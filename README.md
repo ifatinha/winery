@@ -93,9 +93,14 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar
 
 6. Crie uma Pull Request.
 
-## Licença
+## ©️ Copyright e Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+**Copyright (c) 2024 [Fatima Ferreira] (Fatima Ferreira)**
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+Você é livre para usar, modificar e distribuir este projeto, desde que mantenha o aviso de copyright e a licença. Para mais informações, consulte a [Licença MIT](https://opensource.org/licenses/MIT).
+
 
 ## 📧 Contato
 
