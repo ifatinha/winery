@@ -44,6 +44,7 @@ Este projeto consiste no desenvolvimento de uma landing page moderna e responsiv
 4. **Compile o SASS para CSS:**
 
     ```
+    npm run watch-css
     npm run build-css
     ```
 
