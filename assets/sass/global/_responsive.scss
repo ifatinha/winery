@@ -1,0 +1,34 @@
+// Breakpoints
+$xl-device: 1440px;
+$l-device : 1024px;
+$t-device : 768px;
+
+@mixin devices($size) {
+    @if $size==xl {
+        @media screen and (min-width: $xl-device) {
+            @content;
+        }
+    }
+
+    @else if $size==l {
+        @media screen and (min-width: $l-device) and (max-width: calc(#{$xl-device} - 1px)) {
+            @content;
+        }
+    }
+
+    @else if $size==t {
+        @media screen and (min-width: $t-device) and (max-width: calc(#{$l-device} - 1px)) {
+            @content;
+        }
+    }
+
+    @else if $size==m {
+        @media screen and (max-width: calc(#{$t-device} - 1px)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Tamanho #{$size} não é válido. Use 'xl', 'l', 't', ou 'm'.";
+    }
+}

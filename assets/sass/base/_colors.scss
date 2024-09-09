@@ -1,0 +1,16 @@
+@use "sass:map";
+
+$theme-color:(
+    "primary-color": #000000,
+    "second-color": #ffffff,
+);
+
+@mixin color($key) {
+    @if map.has-key($theme-color, $key) {
+        color: map.get($theme-color, $key);
+    }
+
+    @else {
+        @warn "A cor #{$key} não está definida em $theme-color.";
+    }
+}

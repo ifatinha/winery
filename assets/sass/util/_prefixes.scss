@@ -1,0 +1,10 @@
+$known-prefixes: webkit, moz, ms, o;
+
+@mixin prefix($property, $value) {
+
+   @each $prefix in $known-prefixes {
+      -#{$prefix}-#{$property}: $value;
+   }
+
+   #{$property}: $value;
+}

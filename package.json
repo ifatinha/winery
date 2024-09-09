@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "build-css": "sass assets/sass/_main.scss:assets/css/main.css --style compressed && cleancss -o assets/css/main.min.css assets/css/main.css --with-rebase",
+        "watch-css": "sass --watch assets/sass/_main.scss:assets/css/main.css"
+    },
+    "dependencies": {
+        "run": "^1.5.0"
+    },
+    "devDependencies": {
+        "sass": "^1.78.0"
+    }
+}

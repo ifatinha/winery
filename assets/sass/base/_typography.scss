@@ -1,0 +1,20 @@
+@use "sass:math";
+@use "sass:map";
+@use "../util/functions"as *;
+
+@mixin _set-font-style($font-family, $size, $weight, $line-height) {
+   font-family: $font-family;
+   font-size  : px-to-rem($size);
+   font-weight: $weight;
+   line-height: $line-height;
+}
+
+@mixin font-primary($size, $weight: 400, $line-height: 1.5) {
+   $font-primary: sans-serif;
+   @include _set-font-style($font-primary, $size, $weight, $line-height);
+}
+
+@mixin font-secondary($size, $weight: 400, $line-height: 1.5) {
+   $font-secondary: sans-serif;
+   @include _set-font-style($font-secondary, $size, $weight, $line-height);
+}

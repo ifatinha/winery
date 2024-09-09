@@ -1,0 +1,25 @@
+@use "sass:math";
+
+@mixin round($size, $circle: false) {
+    height: $size;
+    width : $size;
+
+    @if $circle {
+        border-radius: math.div($size, 2);
+    }
+}
+
+
+@mixin hover {
+    &:hover {
+        @content
+    }
+}
+
+.button {
+    border: 1px solid black;
+
+    @include hover {
+        border-width: 2px;
+    }
+}
