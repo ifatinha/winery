@@ -10,11 +10,11 @@
 }
 
 @mixin font-primary($size, $weight: 400, $line-height: 1.5) {
-   $font-primary: sans-serif;
+   $font-primary: "Poppins", sans-serif;
    @include _set-font-style($font-primary, $size, $weight, $line-height);
 }
 
 @mixin font-secondary($size, $weight: 400, $line-height: 1.5) {
-   $font-secondary: sans-serif;
+   $font-secondary: "Open Sans", sans-serif;
    @include _set-font-style($font-secondary, $size, $weight, $line-height);
 }

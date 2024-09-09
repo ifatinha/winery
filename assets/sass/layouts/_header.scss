@@ -1,5 +1,1 @@
 @use "../base/typography"as *;
-
-.container {
-    @include font-primary(16);
-}

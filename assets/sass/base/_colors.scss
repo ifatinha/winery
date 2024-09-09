@@ -1,9 +1,19 @@
 @use "sass:map";
 
 $theme-color:(
-    "primary-color": #000000,
-    "second-color": #ffffff,
-);
+    "ash-gray": #979797,
+    "cool-gray": #909092,
+    "charcoal-black": #383737,
+    "deep-navy-blue": #102955,
+    "graphite": #2e2e2e,
+    "muted-silver": #7a7b7c,
+    "midnight-blue": #191d34,
+    "pure-white": #ffffff,
+    "soft-peach": #ffc5c2,
+    "slate-gray": #66666f,
+    "stone-gray": #7a7a7a,
+    "rich-black": #222222,
+    "vibrant-coral": #eb592d);
 
 @mixin color($key) {
     @if map.has-key($theme-color, $key) {
