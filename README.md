@@ -96,7 +96,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar
 
 ## ©️ Copyright e Licença
 
-**Copyright (c) 2024 [Fatima Ferreira](Fatima Ferreira)**
+**Copyright (c) 2024 {fferreira}**
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
