@@ -1,6 +1,6 @@
 # anipat
 
-Este projeto consiste no desenvolvimento de uma landing page moderna e responsiva para um Pet Shop, utilizando HTML, CSS e SASS. O principal objetivo é demonstrar minhas habilidades em desenvolvimento web, destacando projetos concluídos e as tecnologias que domino, como otimização de layout, design responsivo e boas práticas de código.
+Este projeto consiste no desenvolvimento de uma landing page moderna e responsiva para uma vinícola, utilizando HTML, CSS e SASS. O principal objetivo é demonstrar minhas habilidades em desenvolvimento web, destacando projetos concluídos e as tecnologias que domino. O site destacará a oferta de vinhos da vinícola, informações sobre a produção, a história e o ambiente, além de fornecer uma apresentação atraente e informativa sobre a vinícola.
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -25,13 +25,13 @@ Este projeto consiste no desenvolvimento de uma landing page moderna e responsiv
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/ifatinha/anipat.git
+   git clone https://github.com/ifatinha/winery.git
    ```
 
 2. **Navegue até o diretório do projeto:**
 
     ```bash
-   cd anipat
+   cd winery
    ```
 
 3. **Instale as dependências (se necessário):**
@@ -71,7 +71,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar
 2. Clone o seu fork para sua máquina local:
 
    ```bash
-   git clone https://github.com/ifatinha/anipat.git
+   git clone https://github.com/ifatinha/winery.git
    ```
 
 3. Crie uma branch para sua feature:
