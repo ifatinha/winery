@@ -36,7 +36,7 @@
         display   : block;
         height    : 2px;
         position  : relative;
-        transition: .3s ease-in-out;
+        transition: all .25s linear;
         width     : 24px;
 
         &::after,
@@ -47,7 +47,7 @@
             height    : 100%;
             position  : absolute;
             right     : 0;
-            transition: .3s ease-in-out;
+            transition: all .25s linear;
             width     : 100%;
         }
 

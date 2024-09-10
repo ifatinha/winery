@@ -6,7 +6,7 @@
 
 .main {
     @include flex(center, center);
-    @include background-img("../images/Home1-comp.jpg");
+    @include bg-gradient("../images/Home2-comp.webp");
     @include color("pure-white");
     height: 110%;
     width : 100%;
@@ -30,7 +30,11 @@
 
     &__paragraph {
         @include font-primary(18);
-        line-height: 30px;
+        line-height  : 2rem;
         margin-bottom: 2rem;
+
+        @include devices(m) {
+            font-size: 1rem;
+        }
     }
 }

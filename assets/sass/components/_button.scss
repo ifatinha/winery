@@ -1,7 +1,19 @@
 @use "../base/colors"as *;
-@use "../base/typography";
+@use "../base/typography"as*;
+@use "../base/mixins"as *;
 
 
 .btn-default {
-    border: 1px solid map-get($map: $theme-color, $key: "pure-white");
+    @include font-primary(14, 600);
+    border        : 1px solid map-get($map: $theme-color, $key: "pure-white");
+    letter-spacing: 1px;
+    line-height   : 1rem;
+    padding       : 18px 36px;
+    text-transform: uppercase;
+    transition    : .3s ease-in-out;
+
+    @include hover() {
+        @include color("golden-yellow");
+        background: map-get($map: $theme-color, $key: pure-white);
+    }
 }
