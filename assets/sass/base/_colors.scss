@@ -1,0 +1,33 @@
+@use "sass:map";
+
+$theme-color:("black": #000000,
+    "bright-orange": #ff6900,
+    "blue-sky": #2293D7,
+    "charcoal": #232323,
+    "deep-mauve": #76445f,
+    "dark-gray": #474747,
+    "golden-yellow": #fcb900,
+    "light-gray": #9d9d9d,
+    "pure-white": #ffffff,
+    "slate-gray": #5d6163,
+);
+
+@mixin color($key) {
+    @if map.has-key($theme-color, $key) {
+        color: map.get($theme-color, $key);
+    }
+
+    @else {
+        @warn "A cor #{$key} não está definida em $theme-color.";
+    }
+}
+
+@mixin background-color($key) {
+    @if map.has-key($theme-color, $key) {
+        background-color: map.get($theme-color, $key);
+    }
+
+    @else {
+        @warn "A cor #{$key} não está definida em $theme-color.";
+    }
+}

@@ -9,17 +9,22 @@
     }
 }
 
-
 @mixin hover {
     &:hover {
         @content
     }
 }
 
-.button {
-    border: 1px solid black;
+@mixin gradient-bg($url) {
+    background         : linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url($url);
+    background-repeat  : no-repeat;
+    background-position: center;
+    background-size    : cover;
+}
 
-    @include hover {
-        border-width: 2px;
-    }
+@mixin background-img($url) {
+    background         : url($url);
+    background-repeat  : no-repeat;
+    background-position: center;
+    background-size    : cover;
 }

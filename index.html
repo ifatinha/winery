@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description"
-      content="Descubra a nossa landing page moderna e responsiva dedicada a uma vinícola, criada para mostrar habilidades em desenvolvimento web. Explore a oferta de vinhos, a história e o ambiente da vinícola através de um design atraente e informativo, utilizando HTML, CSS e SASS.">
+   <meta name="description" content="Descubra a nossa landing page moderna e responsiva dedicada a uma vinícola, 
+      criada para mostrar habilidades em desenvolvimento web. Explore a oferta de vinhos, 
+      a história e o ambiente da vinícola através de um design atraente e informativo, 
+      utilizando HTML, CSS e SASS.">
    <meta name="author" content="Fatima Ferreira">
    <meta name="robots" content="index, follow">
    <meta name="copyright" content="© 2024 fferreira">
@@ -16,16 +18,51 @@
    <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet">
-   <link rel="stylesheet" href="assets/css/main.css">
-   <script src="https://kit.fontawesome.com/a12613cd88.js" crossorigin="anonymous" defer></script>
+   <link rel="stylesheet" href="assets/styles/main.css">
 </head>
 
 <body>
    <!-- https://oshinewptheme.com/v37/ -->
 
-   <header>
-      <h1>Winere</h1>
+   <header class="header">
+      <div class="container header__container">
+         <a href="/index.html" class="header__brand">winere.</a>
+
+         <button class="menu__bugger" type="button" id="bugger" aria-controls="modal-menu" aria-label="Open mobile menu"
+            aria-expanded="false" aria-haspopup="true">
+            <span class="menu__bugger-visually">Menu</span>
+            <i class="menu__bugger-bars" id="bar" aria-hidden="true"></i>
+         </button>
+
+         <!-- <nav>
+            <ul class="header__navbar">
+               <li><a href="#home" aria-label="Home">Home</a></li>
+               <li><a href="#about" aria-label="About">About</a></li>
+               <li><a href="#shoping" aria-label="Shoping">Shoping</a></li>
+               <li><a href="#contact" aria-label="Contact">Contact</a></li>
+               <li>
+                  <a href="#" aria-label="Shoping Cart">
+                     <i class="fa-solid fa-cart-plus"></i>
+                  </a>
+               </li>
+            </ul>
+         </nav> -->
+      </div>
    </header>
+
+   <main class="main">
+      <div class="container">
+         <div class="main__container">
+            <h1 class="main__title">Traga para casa nossa tradição</h1>
+            <p class="main__paragraph">O aroma da nossa videira leva você de volta aos tempos antigos enquanto você
+               saboreia o sabor enriquecido que cuidadosamente elaboramos e colocamos na garrafa.</p>
+            <a href="#" class="btn-transparent">Saiba mais</a>
+         </div>
+      </div>
+   </main>
+
+   <script src="https://kit.fontawesome.com/a12613cd88.js" crossorigin="anonymous"></script>
+   <script type="module" src="assets/scripts/script.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,77 @@
+@use "sass:math";
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../base/mixins"as *;
+@use "../layouts/flex"as *;
+
+.menu__bugger {
+    @include color("pure-white");
+    @include flex(center, center, 8px);
+    background-color: transparent;
+    border          : none;
+    cursor          : pointer;
+    min-height      : 38px;
+    padding-left    : 0;
+    padding-right   : 0;
+
+    @include hover {
+
+        .menu__bugger-bars::after,
+        .menu__bugger-bars::before {
+            width: 100%;
+        }
+
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &-visually {
+        @include font-primary(16, 500);
+    }
+
+    &-bars {
+        @include background-color("pure-white");
+        display   : block;
+        height    : 2px;
+        position  : relative;
+        transition: .3s ease-in-out;
+        width     : 24px;
+
+        &::after,
+        &::before {
+            @include background-color("pure-white");
+            content   : "";
+            display   : block;
+            height    : 100%;
+            position  : absolute;
+            right     : 0;
+            transition: .3s ease-in-out;
+            width     : 100%;
+        }
+
+        &::after {
+            transform: translate(0, -8px);
+        }
+
+        &::before {
+            transform: translate(0, 8px);
+        }
+    }
+}
+
+.menu-open {
+
+    .menu__bugger-bars {
+        background: transparent;
+
+        &::before {
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+        }
+    }
+}

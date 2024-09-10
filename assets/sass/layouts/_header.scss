@@ -1,1 +1,20 @@
 @use "../base/typography"as *;
+@use "../base/colors"as *;
+@use "../base/mixins"as *;
+@use "../layouts/flex"as *;
+@use "../global/responsive"as*;
+
+.header {
+    padding : 20px 0;
+    position: fixed;
+    width   : 100%;
+
+    &__container {
+        @include flex(center, space-between);
+    }
+
+    &__brand {
+        @include font-secondary(28, 500);
+        @include color("pure-white");
+    }
+}
