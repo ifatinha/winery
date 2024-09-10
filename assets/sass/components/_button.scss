@@ -1,0 +1,7 @@
+@use "../base/colors"as *;
+@use "../base/typography";
+
+
+.btn-default {
+    border: 1px solid map-get($map: $theme-color, $key: "pure-white");
+}

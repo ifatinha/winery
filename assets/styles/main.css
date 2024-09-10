@@ -96,6 +96,10 @@ a {
   text-decoration: none;
 }
 
+.btn-default {
+  border: 1px solid #ffffff;
+}
+
 .menu__bugger {
   color: #ffffff;
   align-items: center;
@@ -200,7 +204,7 @@ a {
   background-position: center;
   background-size: cover;
   color: #ffffff;
-  height: 120%;
+  height: 110%;
   width: 100%;
 }
 .main__container {
@@ -226,6 +230,7 @@ a {
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 30px;
+  margin-bottom: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */
