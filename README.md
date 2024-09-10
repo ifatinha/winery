@@ -1,4 +1,4 @@
-# Valley Vineyard
+# winery
 
 Este projeto consiste no desenvolvimento de uma landing page moderna e responsiva para uma vinícola, utilizando HTML, CSS e SASS. O principal objetivo é demonstrar minhas habilidades em desenvolvimento web, destacando projetos concluídos e as tecnologias que domino. O site destacará a oferta de vinhos da vinícola, informações sobre a produção, a história e o ambiente, além de fornecer uma apresentação atraente e informativa sobre a vinícola.
 
