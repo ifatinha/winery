@@ -387,6 +387,8 @@ a {
   padding: 0 20px;
 }
 .wine__container-row img {
+  display: block;
+  height: 100%;
   object-fit: cover;
 }
 @media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
@@ -414,12 +416,12 @@ a {
 }
 @media screen and (min-width: 1024px) and (max-width: calc(1600px - 1px)) {
   .wine__title {
-    width: 15ch;
+    width: 13ch;
   }
 }
 @media screen and (min-width: 1600px) {
   .wine__title {
-    width: 15ch;
+    width: 13ch;
   }
 }
 @media screen and (max-width: calc(768px - 1px)) {
@@ -461,6 +463,10 @@ a {
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   vertical-align: middle;
   width: 1.5rem;
+}
+
+.wine-bg-light {
+  background-color: rgb(255, 251, 245);
 }
 
 /*# sourceMappingURL=main.css.map */
