@@ -355,7 +355,7 @@ a {
 }
 
 .wine {
-  padding: 120px 0;
+  padding: 100px 0;
   width: 100%;
 }
 @media screen and (max-width: calc(768px - 1px)) {
@@ -435,6 +435,32 @@ a {
   font-weight: 400;
   line-height: 30px;
   margin: 1rem 0;
+}
+.wine__link {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #de844f;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  letter-spacing: 2px;
+  line-height: 30px;
+  position: relative;
+  text-transform: uppercase;
+}
+.wine__link:hover::before {
+  width: 2.2rem;
+}
+.wine__link::before {
+  background: #de844f;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  width: 1.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

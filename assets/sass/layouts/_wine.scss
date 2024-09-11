@@ -1,10 +1,12 @@
 @use "../base/colors"as *;
 @use "../base/typography"as *;
-@use "grid"as *;
+@use "../base/mixins"as *;
 @use "../global/responsive"as *;
+@use "grid"as *;
+@use "flex"as *;
 
 .wine {
-    padding: 120px 0;
+    padding: 100px 0;
     width  : 100%;
 
     @include devices(m) {
@@ -84,7 +86,30 @@
         margin     : 1rem 0;
     }
 
-    &__link{
-        
+    &__link {
+        @include font-primary(12, 600);
+        @include color("sunset-amber");
+        @include flex(center, start);
+        letter-spacing: 2px;
+        line-height   : 30px;
+        position      : relative;
+        text-transform: uppercase;
+
+        @include hover {
+            &::before {
+                width: 2.2rem;
+            }
+        }
+
+        &::before {
+            background: map-get($map: $theme-color, $key: "sunset-amber");
+            content   : "";
+            display   : inline-block;
+            height    : 2px;
+            transition: width .3s cubic-bezier(.4, 0, .2, 1),
+                -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
+            vertical-align: middle;
+            width         : 1.5rem;
+        }
     }
 }
