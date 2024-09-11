@@ -1,9 +1,11 @@
 @use "sass:map";
 
-$theme-color:("black": #000000,
+$theme-color:(
+    "black": #000000,
     "bright-orange": #ff6900,
     "blue-sky": #2293D7,
     "charcoal": #232323,
+    "charcoal-gray": #323232,
     "deep-mauve": #76445f,
     "dark-gray": #474747,
     "golden-yellow": #fcb900,

@@ -12,7 +12,7 @@
    <meta name="robots" content="index, follow">
    <meta name="copyright" content="© 2024 fferreira">
    <meta name="license" content="MIT License: https://opensource.org/licenses/MIT">
-   <title>Winery</title>
+   <title>Vitivallis</title>
    <link rel="shortcut icon" href="assets/images/wine_icon.png" type="image/x-icon">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,39 +27,59 @@
 
    <header class="header">
       <div class="container header__container">
-         <a href="/index.html" class="header__brand">winery.</a>
+         <a href="/index.html" class="header__brand">vitivallis.</a>
 
          <button class="menu__bugger" type="button" id="bugger" aria-controls="modal-menu" aria-label="Open mobile menu"
             aria-expanded="false" aria-haspopup="true">
             <span class="menu__bugger-visually">Menu</span>
             <i class="menu__bugger-bars" id="bar" aria-hidden="true"></i>
          </button>
-
-         <!-- <nav>
-            <ul class="header__navbar">
-               <li><a href="#home" aria-label="Home">Home</a></li>
-               <li><a href="#about" aria-label="About">About</a></li>
-               <li><a href="#shoping" aria-label="Shoping">Shoping</a></li>
-               <li><a href="#contact" aria-label="Contact">Contact</a></li>
-               <li>
-                  <a href="#" aria-label="Shoping Cart">
-                     <i class="fa-solid fa-cart-plus"></i>
-                  </a>
-               </li>
-            </ul>
-         </nav> -->
       </div>
    </header>
 
-   <main class="main">
-      <div class="container">
-         <div class="main__container">
-            <h1 class="main__title">Leve para casa nossa tradição.</h1>
-            <p class="main__paragraph">O aroma de nossas videiras transporta você aos tempos antigos, enquanto saboreia
-               o sabor enriquecido que cuidadosamente elaboramos e colocamos em cada garrafa.</p>
-            <a href="#" class="btn-default">Saiba mais</a>
-         </div>
+   <div class="modal" id="modal"></div>
+   <div class="sidebar" id="sidebar">
+      <a href="/index.html" class="sidebar__brand">vitivallis.</a>
+
+      <nav class="navbar">
+         <ul class="navbar__list">
+            <li><a href="#home" class="js-actived-link">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#shoping">Shop</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+         </ul>
+      </nav>
+
+      <div>
+         <ul class="sidebar__social">
+            <li>
+               <a href="#facebook" aria-label="Facebook" title="Facebook">
+                  <i class="fa-brands fa-facebook-f"></i>
+               </a>
+            </li>
+            <li>
+               <a href="#instagram" aria-label="Instagram" title="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+               </a>
+            </li>
+            <li>
+               <a href="#twitter" aria-label="Twitter" title="Twitter">
+                  <i class="fa-brands fa-x-twitter"></i>
+               </a>
+            </li>
+            <li>
+               <a href="#whatsapp" aria-label="WhatsApp" title="WhatsApp">
+                  <i class="fa-brands fa-whatsapp"></i>
+               </a>
+            </li>
+         </ul>
+
+         <p class="sidebar__paragraph">Copyright 2019 @ vitivallis.</p>
       </div>
+   </div>
+
+   <main class="main">
       <section class="home">
          <div class="container">
             <div class="home__container">
@@ -72,7 +92,7 @@
       </section>
    </main>
 
-   <script src="https://kit.fontawesome.com/a12613cd88.js" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/09fa9cee0a.js" crossorigin="anonymous" defer></script>
    <script type="module" src="assets/scripts/script.js" defer></script>
 </body>
 

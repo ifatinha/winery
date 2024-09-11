@@ -6,7 +6,7 @@
 
 .home {
     @include flex(center, center);
-    @include background-img("../images/Home1-comp.jpg");
+    @include bg-gradient("../images/home-bg.webp");
     @include color("pure-white");
     height: 110%;
     width : 100%;

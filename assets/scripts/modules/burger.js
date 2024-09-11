@@ -1,22 +1,24 @@
 import { updateAriaAtributes } from "./updateLinks.js";
+import { toggleClass } from "./toggle.js";
 
 export function openMenu() {
     const openButton = document.querySelector("#bugger");
+    const modal = document.querySelector("#modal");
+    const sidebar = document.querySelector("#sidebar");
 
-    if (!openButton) return;
+    if (!openButton || !modal) return;
 
-    const toggleClass = (element, className) => {
-        element.classList.toggle(className);
-    }
-
-    const toggle = (event) => {
+    const handleToggle = (event) => {
         if (event?.type === "touchstart") event.preventDefault();
 
-        toggleClass(openButton, "menu-open");
-        const isOpen = openButton.classList.contains("menu-open");
-        updateAriaAtributes(isOpen, openButton);
+        const isMenuOpen = openButton.classList.contains("js-open-menu");
+        updateAriaAtributes(isMenuOpen, openButton);
+
+        toggleClass(openButton, "js-open-menu");
+        toggleClass(modal, "js-open-modal");
+        toggleClass(sidebar, "js-sidebar-open");
     }
 
-    openButton.addEventListener("click", toggle);
-    openButton.addEventListener("touchstart", toggle);
+    openButton.addEventListener("click", handleToggle);
+    openButton.addEventListener("touchstart", handleToggle);
 }

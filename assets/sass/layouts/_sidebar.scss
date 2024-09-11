@@ -1,0 +1,90 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../base/mixins"as *;
+@use "../global/responsive"as *;
+@use "../layouts/flex"as *;
+
+.sidebar {
+    @include flex(start, space-between);
+    background    : map-get($map: $theme-color, $key: "pure-white");
+    flex-direction: column;
+    height        : 100%;
+    overflow-y    : auto;
+    overflow-x    : hidden;
+    padding       : 40px 40px;
+    position      : fixed;
+    right         : 0;
+    top           : 0;
+    transform     : translateX(400px);
+    transition    : transform .7s cubic-bezier(.645, .045, .355, 1),
+        -webkit-transform .7s cubic-bezier(.645, .045, .355, 1);
+    width  : 400px;
+    z-index: 100001;
+
+    @include devices(m) {
+        width: 280px;
+    }
+
+    &__brand {
+        @include font-secondary(32, 500);
+        display: inline-block;
+    }
+
+    &__paragraph {
+        @include font-primary(14);
+        color: rgba(102, 102, 102, 1);
+    }
+
+    &__social {
+        @include flex(center, start);
+        @include font-primary(22);
+        gap          : 1rem;
+        margin-bottom: 10px;
+
+        a {
+            @include color("charcoal-gray");
+
+            i {
+                transition: .3s ease-in-out;
+
+                @include hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+
+.navbar {
+    width: 100%;
+
+    &__list {
+        width: 100%;
+
+        li {
+            margin-bottom: 5px;
+
+            a {
+                @include font-primary(28);
+                color      : rgba(102, 102, 102, 1);
+                display    : inline-block;
+                line-height: 45px;
+                padding    : 4px 0;
+                transition : .3s ease-in-out;
+                width      : 100%;
+
+                @include hover() {
+                    color: rgba($color: #000000, $alpha: 1.0);
+                }
+            }
+        }
+    }
+}
+
+.js-sidebar-open {
+    transform: translateZ(0) !important;
+}
+
+.js-actived-link {
+    color: rgba($color: #000000, $alpha: 1.0) !important;
+}

@@ -1,0 +1,14 @@
+.modal {
+    background: rgba($color: #000000, $alpha: 0.8);
+    height    : 100%;
+    position  : fixed;
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    width     : 100%;
+    visibility: hidden;
+    z-index   : 10000;
+}
+
+.js-open-modal {
+    opacity   : 1;
+    visibility: visible;
+}
