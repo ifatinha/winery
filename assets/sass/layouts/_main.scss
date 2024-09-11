@@ -1,36 +1,4 @@
-@use "../base/mixins"as *;
-@use "../base/typography"as *;
-@use "../base/colors"as *;
-@use "../layouts/flex"as *;
-@use "../global/responsive"as *;
-
 .main {
-    @include flex(center, center);
-    @include background-img("../images/Home1-comp.jpg");
-    @include color("pure-white");
-    height: 110%;
+    height: 100%;
     width : 100%;
-
-    &__container {
-        max-width: 580px;
-        width    : 100%;
-    }
-
-    &__title {
-        @include font-secondary(82);
-        letter-spacing: -0.2px;
-        line-height   : 98px;
-        margin-bottom : 20px;
-
-        @include devices(m) {
-            font-size  : 42px;
-            line-height: 58px;
-        }
-    }
-
-    &__paragraph {
-        @include font-primary(18);
-        line-height: 30px;
-        margin-bottom: 2rem;
-    }
 }

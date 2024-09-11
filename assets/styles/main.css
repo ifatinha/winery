@@ -195,6 +195,11 @@ a {
 }
 
 .main {
+  height: 100%;
+  width: 100%;
+}
+
+.home {
   align-items: center;
   display: flex;
   gap: 1rem;
@@ -207,11 +212,11 @@ a {
   height: 110%;
   width: 100%;
 }
-.main__container {
+.home__container {
   max-width: 580px;
   width: 100%;
 }
-.main__title {
+.home__title {
   font-family: "Playfair Display", serif;
   font-size: 5.125rem;
   font-weight: 400;
@@ -220,12 +225,12 @@ a {
   margin-bottom: 20px;
 }
 @media screen and (max-width: calc(768px - 1px)) {
-  .main__title {
+  .home__title {
     font-size: 42px;
     line-height: 58px;
   }
 }
-.main__paragraph {
+.home__paragraph {
   font-family: "Source Sans 3", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
