@@ -15,14 +15,14 @@
     }
 }
 
-@mixin gradient-bg($url) {
-    background         : linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url($url);
+@mixin bg-gradient($url) {
+    background         : linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url($url);
     background-repeat  : no-repeat;
     background-position: center;
     background-size    : cover;
 }
 
-@mixin background-img($url) {
+@mixin bg-img($url) {
     background         : url($url);
     background-repeat  : no-repeat;
     background-position: center;
