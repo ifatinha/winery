@@ -31,7 +31,7 @@
             max-width: 900px;
         }
 
-        h4 {
+        h3 {
             @include font-secondary(42);
             @include color("deep-mauve");
             letter-spacing: -0-1px;

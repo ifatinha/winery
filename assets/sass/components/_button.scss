@@ -5,15 +5,29 @@
 
 .btn-default {
     @include font-primary(14, 600);
-    border        : 2px solid map-get($map: $theme-color, $key: "pure-white");
+    border-width  : 2px;
+    border-style  : solid;
+    border-color  : transparent;
+    border-radius : 3px;
+    color         : map-get($map: $theme-color, $key: "pure-white");
     letter-spacing: 1px;
     line-height   : 1rem;
-    padding       : 14px 36px;
+    padding       : 14px 20px;
     text-transform: uppercase;
     transition    : .3s ease-in-out;
 
     @include hover() {
-        @include color("golden-yellow");
+        @include color("bright-orange");
         background: map-get($map: $theme-color, $key: pure-white);
     }
+}
+
+.btn-white {
+    border-color: map-get($map: $theme-color, $key: "pure-white");
+}
+
+.btn-orange {
+    background-color: #de844f;
+    border-color    : map-get($map: $theme-color, $key: pure-white);
+    font-weight     : 600;
 }

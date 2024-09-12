@@ -20,5 +20,5 @@ export function openMenu() {
     }
 
     openButton.addEventListener("click", handleToggle);
-    openButton.addEventListener("touchstart", handleToggle);
+    openButton.addEventListener("touchstart", handleToggle, { passive: true });
 }

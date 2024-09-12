@@ -1,4 +1,9 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../base/mixins"as *;
 @use "../layouts/grid"as *;
+@use "../global/responsive"as *;
+@use "../layouts/flex"as *;
 @use "../global/responsive"as *;
 
 .blog {
@@ -13,8 +18,40 @@
         }
 
         &-item {
-            background: gray;
-            padding   : 20px 30px;
+            @include flex(start, space-between);
+            flex-direction: column;
+            padding       : 20px 22px;
+
+            @include devices(m) {
+                padding: 16px;
+            }
+
+            h3 {
+                @include color("deep-mauve");
+                @include font-secondary(26);
+                line-height: 40px;
+                transition : .3s ease-in-out;
+
+                @include hover() {
+                    @include color("blue-sky");
+                }
+            }
+
+            span {
+                @include color("slate-gray");
+                @include font-primary(14);
+                display    : block;
+                flex-grow  : 1;
+                line-height: 28px;
+                margin-top : -12px;
+            }
+
+            p {
+                @include color("stone-gray");
+                @include font-primary(18);
+                line-height  : 30px;
+                margin-bottom: 30px;
+            }
         }
     }
 }

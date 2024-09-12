@@ -30,7 +30,30 @@
 
     &__paragraph {
         @include font-primary(18);
-        line-height: 30px;
+        line-height  : 30px;
         margin-bottom: 2rem;
+    }
+
+    &__contact {
+        @include flex(center, center);
+        gap       : 40px;
+        padding   : 80px 0;
+        text-align: center;
+
+        @include devices(m) {
+            flex-direction: column;
+            gap           : 20px; 
+        }
+
+        h4 {
+            @include font-secondary(36);
+            @include color("deep-mauve");
+            letter-spacing: -0.1px;
+            line-height   : 42px;
+
+            @include devices(m){
+                font-size: 26px;
+            }
+        }
     }
 }
