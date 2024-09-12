@@ -281,11 +281,11 @@ a {
 }
 
 .footer__image {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/bg-footer.jpg");
+  background: url("../images/footer-bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 

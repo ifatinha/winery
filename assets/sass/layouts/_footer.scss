@@ -77,8 +77,8 @@
 }
 
 .footer__image {
-    @include bg-gradient("../images/bg-footer.jpg");
+    @include bg-img("../images/footer-bg.jpg");
     // background-attachment: fixed;
-    height: 100%;
+    height: 100vh;
     width : 100%;
 }
