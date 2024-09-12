@@ -78,7 +78,6 @@
 
 .footer__image {
     @include bg-img("../images/footer-bg.jpg");
-    // background-attachment: fixed;
     height: 100vh;
     width : 100%;
 }

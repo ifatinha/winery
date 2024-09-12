@@ -1,6 +1,8 @@
 @use "../base/colors"as *;
 @use "../base/typography"as*;
 @use "../base/mixins"as *;
+@use "../base/keyframes"as*;
+@use "../layouts/flex"as *;
 
 
 .btn-default {
@@ -30,4 +32,28 @@
     background-color: #de844f;
     border-color    : map-get($map: $theme-color, $key: pure-white);
     font-weight     : 600;
+}
+
+.btn__square {
+    @include color("pure-white");
+    align-items    : center;
+    background     : map-get($map: $theme-color, $key: "blue-sky");
+    bottom         : 20px;
+    border-radius  : 4px;
+    display        : none;
+    height         : 40px;
+    justify-content: center;
+    position       : fixed;
+    right          : 20px;
+    transition     : .3s ease-in-out;
+    width          : 40px;
+
+    @include hover {
+        opacity: .8;
+    }
+}
+
+.btn__square-actived {
+    @include fade-in();
+    display   : flex;
 }
