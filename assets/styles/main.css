@@ -285,7 +285,6 @@ a {
 
 .footer {
   background-color: rgb(255, 255, 255);
-  border-top: 1px solid rgba(157, 157, 157, 0.2);
   width: 100%;
 }
 .footer__container {
@@ -378,16 +377,12 @@ a {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/home-bg.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
   color: #ffffff;
   height: 110vh;
   width: 100%;
 }
 .home__container {
-  max-width: 580px;
+  max-width: 600px;
   width: 100%;
 }
 .home__title {
@@ -437,6 +432,61 @@ a {
 @media screen and (max-width: calc(768px - 1px)) {
   .home__contact h4 {
     font-size: 26px;
+  }
+}
+
+#index {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/home-bg.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#about {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/about-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#shopping {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/shopping-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (min-width: 1600px) {
+  #shopping {
+    height: 80vh;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1600px - 1px)) {
+  #shopping {
+    height: 80vh;
+  }
+}
+
+#contact {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/contact-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#news {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/news-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media screen and (min-width: 1600px) {
+  #news {
+    height: 70vh;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1600px - 1px)) {
+  #news {
+    height: 70vh;
   }
 }
 

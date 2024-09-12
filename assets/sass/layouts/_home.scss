@@ -6,13 +6,12 @@
 
 .home {
     @include flex(center, center);
-    @include bg-gradient("../images/home-bg.webp");
     @include color("pure-white");
     height: 110vh;
     width : 100%;
 
     &__container {
-        max-width: 580px;
+        max-width: 600px;
         width    : 100%;
     }
 
@@ -42,7 +41,7 @@
 
         @include devices(m) {
             flex-direction: column;
-            gap           : 20px; 
+            gap           : 20px;
         }
 
         h4 {
@@ -51,9 +50,45 @@
             letter-spacing: -0.1px;
             line-height   : 42px;
 
-            @include devices(m){
+            @include devices(m) {
                 font-size: 26px;
             }
         }
+    }
+}
+
+#index {
+    @include bg-gradient("../images/home-bg.webp");
+}
+
+#about {
+    @include bg-gradient("../images/about-bg.jpg");
+}
+
+#shopping {
+    @include bg-gradient("../images/shopping-bg.jpg");
+
+    @include devices(xl) {
+        height: 80vh;
+    }
+
+    @include devices(l) {
+        height: 80vh;
+    }
+}
+
+#contact {
+    @include bg-gradient("../images/contact-bg.jpg");
+}
+
+#news {
+    @include bg-gradient("../images/news-bg.jpg");
+
+    @include devices(xl) {
+        height: 70vh;
+    }
+
+    @include devices(l) {
+        height: 70vh;
     }
 }

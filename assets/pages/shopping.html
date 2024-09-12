@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Descubra a nossa landing page moderna e responsiva dedicada a uma vinícola, 
+      criada para mostrar habilidades em desenvolvimento web. Explore a oferta de vinhos, 
+      a história e o ambiente da vinícola através de um design atraente e informativo, 
+      utilizando HTML, CSS e SASS.">
+   <meta name="author" content="Fatima Ferreira">
+   <meta name="robots" content="index, follow">
+   <meta name="copyright" content="© 2024 fferreira">
+   <meta name="license" content="MIT License: https://opensource.org/licenses/MIT">
+   <title>Vitivallis | Shopping</title>
+   <link rel="shortcut icon" href="../images/wine_icon.png" type="image/x-icon">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet">
+   <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+   <!-- https://oshinewptheme.com/v37/ -->
+
+   <header class="header">
+      <div class="container header__container">
+         <a href="/index.html" class="header__brand">vitivallis.</a>
+
+         <button class="menu__bugger" type="button" id="bugger" aria-controls="modal-menu" aria-label="Open mobile menu"
+            aria-expanded="false" aria-haspopup="true">
+            <span class="menu__bugger-visually">Menu</span>
+            <i class="menu__bugger-bars" id="bar" aria-hidden="true"></i>
+         </button>
+      </div>
+   </header>
+
+   <div class="modal" id="modal"></div>
+   <div class="sidebar" id="sidebar">
+      <a href="/index.html" class="sidebar__brand">vitivallis.</a>
+
+      <nav class="navbar">
+         <ul class="navbar__list">
+            <li><a href="/index.html" class="js-actived-link">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="shopping.html">Shopping</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="contact.html">Contact</a></li>
+         </ul>
+      </nav>
+
+      <ul class="sidebar__social">
+         <li>
+            <a href="#facebook" aria-label="Facebook" title="Facebook">
+               <i class="fa-brands fa-facebook-f"></i>
+            </a>
+         </li>
+         <li>
+            <a href="#instagram" aria-label="Instagram" title="Instagram">
+               <i class="fa-brands fa-instagram"></i>
+            </a>
+         </li>
+         <li>
+            <a href="#twitter" aria-label="Twitter" title="Twitter">
+               <i class="fa-brands fa-x-twitter"></i>
+            </a>
+         </li>
+         <li>
+            <a href="#whatsapp" aria-label="WhatsApp" title="WhatsApp">
+               <i class="fa-brands fa-whatsapp"></i>
+            </a>
+         </li>
+      </ul>
+
+      <p class="sidebar__paragraph">Copyright 2019 @ vitivallis.</p>
+   </div>
+
+   <a href="#" class="btn__square" id="btn-scroll" aria-label="Go to top">
+      <i class="fa-solid fa-angle-up"></i>
+   </a>
+
+   <main class="main">
+      <section class="home" id="shopping">
+         <div class="container">
+            <div class="home__container">
+               <h1 class="home__title">Nossos Vinhos</h1>
+               <p class="home__paragraph">O aroma da nossas vinhas leva você de volta aos tempos antigos enquanto você
+                  saboreia o sabor enriquecido que cuidadosamente elaboramos e colocamos na garrafa.</p>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <footer class="footer">
+      <div class="container">
+         <div class="footer__container">
+            <div class="footer__container-item">
+               <h2>Sobre</h2>
+               <p>Uma vinícola premiada, de propriedade e operada por uma família, sediada em Naples, CA. Fomos
+                  estabelecidos em 1929 e produzimos vinhos premium em pequenos lotes que oferecem uma experiência
+                  superior. </p>
+            </div>
+            <div class="footer__container-item">
+               <h2>Visite-nos</h2>
+               <address>25, Bela Vista, (exit 54 1606) Serra Grande, Paraíba - 60635</address>
+               <p>Phone: <a href="tel:+551234567890"> +55-123-4567-890</a></p>
+               <p>Email: <a href="mailto:help@vitivallis.com">help@vitivallis.com</a></p>
+            </div>
+            <div class="footer__container-item">
+               <h2>Horas</h2>
+               <p>Segunda a Sexta</p>
+               <span>10AM - 5PM</span>
+               <p>Sábado e Domingo</p>
+               <span>9AM - 5PM</spa>
+            </div>
+            <div class="footer__container-item">
+               <h2>Links</h2>
+               <ul>
+                  <li><i class="fa-solid fa-angle-right"></i><a href="#">Política de Privacidade</a></li>
+                  <li><i class="fa-solid fa-angle-right"></i><a href="#">Política de envio</a></li>
+                  <li><i class="fa-solid fa-angle-right"></i><a href="#">Termos e condições</a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <div class="footer__image"></div>
+
+   <script src="https://kit.fontawesome.com/09fa9cee0a.js" crossorigin="anonymous" defer></script>
+   <script type="module" src="../scripts/script.js" defer></script>
+</body>
+
+</html>
