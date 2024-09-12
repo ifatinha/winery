@@ -8,7 +8,7 @@
     @include flex(center, center);
     @include bg-gradient("../images/home-bg.webp");
     @include color("pure-white");
-    height: 110%;
+    height: 110vh;
     width : 100%;
 
     &__container {

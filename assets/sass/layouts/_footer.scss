@@ -1,0 +1,15 @@
+@use "../base/mixins"as *;
+
+.footer {
+    background-color: rgba(255, 255, 255, 1);
+    border-top      : 1px solid rgba(157, 157, 157, 0.2);
+    padding-top     : 60px;
+    width           : 100%;
+}
+
+.footer__image {
+    @include bg-img("../images/bg-footer.jpg");
+    background-attachment: fixed;
+    height               : 100%;
+    width                : 100%;
+}
