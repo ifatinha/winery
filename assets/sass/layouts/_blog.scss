@@ -1,0 +1,20 @@
+@use "../layouts/grid"as *;
+@use "../global/responsive"as *;
+
+.blog {
+    padding: 80px 0;
+
+    &__container {
+        @include grid(1fr 1fr 1fr);
+
+        @include devices(m) {
+            grid-template-columns: 1fr;
+            gap                  : 2rem;
+        }
+
+        &-item {
+            background: gray;
+            padding   : 20px 30px;
+        }
+    }
+}
