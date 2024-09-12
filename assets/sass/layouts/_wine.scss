@@ -90,7 +90,7 @@
 
     &__link {
         @include font-primary(12, 600);
-        @include color("sunset-amber");
+        @include color("bright-orange");
         @include flex(center, start);
         letter-spacing: 2px;
         line-height   : 30px;
@@ -104,7 +104,7 @@
         }
 
         &::before {
-            background: map-get($map: $theme-color, $key: "sunset-amber");
+            background: map-get($map: $theme-color, $key: "bright-orange");
             content   : "";
             display   : inline-block;
             height    : 2px;
@@ -112,6 +112,19 @@
                 -webkit-transform .3s cubic-bezier(.4, 0, .2, 1);
             vertical-align: middle;
             width         : 1.5rem;
+        }
+    }
+
+    &__list {
+        list-style-type    : disc;
+        list-style-position: inside;
+        margin-bottom      : 40px;
+
+        li {
+            @include color("slate-gray");
+            @include font-primary(18);
+            line-height  : 30px;
+            margin-bottom: 10px;
         }
     }
 }

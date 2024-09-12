@@ -265,6 +265,76 @@ a {
   margin-bottom: 2rem;
 }
 
+.testimony {
+  padding: 100px 0;
+  position: relative;
+}
+.testimony__img {
+  margin-bottom: 40px;
+}
+.testimony__img img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+.testimony__comment {
+  margin: 0 auto;
+  max-width: 600px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (min-width: 1600px) {
+  .testimony__comment {
+    max-width: 900px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1600px - 1px)) {
+  .testimony__comment {
+    max-width: 900px;
+  }
+}
+.testimony__comment h4 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.625rem;
+  font-weight: 400;
+  color: #76445f;
+  letter-spacing: -1px;
+  line-height: 56px;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  .testimony__comment h4 {
+    font-size: 30px;
+    line-height: 42px;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .testimony__comment h4 {
+    font-size: 30px;
+    line-height: 42px;
+  }
+}
+.testimony__comment p,
+.testimony__comment span {
+  color: #5d6163;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 30px;
+}
+.testimony__comment p {
+  font-weight: 600;
+}
+
+.quote {
+  bottom: 2%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: -9999;
+}
+
 .sidebar {
   align-items: start;
   display: flex;
@@ -294,6 +364,7 @@ a {
   font-size: 2rem;
   font-weight: 500;
   display: inline-block;
+  margin-bottom: 2rem;
 }
 .sidebar__paragraph {
   font-family: "Source Sans 3", sans-serif;
@@ -323,6 +394,7 @@ a {
 }
 
 .navbar {
+  flex-grow: 1;
   width: 100%;
 }
 .navbar__list {
@@ -442,7 +514,7 @@ a {
   font-family: "Source Sans 3", sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #de844f;
+  color: #ff6900;
   align-items: center;
   display: flex;
   gap: 1rem;
@@ -456,13 +528,26 @@ a {
   width: 2.2rem;
 }
 .wine__link::before {
-  background: #de844f;
+  background: #ff6900;
   content: "";
   display: inline-block;
   height: 2px;
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   vertical-align: middle;
   width: 1.5rem;
+}
+.wine__list {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 40px;
+}
+.wine__list li {
+  color: #5d6163;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 10px;
 }
 
 .wine-bg-light {

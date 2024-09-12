@@ -1,0 +1,72 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../global/responsive"as *;
+
+.testimony {
+    padding : 100px 0;
+    position: relative;
+
+    &__img {
+        margin-bottom: 40px;
+
+        img {
+            display   : block;
+            height    : 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__comment {
+        margin    : 0 auto;
+        max-width : 600px;
+        position  : relative;
+        text-align: center;
+        width     : 100%;
+
+        @include devices(xl) {
+            max-width: 900px;
+        }
+
+        @include devices(l) {
+            max-width: 900px;
+        }
+
+        h4 {
+            @include font-secondary(42);
+            @include color("deep-mauve");
+            letter-spacing: -0-1px;
+            line-height   : 56px;
+            margin-bottom : 16px;
+
+
+            @include devices(t) {
+                font-size  : 30px;
+                line-height: 42px;
+            }
+
+            @include devices(m) {
+                font-size  : 30px;
+                line-height: 42px;
+            }
+        }
+
+        p,
+        span {
+            @include color("slate-gray");
+            @include font-primary(18);
+            line-height: 30px;
+        }
+
+        p {
+            font-weight: 600;
+        }
+    }
+}
+
+.quote {
+    bottom   : 2%;
+    left     : 50%;
+    position : absolute;
+    transform: translate(-50%, -50%);
+    z-index  : -9999;
+}
