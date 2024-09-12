@@ -1,15 +1,79 @@
 @use "../base/mixins"as *;
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../layouts/grid"as *;
+@use "../global/responsive"as *;
 
 .footer {
     background-color: rgba(255, 255, 255, 1);
     border-top      : 1px solid rgba(157, 157, 157, 0.2);
-    padding-top     : 60px;
     width           : 100%;
+
+    &__container {
+        @include grid(1fr 1fr 1fr 1fr);
+        gap    : 1rem;
+        padding: 80px 0;
+
+        @include devices(t) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include devices(m) {
+            grid-template-columns: 1fr;
+        }
+
+        &-item {
+            @include font-primary(16);
+            @include color("light-gray");
+            padding: 1rem;
+
+            h2 {
+                @include color("dark-gray");
+                font-size     : 18px;
+                letter-spacing: -0.05px;
+                line-height   : 30px;
+                margin-bottom : 20px;
+            }
+
+            p,
+            address {
+                line-height: 26px;
+            }
+
+            address {
+                margin-bottom: 30px;
+            }
+
+            a {
+                transition: .3s ease-in-out;
+
+                @include hover() {
+                    @include color("blue-sky");
+                }
+            }
+
+            ul {
+                li {
+                    margin      : 10px;
+                    padding-left: 25px;
+
+                    a {
+                        display   : block;
+                        transition: .3s ease-in-out;
+
+                        @include hover {
+                            margin-left: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer__image {
-    @include bg-img("../images/bg-footer.jpg");
-    background-attachment: fixed;
-    height               : 100%;
-    width                : 100%;
+    @include bg-gradient("../images/bg-footer.jpg");
+    // background-attachment: fixed;
+    height: 100%;
+    width : 100%;
 }
