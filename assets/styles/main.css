@@ -266,11 +266,14 @@ a {
   color: #2293D7;
 }
 .footer__container-item ul li {
-  margin: 10px;
-  padding-left: 25px;
+  margin-bottom: 10px;
+  padding-right: 25px;
+}
+.footer__container-item ul li i {
+  margin-right: 16px;
 }
 .footer__container-item ul li a {
-  display: block;
+  display: inline-block;
   transition: 0.3s ease-in-out;
 }
 .footer__container-item ul li a:hover {

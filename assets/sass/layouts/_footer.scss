@@ -53,12 +53,17 @@
             }
 
             ul {
+
                 li {
-                    margin      : 10px;
-                    padding-left: 25px;
+                    margin-bottom: 10px;
+                    padding-right: 25px;
+
+                    i {
+                        margin-right: 16px;
+                    }
 
                     a {
-                        display   : block;
+                        display   : inline-block;
                         transition: .3s ease-in-out;
 
                         @include hover {
