@@ -35,6 +35,16 @@
     font-weight     : 600;
 }
 
+.btn-blue {
+    background-color: map-get($map: $theme-color, $key: "blue-sky");
+    text-transform  : uppercase;
+
+    @include hover {
+        border-color: map-get($map: $theme-color, $key: "blue-sky");
+        color       : map-get($map: $theme-color, $key: "blue-sky");
+    }
+}
+
 .btn__square {
     @include color("pure-white");
     align-items    : center;
