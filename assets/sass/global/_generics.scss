@@ -1,3 +1,30 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../global/responsive"as *;
+
 .bg-light {
     background-color: rgba(255, 251, 245, 1);
+}
+
+.special__title {
+    @include color("deep-mauve");
+    @include font-secondary(62);
+    letter-spacing: -0.2px;
+    line-height   : 75px;
+    text-align    : center;
+
+    @include devices(m) {
+        font-size  : 2.5rem;
+        line-height: normal;
+    }
+}
+
+.special__subtitle {
+    @include color("slate-gray");
+    @include font-primary(12, 600);
+    display       : block;
+    letter-spacing: 2px;
+    line-height   : 22px;
+    text-align    : center;
+    text-transform: uppercase;
 }

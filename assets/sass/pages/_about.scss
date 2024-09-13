@@ -1,0 +1,146 @@
+@use "../layouts/grid"as *;
+@use "../global/responsive"as *;
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+
+.about {
+    padding: 80px 0;
+
+    &__columns {
+        @include grid(1fr 1fr);
+        gap       : 50px;
+        margin-top: 60px;
+
+        @include devices(m) {
+            grid-template-columns: 1fr;
+        }
+
+        &-row {
+            p {
+                @include color("slate-gray");
+                @include font-primary(18);
+                line-height: 30px;
+                margin     : 30px 0;
+            }
+
+            img {
+                display        : block;
+                object-fit     : cover;
+                object-position: center;
+            }
+        }
+    }
+
+    &__image {
+        margin    : 40px 0;
+        text-align: center;
+
+        h3 {
+            @include color("deep-mauve");
+            @include font-secondary(20);
+            letter-spacing: -0.05px;
+            line-height   : 32px;
+            margin        : 40px 0 10px;
+        }
+
+        p {
+            @include color("slate-gray");
+            @include font-primary(18);
+            line-height: 30px;
+        }
+    }
+}
+
+.about__wine {
+    padding: 80px 0;
+
+    &-container {
+        @include grid(repeat(3, 1fr));
+        gap          : 2rem;
+        justify-items: center;
+        max-width    : 980px;
+        margin       : 0 auto;
+        width        : 100%;
+
+        @include devices(m) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &-item {
+
+        align-self: center;
+
+        ul {
+            width: 100%;
+
+            li {
+                @include color("slate-gray");
+                @include font-primary(18);
+                line-height  : 24px;
+                margin-bottom: 1rem;
+                width        : 100%;
+
+                i {
+                    @include color("sunset-amber");
+                    font-size   : 1rem;
+                    margin-right: 1rem;
+                }
+            }
+        }
+
+        img {
+            display        : block;
+            object-fit     : cover;
+            object-position: center;
+        }
+
+    }
+}
+
+.oenologist {
+
+    .special__title {
+        margin-bottom: 1rem;
+    }
+
+    &__container {
+        @include grid(repeat(3, 1fr));
+        gap    : 2rem;
+        padding: 80px 0;
+
+        @include devices(m) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__card {
+        text-align: center;
+
+        &-img {
+            background   : orange;
+            border-radius: 50%;
+            height       : 340px;
+            margin       : 0 auto;
+            width        : 340px;
+
+            @include devices(t) {
+                height: 200px;
+                width : 200px;
+            }
+
+            @include devices(m) {
+                height: 200px;
+                width : 200px;
+            }
+        }
+
+        h3 {
+            @include color("deep-mauve");
+            @include font-secondary(20);
+            letter-spacing: -0.05px;
+            line-height   : 32px;
+            margin-top    : 8px;
+        }
+    }
+}
