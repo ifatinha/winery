@@ -45,7 +45,7 @@
     }
 }
 
-.btn__square {
+.btn-blue {
     @include color("pure-white");
     align-items    : center;
     background     : map-get($map: $theme-color, $key: "blue-sky");
@@ -64,7 +64,7 @@
     }
 }
 
-.btn__square-actived {
+.btn-blue-actived {
     @include fade-in();
     display: flex;
 }

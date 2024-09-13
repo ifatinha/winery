@@ -12,12 +12,12 @@ export function scrollFunction() {
 
         if (scrollTop > 20) {
             if (!btnScroll.hasListener) {
-                btnScroll.classList.add("btn__square-actived");
+                btnScroll.classList.add("btn-blue-actived");
                 btnScroll.addEventListener("click", moveToTop);
                 btnScroll.addEventListener("touchstart", moveToTop, { passive: true });
             }
         } else {
-            btnScroll.classList.remove("btn__square-actived");
+            btnScroll.classList.remove("btn-blue-actived");
             btnScroll.hasListener = false;
         }
     }
