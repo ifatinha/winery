@@ -11,6 +11,7 @@
     border-style  : solid;
     border-color  : transparent;
     border-radius : 3px;
+    display       : inline-block;
     color         : map-get($map: $theme-color, $key: "pure-white");
     letter-spacing: 1px;
     line-height   : 1rem;
@@ -55,5 +56,5 @@
 
 .btn__square-actived {
     @include fade-in();
-    display   : flex;
+    display: flex;
 }

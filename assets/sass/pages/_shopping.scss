@@ -1,0 +1,17 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../layouts/flex"as *;
+@use "../global/responsive"as *;
+
+.shopping {
+    padding: 80px 0;
+
+    &__header {
+        @include flex(center, space-between);
+
+        @include devices(m) {
+            align-items   : start;
+            flex-direction: column;
+        }
+    }
+}

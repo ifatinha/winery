@@ -16,12 +16,6 @@
         }
 
         &-row {
-            p {
-                @include color("slate-gray");
-                @include font-primary(18);
-                line-height: 30px;
-                margin     : 30px 0;
-            }
 
             img {
                 display        : block;
@@ -42,12 +36,13 @@
             line-height   : 32px;
             margin        : 40px 0 10px;
         }
+    }
 
-        p {
-            @include color("slate-gray");
-            @include font-primary(18);
-            line-height: 30px;
-        }
+    &__paragraph {
+        @include color("slate-gray");
+        @include font-primary(18);
+        line-height: 30px;
+        margin     : 20px 0;
     }
 }
 
@@ -118,7 +113,6 @@
         text-align: center;
 
         &-img {
-            background   : orange;
             border-radius: 50%;
             height       : 340px;
             margin       : 0 auto;
@@ -133,6 +127,14 @@
                 height: 200px;
                 width : 200px;
             }
+
+            img {
+                border-radius: 50%;
+                display      : block;
+                height       : 100%;
+                object-fit   : cover;
+                width        : 100%
+            }
         }
 
         h3 {
@@ -141,6 +143,58 @@
             letter-spacing: -0.05px;
             line-height   : 32px;
             margin-top    : 8px;
+        }
+    }
+}
+
+.festival {
+    @include grid(1fr 1fr);
+    align-items: center;
+    padding    : 60px 0;
+    gap        : 30px;
+
+    @include devices(t) {
+        align-items: start;
+    }
+
+    @include devices(m) {
+        grid-template-columns: 1fr;
+    }
+
+    .special__title {
+        font-size  : 50px;
+        line-height: 60px;
+        text-align : left;
+
+        @include devices(t) {
+            font-size  : 2.25rem;
+            line-height: normal;
+        }
+
+        @include devices(m) {
+            font-size  : 2rem;
+            line-height: normal;
+        }
+    }
+
+    &__image {
+        img {
+            display   : block;
+            height    : 100%;
+            object-fit: cover;
+            width     : 100%;
+        }
+    }
+
+    &__description {
+        padding: 0 40px;
+
+        @include devices(t) {
+            padding: 0;
+        }
+
+        @include devices(m) {
+            padding: 0;
         }
     }
 }
