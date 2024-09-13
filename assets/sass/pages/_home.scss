@@ -75,12 +75,4 @@
 
 #news {
     @include bg-gradient("../images/news-bg.jpg");
-
-    @include devices(xl) {
-        height: 70vh;
-    }
-
-    @include devices(l) {
-        height: 70vh;
-    }
 }

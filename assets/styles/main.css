@@ -843,16 +843,6 @@ a {
   background-position: center;
   background-size: cover;
 }
-@media screen and (min-width: 1600px) {
-  #news {
-    height: 70vh;
-  }
-}
-@media screen and (min-width: 1024px) and (max-width: calc(1600px - 1px)) {
-  #news {
-    height: 70vh;
-  }
-}
 
 .about {
   padding: 80px 0;
@@ -1058,6 +1048,73 @@ a {
     align-items: start;
     flex-direction: column;
   }
+}
+.shopping__title h2 {
+  color: #76445f;
+  font-family: "Playfair Display", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+.shopping__title p {
+  color: #5d6163;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+.shopping__form select {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #5d6163;
+  border: 1px solid #eeeeee;
+  line-height: 30px;
+  letter-spacing: 0;
+  outline: none;
+  padding: 8px 12px;
+}
+
+.product {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .product {
+    grid-template-columns: 1fr;
+  }
+}
+.product__item {
+  background: gray;
+  width: 100%;
+}
+.product__img {
+  background: orange;
+  height: 380px;
+}
+.product__img img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.product__price h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #76445f;
+  letter-spacing: -0.1px;
+  line-height: 36px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+.product__price span {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: block;
+  line-height: 30px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

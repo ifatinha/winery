@@ -13,7 +13,8 @@ $theme-color:(
     "pure-white": #ffffff,
     "slate-gray": #5d6163,
     "sunset-amber": #de844f,
-    "stone-gray": #7a7a7a
+    "stone-gray": #7a7a7a,
+    "snow-gray": #eeeeee
 );
 
 @mixin color($key) {
