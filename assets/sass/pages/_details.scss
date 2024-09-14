@@ -1,0 +1,147 @@
+@use "../base/mixins"as *;
+@use "../base/typography"as *;
+@use "../base/colors"as *;
+@use "../layouts/grid"as *;
+@use "../global/responsive"as *;
+
+#details {
+    .header {
+        @include bg-gradient("../images/header-bg.jpg");
+        padding-top: 3rem;
+        position   : relative;
+    }
+}
+
+.product__details {
+    @include grid(1fr 1fr);
+    gap    : 1rem;
+    padding: 80px 0;
+
+    @include devices(m) {
+        grid-template-columns: 1fr;
+    }
+
+    @include devices(t) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product__image {
+    padding: 0 60px;
+
+    @include devices(m) {
+        padding: 0;
+    }
+
+    @include devices(t) {
+        align-self  : center;
+        justify-self: center;
+        padding     : 0;
+    }
+
+    img {
+        display   : block;
+        object-fit: cover;
+    }
+}
+
+.product__info {
+    @include devices(t) {
+        padding: 0 48px;
+    }
+
+    .special__title {
+        font-size    : 2.625rem;
+        line-height  : 56px;
+        margin-bottom: 1rem;
+        text-align   : left;
+    }
+
+    &-price {
+        @include font-primary(26);
+        border        : 1px solid transparent;
+        border-bottom : 3px solid #e5e5e5;
+        display       : block;
+        margin-bottom : 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &-desc {
+        @include font-primary(18);
+        @include color("slate-gray");
+        margin-bottom: 2rem;
+    }
+
+    &-qtd {
+        @include color("stone-gray");
+        border        : 1px solid transparent;
+        border-color  : #dedede;
+        height        : 43px;
+        margin-right  : 5px;
+        outline       : none;
+        text-align    : center;
+        vertical-align: middle;
+        width         : 45px;
+    }
+
+    &-category {
+        @include font-primary(18);
+        @include color("slate-gray");
+        line-height  : 30px;
+        margin-bottom: 20px;
+
+        span {
+            @include color("blue-sky");
+        }
+    }
+
+    &-aditional {
+        @include color("deep-mauve");
+        @include font-primary(12, 600);
+        display       : inline-block;
+        letter-spacing: 2px;
+        line-height   : 30px;
+        margin-bottom : 30px;
+        padding       : 0 0 5px;
+        position      : relative;
+        text-transform: uppercase;
+
+        &::after {
+            background: map-get($map: $theme-color, $key: "deep-mauve");
+            content   : "";
+            display   : block;
+            height    : 2px;
+            position  : absolute;
+            width     : 100%;
+        }
+    }
+
+    &-table {
+        border-collapse: collapse;
+        width          : 100%;
+
+        tr {
+            @include font-primary(18);
+            @include color("slate-gray");
+            line-height: 24px;
+            vertical-align: baseline;
+        }
+
+        th {
+            border-bottom: 1px solid #eeeeee;
+            padding      : 8px 5px;
+            text-align   : left;
+            width        : 150px;
+        }
+
+        td {
+            border-bottom : 1px solid #eeeeee;
+            padding: 8px 5px;
+            text-align    : left;
+        }
+    }
+}
+
+.cart {
+    margin-bottom: 2rem;
+}
