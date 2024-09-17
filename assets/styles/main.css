@@ -755,6 +755,27 @@ a {
   text-transform: uppercase;
 }
 
+.product__price {
+  width: 100%;
+}
+.product__price h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #76445f;
+  letter-spacing: -0.1px;
+  line-height: 36px;
+  text-align: center;
+}
+.product__price span {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: block;
+  line-height: 30px;
+  text-align: center;
+}
+
 .home {
   align-items: center;
   display: flex;
@@ -1117,26 +1138,6 @@ a {
   object-fit: cover;
   width: 100%;
 }
-.product__price {
-  width: 100%;
-}
-.product__price h2 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: #76445f;
-  letter-spacing: -0.1px;
-  line-height: 36px;
-  text-align: center;
-}
-.product__price span {
-  font-family: "Source Sans 3", sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  display: block;
-  line-height: 30px;
-  text-align: center;
-}
 .product__overlay {
   background: rgba(0, 0, 0, 0.6);
   align-items: center;
@@ -1314,10 +1315,11 @@ a {
 }
 .product__info-qtd {
   color: #7a7a7a;
+  appearance: none;
+  -webkit-appearance: none;
   border: 1px solid transparent;
   border-color: #dedede;
   height: 43px;
-  margin-right: 5px;
   outline: none;
   text-align: center;
   vertical-align: middle;
@@ -1381,6 +1383,53 @@ a {
 
 .cart {
   margin-bottom: 2rem;
+}
+
+.related {
+  margin: 60px 0;
+}
+.related__title {
+  color: #76445f;
+  font-family: "Playfair Display", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 36px;
+  margin-bottom: 36px;
+  text-transform: uppercase;
+}
+.related__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  .related__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .related__container {
+    grid-template-columns: 1fr;
+  }
+}
+.related__item {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.related__item:hover {
+  transform: scale(1.1);
+}
+.related__item-image {
+  background: purple;
+  height: 480px;
+  width: 100%;
+}
+.related__item-image img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

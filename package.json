@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "build-css": "sass assets/sass/_main.scss:assets/styles/main.css --style compressed && cleancss -o assets/css/main.min.css assets/css/main.css --with-rebase",
+        "build-css": "sass assets/sass/_main.scss:assets/styles/main.css --style compressed && cleancss -o assets/style/main.min.css assets/style/main.css --with-rebase",
         "watch-css": "sass --watch assets/sass/_main.scss:assets/styles/main.css"
     },
     "dependencies": {

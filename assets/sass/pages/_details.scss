@@ -74,14 +74,15 @@
 
     &-qtd {
         @include color("stone-gray");
-        border        : 1px solid transparent;
-        border-color  : #dedede;
-        height        : 43px;
-        margin-right  : 5px;
-        outline       : none;
-        text-align    : center;
-        vertical-align: middle;
-        width         : 45px;
+        appearance        : none;
+        -webkit-appearance: none;
+        border            : 1px solid transparent;
+        border-color      : #dedede;
+        height            : 43px;
+        outline           : none;
+        text-align        : center;
+        vertical-align    : middle;
+        width             : 45px;
     }
 
     &-category {
@@ -123,7 +124,7 @@
         tr {
             @include font-primary(18);
             @include color("slate-gray");
-            line-height: 24px;
+            line-height   : 24px;
             vertical-align: baseline;
         }
 
@@ -135,13 +136,61 @@
         }
 
         td {
-            border-bottom : 1px solid #eeeeee;
-            padding: 8px 5px;
-            text-align    : left;
+            border-bottom: 1px solid #eeeeee;
+            padding      : 8px 5px;
+            text-align   : left;
         }
     }
 }
 
 .cart {
     margin-bottom: 2rem;
+}
+
+.related {
+    margin: 60px 0;
+
+    &__title {
+        @include color("deep-mauve");
+        @include font-secondary(18);
+        line-height   : 36px;
+        margin-bottom : 36px;
+        text-transform: uppercase;
+    }
+
+    &__container {
+        @include grid(repeat(4, 1fr));
+        gap: 3rem;
+
+        @include devices(t) {
+            grid-template-columns: 1fr 1fr;
+            gap                  : 2rem;
+        }
+
+        @include devices(m) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        cursor    : pointer;
+        transition: .2s ease-in-out;
+
+        @include hover() {
+            transform: scale(1.1);
+        }
+
+        &-image {
+            background: purple;
+            height    : 480px;
+            width     : 100%;
+
+            img {
+                display   : block;
+                height    : 100%;
+                object-fit: cover;
+                width     : 100%;
+            }
+        }
+    }
 }
