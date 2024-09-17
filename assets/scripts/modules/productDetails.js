@@ -5,20 +5,14 @@ function updateProductDetails(imageSrc, productTitle, productPrice) {
 
   if (imgElement) {
     imgElement.src = imageSrc;
-  } else {
-    console.error("Elemento com ID 'product-image' não encontrado.");
   }
 
   if (titleElement) {
     titleElement.innerText = productTitle;
-  } else {
-    console.error("Elemento com ID 'product-title' não encontrado.");
   }
 
   if (priceElement) {
     priceElement.innerText = productPrice;
-  } else {
-    console.error("Elemento com ID 'product-price' não encontrado.");
   }
 }
 
