@@ -158,7 +158,7 @@
         text-transform: uppercase;
     }
 
-    &__container {
+    .product {
         @include grid(repeat(4, 1fr));
         gap: 3rem;
 
@@ -169,28 +169,6 @@
 
         @include devices(m) {
             grid-template-columns: 1fr;
-        }
-    }
-
-    &__item {
-        cursor    : pointer;
-        transition: .2s ease-in-out;
-
-        @include hover() {
-            transform: scale(1.1);
-        }
-
-        &-image {
-            background: purple;
-            height    : 480px;
-            width     : 100%;
-
-            img {
-                display   : block;
-                height    : 100%;
-                object-fit: cover;
-                width     : 100%;
-            }
         }
     }
 }

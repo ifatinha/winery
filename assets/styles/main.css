@@ -1397,39 +1397,21 @@ a {
   margin-bottom: 36px;
   text-transform: uppercase;
 }
-.related__container {
+.related .product {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
 }
 @media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
-  .related__container {
+  .related .product {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
 }
 @media screen and (max-width: calc(768px - 1px)) {
-  .related__container {
+  .related .product {
     grid-template-columns: 1fr;
   }
-}
-.related__item {
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
-.related__item:hover {
-  transform: scale(1.1);
-}
-.related__item-image {
-  background: purple;
-  height: 480px;
-  width: 100%;
-}
-.related__item-image img {
-  display: block;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */
