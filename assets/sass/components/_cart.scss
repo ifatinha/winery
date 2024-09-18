@@ -1,0 +1,11 @@
+@use "../base/colors"as *;
+@use "../global/"
+
+.cart__modal {
+    background: map-get($map: $theme-color, $key: "pure-white");
+    position  : absolute;
+    max-width : 280px;
+    right     : 80px;
+    top       : 70px;
+    width     : 280px;
+}
