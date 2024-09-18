@@ -202,6 +202,23 @@ a {
   display: flex;
 }
 
+.btn-cart {
+  color: #ffffff;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.375rem;
+  font-weight: 400;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  gap: 4px;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+}
+.btn-cart:hover {
+  opacity: 0.8;
+}
+
 .menu__bugger {
   color: #ffffff;
   align-items: center;
@@ -380,6 +397,12 @@ a {
   font-size: 1.75rem;
   font-weight: 500;
   color: #ffffff;
+}
+.header__navbar {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .testimony {
@@ -774,6 +797,26 @@ a {
   display: block;
   line-height: 30px;
   text-align: center;
+}
+
+.cart-quantity {
+  color: #ffffff;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  align-items: center;
+  background: #de844f;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+  height: 20px;
+  justify-content: center;
+  text-align: center;
+  width: 20px;
+}
+
+.js-cart__actived {
+  display: flex;
 }
 
 .home {

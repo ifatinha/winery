@@ -1,6 +1,7 @@
 @use "../base/colors"as *;
 @use "../base/typography"as *;
 @use "../global/responsive"as *;
+@use "../layouts/flex"as *;
 
 .bg-light {
     background-color: rgba(255, 251, 245, 1);
@@ -46,4 +47,22 @@
         line-height: 30px;
         text-align : center;
     }
+}
+
+.cart-quantity {
+    @include color("pure-white");
+    @include font-primary(12, 600);
+    align-items    : center;
+    background     : map-get($map: $theme-color, $key: "sunset-amber");
+    border-radius  : 4px;
+    cursor         : pointer;
+    display        : none;
+    height         : 20px;
+    justify-content: center;
+    text-align     : center;
+    width          : 20px;
+}
+
+.js-cart__actived {
+    display: flex;
 }

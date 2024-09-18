@@ -37,7 +37,19 @@ export function addWineToCart() {
   });
 }
 
+function updateCartQuantity(element, quantity) {
+  if (quantity > 0) {
+    element.classList.add("js-cart__actived");
+    element.innerText = quantity;
+  } else {
+    element.classList.remove("js-cart__actived");
+    element.innerText = "";
+  }
+}
+
 export function renderProducts() {
+  const cartQtdElement = document.querySelector("#cartQtd");
   const wines = loadListFromLocalStorage();
+  updateCartQuantity(cartQtdElement, wines.length);
   console.log(wines);
 }

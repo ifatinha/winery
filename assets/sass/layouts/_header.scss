@@ -17,4 +17,8 @@
         @include font-secondary(28, 500);
         @include color("pure-white");
     }
+
+    &__navbar {
+        @include flex(center, center);
+    }
 }

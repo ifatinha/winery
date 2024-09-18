@@ -68,3 +68,16 @@
     @include fade-in();
     display: flex;
 }
+
+.btn-cart {
+    @include color("pure-white");
+    @include font-primary(22);
+    @include flex(center, center);
+    gap           : 4px;
+    transition    : .3s ease-in-out;
+    text-align    : center;
+
+    @include hover() {
+        opacity: .8;
+    }
+}

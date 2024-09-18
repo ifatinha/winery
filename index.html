@@ -29,11 +29,18 @@
       <div class="container header__container">
          <a href="/index.html" class="header__brand">vitivallis.</a>
 
-         <button class="menu__bugger" type="button" id="bugger" aria-controls="modal" aria-label="Open mobile menu"
-            aria-expanded="false" aria-haspopup="true">
-            <span class="menu__bugger-visually">Menu</span>
-            <i class="menu__bugger-bars" id="bar" aria-hidden="true"></i>
-         </button>
+         <nav class="header__navbar">
+            <button class="menu__bugger" type="button" id="bugger" aria-controls="modal" aria-label="Open mobile menu"
+               aria-expanded="false" aria-haspopup="true">
+               <span class="menu__bugger-visually">Menu</span>
+               <i class="menu__bugger-bars" id="bar" aria-hidden="true"></i>
+            </button>
+
+            <a href="#" class="btn-cart" id="btnCart">
+               <i class="fa-solid fa-cart-plus"></i>
+               <span class="cart-quantity" id="cartQtd"></span>
+            </a>
+         </nav>
       </div>
    </header>
 
