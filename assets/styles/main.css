@@ -1110,6 +1110,11 @@ a {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+@media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media screen and (max-width: calc(768px - 1px)) {
   .product {
     grid-template-columns: 1fr;
@@ -1129,6 +1134,16 @@ a {
   flex-grow: 1;
   overflow: hidden;
   position: relative;
+}
+@media screen and (min-width: 1600px) {
+  .product__img {
+    height: 80px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: calc(1600px - 1px)) {
+  .product__img {
+    height: 480px;
+  }
 }
 .product__img:hover .product__overlay {
   opacity: 1;

@@ -48,6 +48,10 @@
     @include grid(repeat(3, 1fr));
     gap: 2rem;
 
+    @include devices(t) {
+        grid-template-columns: 1fr 1fr;
+    }
+
     @include devices(m) {
         grid-template-columns: 1fr;
     }
@@ -64,6 +68,14 @@
         flex-grow: 1;
         overflow : hidden;
         position : relative;
+
+        @include devices(xl) {
+            height: 80px;
+        }
+
+        @include devices(l) {
+            height: 480px;
+        }
 
         @include hover {
             .product__overlay {

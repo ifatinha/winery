@@ -1,3 +1,4 @@
+
 function redirectToProductDetails(link) {
   const productId = link.dataset.productbtn;
   const productElement = document.querySelector(
