@@ -1,11 +1,108 @@
 @use "../base/colors"as *;
-@use "../global/"
+@use "../base/typography"as *;
+@use "../global/responsive"as *;
+@use "../layouts/flex"as *;
 
 .cart__modal {
     background: map-get($map: $theme-color, $key: "pure-white");
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.23);
+    display   : none;
     position  : absolute;
     max-width : 280px;
     right     : 80px;
+    transition: .3 ease-in-out;
     top       : 70px;
     width     : 280px;
+
+    @include devices(t) {
+        right: 20px;
+        top  : 60px;
+    }
+
+    @include devices(m) {
+        right: 16px;
+    }
+}
+
+.cart__container {
+    border-top: 1px solid #dedede;
+    margin-top: 1px;
+    overflow  : hidden;
+    padding   : 25px;
+    z-index   : 99999;
+}
+
+.cart__title {
+    @include font-secondary(14, 600);
+    @include color("deep-mauve");
+    border-bottom : 1px solid #dedede;
+    margin-bottom : 2rem;
+    text-transform: uppercase;
+}
+
+.cart__list {
+    border-bottom: 1px solid #dedede;
+    overflow-y   : auto;
+    padding      : 1rem;
+    height       : 240px;
+    width        : 100%;
+
+    &-item {
+        @include flex(center, space-between);
+        margin-bottom: 30px;
+        position     : relative;
+    }
+
+    &-info {
+        h3 {
+            @include font-primary(14);
+            margin-bottom: 4px;
+        }
+
+        p {
+            @include font-primary(18);
+        }
+    }
+
+    &-img {
+        border-radius: 50%;
+        height       : 40px;
+        width        : 40px;
+
+        img {
+            border-radius: inherit;
+            display      : block;
+            height       : 100%;
+            object-fit   : cover;
+            width        : 100%;
+        }
+    }
+}
+
+.cart__btn {
+    @include font-primary(14, 600);
+    position: absolute;
+    right   : 0px;
+    top     : -20px;
+}
+
+.cart__total {
+    @include font-primary(18, 500);
+    padding: 16px 0;
+}
+
+.cart__buttons {
+    @include flex(start, start);
+    flex-direction: column;
+    gap           : 20px;
+
+    .btn-border_black {
+        &:nth-child(2) {
+            align-self: flex-end;
+        }
+    }
+}
+
+.cart__modal-actived {
+    display: block;
 }

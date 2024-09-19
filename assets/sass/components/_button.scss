@@ -73,11 +73,18 @@
     @include color("pure-white");
     @include font-primary(22);
     @include flex(center, center);
-    gap           : 4px;
-    transition    : .3s ease-in-out;
-    text-align    : center;
+    gap       : 4px;
+    transition: .3s ease-in-out;
+    text-align: center;
 
     @include hover() {
         opacity: .8;
     }
+}
+
+.btn-border_black {
+    @include color("black");
+    @include font-primary(14, 600);
+    border-color : map-get($map: $theme-color, $key: "black");
+    border-radius: 40px;
 }
