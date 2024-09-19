@@ -32,18 +32,20 @@ export function addWineToCart() {
   buttonBuy.addEventListener("click", () => {
     console.log("Adicionar vinho ao carrinho.");
     const wine = buildWine();
-    saveListToLocalStorage(wine.name, wine);
+    saveListToLocalStorage(wine);
     alert("Produto Adicionar ao carrinho");
   });
 }
 
 function updateCartQuantity(element, quantity) {
-  if (quantity > 0) {
-    element.classList.add("js-cart__actived");
-    element.innerText = quantity;
-  } else {
-    element.classList.remove("js-cart__actived");
-    element.innerText = "";
+  if (element) {
+    if (quantity > 0) {
+      element.classList.add("js-cart__actived");
+      element.innerText = quantity;
+    } else {
+      element.classList.remove("js-cart__actived");
+      element.innerText = "";
+    }
   }
 }
 

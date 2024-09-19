@@ -1,4 +1,9 @@
-export function saveListToLocalStorage(key, wine) {
+function getId() {
+  return `item_${Math.random().toString(36).substring(2, 9)}`;
+}
+
+export function saveListToLocalStorage(wine) {
+  const key = getId();
   localStorage.setItem(key, JSON.stringify(wine));
 }
 
