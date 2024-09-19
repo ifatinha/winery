@@ -30,7 +30,6 @@ export function addWineToCart() {
   }
 
   buttonBuy.addEventListener("click", () => {
-    console.log("Adicionar vinho ao carrinho.");
     const wine = buildWine();
     saveListToLocalStorage(wine);
     alert("Produto Adicionar ao carrinho");

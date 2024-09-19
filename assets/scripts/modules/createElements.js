@@ -59,7 +59,7 @@ export function createCartItem(wine, index) {
 
   link.innerText = "X";
   link.href = "#";
-  link.id = "btnRemoveWine"
+  link.id = "btnRemoveWine";
   li.appendChild(link);
 
   return li;
