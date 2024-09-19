@@ -9,10 +9,14 @@
     display   : none;
     position  : absolute;
     max-width : 280px;
-    right     : 80px;
+    right     : 180px;
     transition: .3 ease-in-out;
     top       : 70px;
     width     : 280px;
+
+    @include devices(xl) {
+        right: 240px;
+    }
 
     @include devices(t) {
         right: 20px;

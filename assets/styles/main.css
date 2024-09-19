@@ -309,10 +309,15 @@ a {
   display: none;
   position: absolute;
   max-width: 280px;
-  right: 80px;
+  right: 180px;
   transition: 0.3 ease-in-out;
   top: 70px;
   width: 280px;
+}
+@media screen and (min-width: 1600px) {
+  .cart__modal {
+    right: 240px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: calc(1024px - 1px)) {
   .cart__modal {

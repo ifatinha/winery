@@ -1,10 +1,5 @@
-function getId() {
-  return `item_${Math.random().toString(36).substring(2, 9)}`;
-}
-
 export function saveListToLocalStorage(wine) {
-  const key = getId();
-  localStorage.setItem(key, JSON.stringify(wine));
+  localStorage.setItem(wine.code, JSON.stringify(wine));
 }
 
 export function loadListFromLocalStorage() {
@@ -22,4 +17,8 @@ export function loadListFromLocalStorage() {
   }
 
   return wines;
+}
+
+export function removeItemLocalStore(key) {
+  localStorage.removeItem(key);
 }

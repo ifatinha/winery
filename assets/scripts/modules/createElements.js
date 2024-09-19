@@ -8,13 +8,13 @@ function createElement({ elementName = "div", classes = "" } = {}) {
   return element;
 }
 
-export function createCartItem(wine, index) {
+export function createCartItem(wine) {
   const li = createElement({
     elementName: "li",
     classes: "cart__list-item",
   });
 
-  li.id = index;
+  li.id = wine.code;
 
   const divInfo = createElement({
     elementName: "div",

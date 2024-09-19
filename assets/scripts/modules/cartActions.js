@@ -4,6 +4,7 @@ import { createCartItem } from "./createElements.js";
 import {
   saveListToLocalStorage,
   loadListFromLocalStorage,
+  removeItemLocalStore,
 } from "./localStorage.js";
 
 function buildWine() {
@@ -36,28 +37,28 @@ export function addWineToCart() {
   });
 }
 
-function updateCartQuantity(element, quantity) {
-  if (element) {
+function updateCartQuantity(quantity) {
+  const cartQtdElement = document.querySelector("#cartQtd");
+  if (cartQtdElement) {
     if (quantity > 0) {
-      element.classList.add("js-cart__actived");
-      element.innerText = quantity;
+      cartQtdElement.classList.add("js-cart__actived");
+      cartQtdElement.innerText = quantity;
     } else {
-      element.classList.remove("js-cart__actived");
-      element.innerText = "";
+      cartQtdElement.classList.remove("js-cart__actived");
+      cartQtdElement.innerText = "";
     }
   }
 }
 
 export function renderProducts() {
-  const cartQtdElement = document.querySelector("#cartQtd");
   const wines = loadListFromLocalStorage();
 
   if (wines.length > 0) {
     const cartList = document.querySelector("#cartList");
-    updateCartQuantity(cartQtdElement, wines.length);
+    updateCartQuantity(wines.length);
 
-    wines.forEach((wine, index) => {
-      const li = createCartItem(wine, index);
+    wines.forEach((wine) => {
+      const li = createCartItem(wine);
       cartList.appendChild(li);
     });
   }
@@ -65,16 +66,19 @@ export function renderProducts() {
 
 export function deleteCartItem() {
   const links = document.querySelectorAll("#btnRemoveWine");
-  const itens = document.querySelectorAll(".cart__list-item");
+  const items = document.querySelectorAll(".cart__list-item");
 
-  if (!links || !itens) return;
+  if (links.length === 0 || items.length === 0) return;
 
-  const handleRemoveItem = (link, index) => {
-    const item = itens[index];
-    console.log(item);
+  const handleRemoveItem = (index) => {
+    const item = items[index];
+    const key = item.getAttribute("id");
+    removeItemLocalStore(key);
+    item.remove();
+    updateCartQuantity(items.length);
   };
 
   links.forEach((link, index) => {
-    link.addEventListener("click", () => handleRemoveItem(link, index));
+    link.addEventListener("click", () => handleRemoveItem(index));
   });
 }
