@@ -1,5 +1,5 @@
 import { Wine } from "../classes/wine.js";
-// import { wines } from "./wines.js";
+import { createCartItem } from "./createElements.js";
 
 import {
   saveListToLocalStorage,
@@ -50,6 +50,14 @@ function updateCartQuantity(element, quantity) {
 export function renderProducts() {
   const cartQtdElement = document.querySelector("#cartQtd");
   const wines = loadListFromLocalStorage();
-  updateCartQuantity(cartQtdElement, wines.length);
-  console.log(wines);
+
+  if (wines.length > 0) {
+    const cartList = document.querySelector("#cartList");
+    updateCartQuantity(cartQtdElement, wines.length);
+
+    wines.forEach((wine) => {
+      const li = createCartItem(wine);
+      cartList.appendChild(li);
+    });
+  }
 }
