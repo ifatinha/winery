@@ -39,6 +39,7 @@ export function addWineToCart() {
 
 function updateCartQuantity(quantity) {
   const cartQtdElement = document.querySelector("#cartQtd");
+
   if (cartQtdElement) {
     if (quantity > 0) {
       cartQtdElement.classList.add("js-cart__actived");
@@ -72,10 +73,14 @@ export function deleteCartItem() {
 
   const handleRemoveItem = (index) => {
     const item = items[index];
-    const key = item.getAttribute("id");
-    removeItemLocalStore(key);
-    item.remove();
-    updateCartQuantity(items.length);
+
+    if (item) {
+      const key = item.getAttribute("id");
+      removeItemLocalStore(key);
+      item.remove();
+      updateCartQuantity(items.length);
+      window.location.reload();
+    }
   };
 
   links.forEach((link, index) => {
