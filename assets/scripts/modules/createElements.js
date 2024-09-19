@@ -8,11 +8,13 @@ function createElement({ elementName = "div", classes = "" } = {}) {
   return element;
 }
 
-export function createCartItem(wine) {
+export function createCartItem(wine, index) {
   const li = createElement({
     elementName: "li",
     classes: "cart__list-item",
   });
+
+  li.id = index;
 
   const divInfo = createElement({
     elementName: "div",
@@ -57,6 +59,7 @@ export function createCartItem(wine) {
 
   link.innerText = "X";
   link.href = "#";
+  link.id = "btnRemoveWine"
   li.appendChild(link);
 
   return li;

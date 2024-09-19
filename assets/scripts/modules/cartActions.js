@@ -55,9 +55,25 @@ export function renderProducts() {
     const cartList = document.querySelector("#cartList");
     updateCartQuantity(cartQtdElement, wines.length);
 
-    wines.forEach((wine) => {
-      const li = createCartItem(wine);
+    wines.forEach((wine, index) => {
+      const li = createCartItem(wine, index);
       cartList.appendChild(li);
     });
   }
+}
+
+export function deleteCartItem() {
+  const links = document.querySelectorAll("#btnRemoveWine");
+  const itens = document.querySelectorAll(".cart__list-item");
+
+  if (!links || !itens) return;
+
+  const handleRemoveItem = (link, index) => {
+    const item = itens[index];
+    console.log(item);
+  };
+
+  links.forEach((link, index) => {
+    link.addEventListener("click", () => handleRemoveItem(link, index));
+  });
 }
