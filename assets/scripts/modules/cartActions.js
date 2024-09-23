@@ -23,6 +23,7 @@ function buildWine() {
   });
 }
 
+
 export function addWineToCart() {
   const buttonBuy = document.querySelector("#btn-buy");
 
@@ -33,6 +34,7 @@ export function addWineToCart() {
   buttonBuy.addEventListener("click", () => {
     const wine = buildWine();
     saveListToLocalStorage(wine);
+    window.location.reload();
     alert("Produto Adicionar ao carrinho");
   });
 }
@@ -108,7 +110,6 @@ export function deleteCartItem() {
 
     if (item) {
       const key = item.getAttribute("id");
-      console.log(item);
       removeItemLocalStore(key);
       item.remove();
       updateCartQuantity(items.length);

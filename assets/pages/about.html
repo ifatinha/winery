@@ -29,11 +29,18 @@
       <div class="container header__container">
          <a href="/index.html" class="header__brand">vitivallis.</a>
 
-         <button class="menu__bugger" type="button" id="bugger" aria-controls="modal" aria-label="Open mobile menu"
-            aria-expanded="false" aria-haspopup="true">
-            <span class="menu__bugger-visually">Menu</span>
-            <i class="menu__bugger-bars" id="bar" aria-hidden="true"></i>
-         </button>
+         <nav class="header__navbar">
+            <button class="menu__bugger" type="button" id="bugger" aria-controls="modal" aria-label="Open mobile menu"
+               aria-expanded="false" aria-haspopup="true">
+               <span class="menu__bugger-visually">Menu</span>
+               <i class="menu__bugger-bars" id="bar" aria-hidden="true"></i>
+            </button>
+
+            <a href="#" class="btn-cart" id="btnCart">
+               <i class="fa-solid fa-cart-plus"></i>
+               <span class="cart-quantity" id="cartQtd"></span>
+            </a>
+         </nav>
       </div>
    </header>
 
@@ -74,6 +81,22 @@
       </ul>
 
       <p class="sidebar__paragraph">Copyright 2019 @ vitivallis.</p>
+   </div>
+   <div class="cart__modal" id="cartModal">
+      <div class="cart__container">
+         <p class="cart__empty">Carrinho vazio.</p>
+         <div class="cart__visible">
+            <h2 class="cart__title">Seus produtos</h2>
+            <ul class="cart__list" id="cartList"></ul>
+            <p class="cart__total" id="cartTotal">
+               <strong></strong>
+            </p>
+            <div class="cart__buttons">
+               <a href="#" class="btn-default btn-border_black">Ver carrinho</a>
+               <a href="#" class="btn-default btn-border_black">Finalizar</a>
+            </div>
+         </div>
+      </div>
    </div>
 
    <a href="#" class="btn-blue" id="btn-scroll" aria-label="Go to top">

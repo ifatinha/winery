@@ -9,9 +9,9 @@
     display   : none;
     position  : absolute;
     max-width : 280px;
-    right     : 180px;
+    right     : 100px;
     transition: .3 ease-in-out;
-    top       : 70px;
+    top       : 100px;
     width     : 280px;
 
     @include devices(xl) {
