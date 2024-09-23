@@ -425,11 +425,18 @@ a {
   font-size: 1.125rem;
   font-weight: 500;
   display: block;
-  padding: 1rem;
 }
 
-.cart__not-empyt {
+.cart__not-empty {
   display: none;
+}
+
+.cart__visible {
+  display: block !important;
+}
+
+.cart__hidden {
+  display: none !important;
 }
 
 ::-webkit-scrollbar {

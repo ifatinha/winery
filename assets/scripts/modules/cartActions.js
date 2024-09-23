@@ -63,8 +63,19 @@ function renderTotalProducts() {
   cartElement.textContent = `Total: R$ ${calculateCartTotal()}`;
 }
 
-function cartEmpty() {
-  const element = document.querySelector(".cart__empty");
+function cartEmpty(isEmpty) {
+  const message = document.querySelector(".cart__empty");
+  const cart = document.querySelector(".cart__visible");
+
+  if (message) {
+    message.classList.toggle("cart__empty", isEmpty);
+    message.classList.toggle("cart__not-empty", !isEmpty);
+  }
+
+  if (cart) {
+    cart.classList.toggle("cart__visible", !isEmpty);
+    cart.classList.toggle("cart__hidden", isEmpty);
+  }
 }
 
 export function renderProducts() {
@@ -80,6 +91,9 @@ export function renderProducts() {
     });
 
     renderTotalProducts();
+    cartEmpty(false);
+  } else {
+    cartEmpty(true);
   }
 }
 
