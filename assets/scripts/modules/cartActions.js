@@ -51,6 +51,22 @@ function updateCartQuantity(quantity) {
   }
 }
 
+function calculateCartTotal() {
+  const wines = loadListFromLocalStorage();
+  return wines.reduce((total, item) => {
+    return total + item.price * item.quantity;
+  }, 0);
+}
+
+function renderTotalProducts() {
+  const cartElement = document.querySelector("#cartTotal strong");
+  cartElement.textContent = `Total: R$ ${calculateCartTotal()}`;
+}
+
+function cartEmpty() {
+  const element = document.querySelector(".cart__empty");
+}
+
 export function renderProducts() {
   const wines = loadListFromLocalStorage();
 
@@ -62,6 +78,8 @@ export function renderProducts() {
       const li = createCartItem(wine);
       cartList.appendChild(li);
     });
+
+    renderTotalProducts();
   }
 }
 
@@ -76,9 +94,11 @@ export function deleteCartItem() {
 
     if (item) {
       const key = item.getAttribute("id");
+      console.log(item);
       removeItemLocalStore(key);
       item.remove();
       updateCartQuantity(items.length);
+      renderTotalProducts();
       window.location.reload();
     }
   };

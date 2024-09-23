@@ -420,6 +420,18 @@ a {
   display: block;
 }
 
+.cart__empty {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  display: block;
+  padding: 1rem;
+}
+
+.cart__not-empyt {
+  display: none;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

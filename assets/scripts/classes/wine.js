@@ -7,6 +7,12 @@ export class Wine {
     this.quantity = quantity;
   }
 
+  setCode(code) {
+    if (code.length > 0) {
+      this.code = code;
+    }
+  }
+
   getId() {
     return `item_${Math.random().toString(36).substring(2, 9)}`;
   }

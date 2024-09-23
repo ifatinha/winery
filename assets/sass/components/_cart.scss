@@ -110,3 +110,13 @@
 .cart__modal-actived {
     display: block;
 }
+
+.cart__empty {
+    @include font-primary(18, 500);
+    display: block;
+    padding: 1rem;
+}
+
+.cart__not-empyt {
+    display: none;
+}
