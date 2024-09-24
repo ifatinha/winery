@@ -84,6 +84,27 @@
       <p class="sidebar__paragraph">Copyright 2024 @ vitivallis.</p>
    </div>
 
+   <div class="cart__modal" id="cartModal" aria-hidden="true">
+      <div class="cart__container">
+         <p class="cart__empty">Carrinho vazio.</p>
+         <div class="cart__visible">
+            <h2 class="cart__title">Seus produtos</h2>
+            <ul class="cart__list" id="cartList"></ul>
+            <p class="cart__total" id="cartTotal" aria-live="polite">
+               <strong></strong>
+            </p>
+            <div class="cart__buttons">
+               <button class="btn-default btn-border_black" aria-label="Ver carrinho de compras">
+                  Ver carrinho
+               </button>
+               <button class="btn-default btn-border_black" aria-label="Finalizar compra">
+                  Finalizar
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+
    <button type="button" class="btn-blue" id="btn-scroll" aria-label="Go to top">
       <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
    </button>
