@@ -1,4 +1,4 @@
-export function scrollFunction() {
+export function scrollToTop() {
     const btnScroll = document.querySelector("#btn-scroll");
 
     const moveToTop = (event) => {
@@ -12,12 +12,12 @@ export function scrollFunction() {
 
         if (scrollTop > 20) {
             if (!btnScroll.hasListener) {
-                btnScroll.classList.add("btn-blue-actived");
+                btnScroll.classList.add("visible");
                 btnScroll.addEventListener("click", moveToTop);
                 btnScroll.addEventListener("touchstart", moveToTop, { passive: true });
             }
         } else {
-            btnScroll.classList.remove("btn-blue-actived");
+            btnScroll.classList.remove("visible");
             btnScroll.hasListener = false;
         }
     }

@@ -37,37 +37,32 @@
 }
 
 .btn-blue {
-    background-color: map-get($map: $theme-color, $key: "blue-sky");
-    text-transform  : uppercase;
-
-    @include hover {
-        border-color: map-get($map: $theme-color, $key: "blue-sky");
-        color       : map-get($map: $theme-color, $key: "blue-sky");
-    }
-}
-
-.btn-blue {
     @include color("pure-white");
     align-items    : center;
+    background     : transparent;
     background     : map-get($map: $theme-color, $key: "blue-sky");
     bottom         : 20px;
+    border         : none;
     border-radius  : 4px;
-    display        : none;
+    cursor         : pointer;
+    display        : flex;
     height         : 40px;
     justify-content: center;
+    opacity        : 0;
     position       : fixed;
     right          : 20px;
-    transition     : .3s ease-in-out;
+    transform      : translateY(20px);
+    transition     : opacity 0.5s ease, transform 0.5s ease;
     width          : 40px;
 
     @include hover {
-        opacity: .8;
+        background: map-get($map: $theme-color, $key: "ocean-depths");
     }
 }
 
-.btn-blue-actived {
-    @include fade-in();
-    display: flex;
+.btn-blue.visible {
+    opacity  : 1;
+    transform: translateY(0);
 }
 
 .btn-cart {
