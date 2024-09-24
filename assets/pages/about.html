@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
    <meta charset="UTF-8">
@@ -46,7 +46,7 @@
 
    <div class="modal" id="modal"></div>
 
-   <div class="sidebar" id="sidebar" aria-hidden="true" aria-label="Menu de navegação">
+   <div class="sidebar" id="sidebar" aria-hidden="true" aria-label="Menu de navegação principal">
       <a href="/index.html" class="sidebar__brand">vitivallis.</a>
 
       <nav class="navbar">
@@ -105,12 +105,12 @@
       </div>
    </div>
 
-   <a href="#" class="btn-blue" id="btn-scroll" aria-label="Go to top">
-      <i class="fa-solid fa-angle-up"></i>
-   </a>
+   <button type="button" class="btn-blue" id="btn-scroll" aria-label="Go to top">
+      <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
+   </button>
 
    <main class="main">
-      <section class="home" id="about">
+      <section class="home" id="about" aria-label="Informações sobre a vinícola">
          <div class="container">
             <div class="home__container">
                <h1 class="home__title">A arte de fazer vinho</h1>
@@ -118,60 +118,56 @@
                   capturam a essência do nosso terroir. Com cuidado em cada etapa, cada garrafa reflete nossa paixão e
                   compromisso com a qualidade. Descubra vinhos únicos que traduzem a autenticidade e riqueza de nossa
                   região.</p>
-               <a href="#" class="btn-default btn-white">Saiba mais</a>
+               <a href="#" class="btn-default btn-white" aria-label="Saiba mais sobre a vinícola">Saiba mais</a>
             </div>
          </div>
       </section>
 
-      <section class="about">
+      <section class="about" aria-label="Sobre nossos vinhos artesanais">
          <div class="container">
             <div class="about__container">
                <span class="special__subtitle">Por que as pessoas amam nossos vinhos</span>
-               <h2 class="special__title">Vinhos artesanais premiums </h2>
+               <h2 class="special__title">Vinhos artesanais premium</h2>
 
                <div class="about__columns">
                   <div class="about__columns-row">
-                     <p class="about__paragraph">Far far away, behind the word mountains, far from the countries Vokalia
-                        and Consonantia, there
-                        live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.</p>
+                     <p class="about__paragraph">Nossa vinícola é um refúgio de tradição e inovação, onde cada garrafa
+                        conta uma história de paixão pela viticultura. Criamos vinhos que refletem o caráter único do
+                        nosso terroir, levando você a uma jornada de sabores incomparáveis.</p>
 
-                     <p class="about__paragraph">Even the all-powerful Pointing has no control about the blind texts it
-                        is an almost
-                        unorthographic life.</p>
+                     <p class="about__paragraph">Cada vinho é elaborado com atenção meticulosa, utilizando uvas
+                        selecionadas de nossos vinhedos, garantindo qualidade e autenticidade em cada gole. A
+                        experiência de degustação é uma celebração do que há de melhor na viticultura.</p>
 
                      <img src="../images/about-01.jpg" alt="Winery Photo" width="640" height="996">
                   </div>
                   <div class="about__columns-row">
                      <img src="../images/about-02.jpg" alt="Grapes" width="640" height="996">
-                     <p class="about__paragraph">Far far away, behind the word mountains, far from the countries Vokalia
-                        and Consonantia, there
-                        live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics,
-                        a large language ocean.</p>
+                     <p class="about__paragraph">Na nossa vinícola, cultivamos uvas com amor e dedicação, garantindo que
+                        cada colheita resulte em vinhos de qualidade excepcional. Através da nossa técnica artesanal,
+                        trazemos à vida sabores únicos que encantam os amantes do vinho.</p>
 
-                     <p class="about__paragraph">Even the all-powerful Pointing has no control about the blind texts it
-                        is an almost
-                        unorthographic life.</p>
+                     <p class="about__paragraph">Explore o equilíbrio perfeito entre tradição e modernidade em nossos
+                        vinhos, que são um reflexo da terra e do clima de nossa região. Venha descobrir o que faz de
+                        cada taça uma experiência inesquecível.</p>
                   </div>
                </div>
 
                <div class="about__image">
                   <img src="../images/about-section.jpg" alt="Naples Valley" height="897" width="1920">
 
-                  <h3>Naples Valley, California</h3>
-                  <p class="about__paragraph">Far far away, behind the word mountains, far from the countries Vokalia
-                     and Consonantia, there live
-                     the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-                     language ocean. A small river named Duden flows by their place and supplies it with the necessary
-                     regelialia.
-                  </p>
+                  <h3>Vale de Naples, Califórnia</h3>
+                  <p class="about__paragraph">Situada nas deslumbrantes colinas da Califórnia, nossa vinícola é cercada
+                     pela beleza natural do Vale de Naples. Aqui, a tradição encontra a inovação, e cada visita promete
+                     uma experiência imersiva, onde você pode saborear nossos vinhos enquanto aprecia a paisagem
+                     deslumbrante que nos cerca.</p>
                </div>
             </div>
          </div>
       </section>
 
-      <section class="about__wine bg-light">
-         <div class="about__wine-container">
+      <section class="about__wine bg-light" aria-label="Características do Vinho" aria-labelledby="wine-features">
+         <div class="about__wine-container" id="wine-features">
             <div class="about__wine-item">
                <ul>
                   <li><i class="fa-solid fa-check"></i> Molhos de limão</li>
@@ -182,7 +178,8 @@
             </div>
 
             <div class="about__wine-item">
-               <img src="../images/wine-bottle.jpg" alt="Wine Bottle" height="339" width="154">
+               <img src="../images/wine-bottle.jpg" alt="Garrafas de vinho da vinícola Vitivallis" height="339"
+                  width="154">
             </div>
 
             <div class="about__wine-item">
@@ -196,60 +193,57 @@
          </div>
       </section>
 
-      <section>
+      <section aria-labelledby="oenologists">
          <div class="container">
-            <div class="oenologist">
+            <div class="oenologist" id="oenologists">
                <h2 class="special__title">Enólogos</h2>
                <span class="special__subtitle">Nossos especialistas em produção e vinificação</span>
 
                <div class="oenologist__container">
-                  <div class="oenologist__card">
+                  <article class="oenologist__card">
                      <div class="oenologist__card-img">
-                        <img src="../images/profile-01.jpg" alt="Profile" height="607" width="607">
+                        <img src="../images/profile-01.jpg" alt="Daniel Doe, Fundador" height="607" width="607">
                      </div>
                      <h3>Daniel Doe</h3>
-                     <p class="special__subtitle">Founder</p>
-                  </div>
-                  <div class="oenologist__card">
+                     <p class="special__subtitle">Fundador</p>
+                  </article>
+                  <article class="oenologist__card">
                      <div class="oenologist__card-img">
-                        <img src="../images/profile-02.jpg" alt="Profile" height="607" width="607">
+                        <img src="../images/profile-02.jpg" alt="Alice Doe, Bióloga" height="607" width="607">
                      </div>
                      <h3>Alice Doe</h3>
-                     <p class="special__subtitle">Biologist</p>
-                  </div>
-                  <div class="oenologist__card">
+                     <p class="special__subtitle">Bióloga</p>
+                  </article>
+                  <article class="oenologist__card">
                      <div class="oenologist__card-img">
-                        <img src="../images/profile-03.jpg" alt="Profile" height="607" width="607">
+                        <img src="../images/profile-03.jpg" alt="Patrick Doe, Sr. Enólogo" height="607" width="607">
                      </div>
                      <h3>Patrick Doe</h3>
-                     <p class="special__subtitle">Sr. Oenologist</p>
-                  </div>
+                     <p class="special__subtitle">Sr. Enólogo</p>
+                  </article>
                </div>
             </div>
          </div>
       </section>
 
-      <section id="festival">
+      <section id="festival" aria-label="Festival de Degustação de Vinhos" aria-labelledby="festival-title">
          <div class="container">
-            <div class="festival">
+            <div class="festival" id="festival-title">
                <div class="festival__image">
-                  <img src="../images/festival.jpg" alt="Festival" height="750" width="497">
+                  <img src="../images/festival.jpg" alt="Festival de Degustação de Vinhos" height="750" width="497">
                </div>
                <div class="festival__description">
                   <h2 class="special__title">
                      Participe do nosso festival de degustação de vinhos
                   </h2>
-                  <p class="about__paragraph">It contains a series of real Latin words. This ancient dummy text is also
-                     incomprehensible, but it
-                     imitates the rhythm of most European languages in Latin script.
-                  </p>
-                  <p class="about__paragraph">The advantage of its Latin origin and the relative meaninglessness of
-                     Lorum Ipsum is that the text
-                     does not attract attention to itself or distract the viewer’s attention from the layout. There is
-                     now an abundance of readable dummy texts. These are usually used when a text is required purely to
-                     fill a space.
-                  </p>
-                  <a href="#" class="btn-default btn-orange">Reserva agora</a>
+                  <p class="about__paragraph">Venha desfrutar de uma experiência única de degustação de vinhos, onde
+                     você poderá explorar uma seleção dos melhores vinhos de nossa vinícola. Conheça nossos enólogos,
+                     participe de workshops e descubra os segredos da produção de vinhos artesanais.</p>
+                  <p class="about__paragraph">O festival é uma oportunidade perfeita para amantes do vinho e iniciantes.
+                     Aproveite a atmosfera festiva, faça novas amizades e saboreie a deliciosa gastronomia local
+                     acompanhada por nossos vinhos premiados.</p>
+                  <a href="#" class="btn-default btn-orange"
+                     aria-label="Reservar para o festival de degustação de vinhos">Reserva agora</a>
                </div>
             </div>
          </div>
@@ -259,7 +253,7 @@
          <div class="container">
             <div class="home__contact">
                <h3>Veja nossas coleções exclusivas</h3>
-               <a href="#" class="btn-default btn-orange">Compre agora</a>
+               <a href="#" class="btn-default btn-orange" aria-label="Comprar coleções exclusivas agora">Compre agora</a>
             </div>
          </div>
       </section>
