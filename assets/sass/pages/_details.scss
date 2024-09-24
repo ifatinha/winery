@@ -144,8 +144,14 @@
     }
 }
 
-.cart {
+.cart__form {
     margin-bottom: 2rem;
+
+    label {
+        @include font-primary(16);
+        @include color("slate-gray");
+        font-weight: 500;
+    }
 }
 
 .related {

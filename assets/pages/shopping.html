@@ -46,7 +46,7 @@
 
    <div class="modal" id="modal"></div>
 
-   <div class="sidebar" id="sidebar" aria-hidden="true">
+   <div role="menu" class="sidebar" id="sidebar" aria-hidden="true" aria-label="Menu de navegação principal">
       <a href="/index.html" class="sidebar__brand">vitivallis.</a>
 
       <nav class="navbar">
@@ -84,33 +84,12 @@
       <p class="sidebar__paragraph">Copyright 2024 @ vitivallis.</p>
    </div>
 
-   <div class="cart__modal" id="cartModal" aria-hidden="true" aria-label="Menu de navegação">
-      <div class="cart__container">
-         <p class="cart__empty">Carrinho vazio.</p>
-         <div class="cart__visible">
-            <h2 class="cart__title">Seus produtos</h2>
-            <ul class="cart__list" id="cartList"></ul>
-            <p class="cart__total" id="cartTotal" aria-live="polite">
-               <strong></strong>
-            </p>
-            <div class="cart__buttons">
-               <button class="btn-default btn-border_black" aria-label="Ver carrinho de compras">
-                  Ver carrinho
-               </button>
-               <button class="btn-default btn-border_black" aria-label="Finalizar compra">
-                  Finalizar
-               </button>
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <a href="#" class="btn-blue" id="btn-scroll" aria-label="Go to top">
-      <i class="fa-solid fa-angle-up"></i>
-   </a>
+   <button type="button" class="btn-blue" id="btn-scroll" aria-label="Go to top">
+      <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
+   </button>
 
    <main class="main">
-      <section class="home" id="shopping">
+      <section class="home" id="shopping" aria-label="Shopping">
          <div class="container">
             <div class="home__container">
                <h1 class="home__title">Nossos Vinhos</h1>
@@ -130,6 +109,7 @@
                      <p>Mostrando todos os 9 resultados</p>
                   </div>
                   <form action="#" class="shopping__form">
+                     <label for="order" class="order__title">Ordenar por:</label>
                      <select name="order" id="order">
                         <option value="popularidade">Mais popular</option>
                         <option value="avaliado">Mais bem avaliado</option>
@@ -143,12 +123,13 @@
          </div>
       </section>
 
-      <section>
+      <section aria-label="Nossos Produtos" id="our-products">
          <div class="container">
+            <h2 class="special__title">Nossos produtos</h2>
             <div class="product">
                <div class="product__item" data-product="product-01">
                   <div class="product__img">
-                     <img src="../images/product-01.jpg" alt="Product">
+                     <img src="../images/product-01.jpg" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-01">
                            <i class="fa-solid fa-plus"></i>
@@ -162,7 +143,7 @@
                </div>
                <div class="product__item" data-product="product-02">
                   <div class="product__img">
-                     <img src="../images/product-02.jpg" alt="Product">
+                     <img src="../images/product-02.jpg" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-02">
                            <i class="fa-solid fa-plus"></i>
@@ -176,7 +157,7 @@
                </div>
                <div class="product__item" data-product="product-03">
                   <div class="product__img">
-                     <img src="../images/product-03.jpg" alt="Product">
+                     <img src="../images/product-03.jpg" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-03">
                            <i class="fa-solid fa-plus"></i>
@@ -190,7 +171,7 @@
                </div>
                <div class="product__item" data-product="product-04">
                   <div class="product__img">
-                     <img src="../images/product-04.jpg" alt="Product">
+                     <img src="../images/product-04.jpg" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-04">
                            <i class="fa-solid fa-plus"></i>
@@ -204,7 +185,7 @@
                </div>
                <div class="product__item" data-product="product-05">
                   <div class="product__img">
-                     <img src="../images/product-05.jpg" alt="Product">
+                     <img src="../images/product-05.jpg" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-05">
                            <i class="fa-solid fa-plus"></i>
@@ -218,7 +199,7 @@
                </div>
                <div class="product__item" data-product="product-06">
                   <div class="product__img">
-                     <img src="../images/product-06.jpg" alt="Product">
+                     <img src="../images/product-06.jpg" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-06">
                            <i class="fa-solid fa-plus"></i>
@@ -232,7 +213,7 @@
                </div>
                <div class="product__item" data-product="product-07">
                   <div class="product__img">
-                     <img src="../images/product-07.jpg" alt="Product">
+                     <img src="../images/product-07.jpg" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-07">
                            <i class="fa-solid fa-plus"></i>
@@ -246,7 +227,7 @@
                </div>
                <div class="product__item" data-product="product-08">
                   <div class="product__img">
-                     <img src="../images/product-08.jpg" alt="Product">
+                     <img src="../images/product-08.jpg" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-08">
                            <i class="fa-solid fa-plus"></i>
@@ -260,7 +241,7 @@
                </div>
                <div class="product__item" data-product="product-09">
                   <div class="product__img">
-                     <img src="../images/product-09.jpg" alt="Product">
+                     <img src="../images/product-09.jpg" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-09">
                            <i class="fa-solid fa-plus"></i>
@@ -274,7 +255,7 @@
                </div>
                <div class="product__item" data-product="product-10">
                   <div class="product__img">
-                     <img src="../images/product-10.avif" alt="Product">
+                     <img src="../images/product-10.avif" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-10">
                            <i class="fa-solid fa-plus"></i>
@@ -288,7 +269,7 @@
                </div>
                <div class="product__item" data-product="product-11">
                   <div class="product__img">
-                     <img src="../images/product-11.avif" alt="Product">
+                     <img src="../images/product-11.avif" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-11">
                            <i class="fa-solid fa-plus"></i>
@@ -302,7 +283,7 @@
                </div>
                <div class="product__item" data-product="product-12">
                   <div class="product__img">
-                     <img src="../images/product-12.avif" alt="Product">
+                     <img src="../images/product-12.avif" alt="Product" width="640" height="896">
                      <div class="product__overlay">
                         <a href="#" aria-label="Ver detalhes" data-productBtn="product-12">
                            <i class="fa-solid fa-plus"></i>
@@ -356,7 +337,7 @@
    <div class="footer__image"></div>
 
    <script src="https://kit.fontawesome.com/09fa9cee0a.js" crossorigin="anonymous" defer></script>
-   <script type="module" src="../scripts/script.js" defer></script>
+   <script type="module" src="../scripts/script.js"></script>
 </body>
 
 </html>

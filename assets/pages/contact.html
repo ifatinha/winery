@@ -3,7 +3,6 @@
 
 <head>
    <meta charset="utf-8">
-   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description"
       content="Explore nossa moderna landing page responsiva dedicada a uma vinícola, exibindo vinhos, história e ambiente com design atraente em HTML, CSS e SASS.">
@@ -47,7 +46,7 @@
 
    <div class="modal" id="modal"></div>
 
-   <div class="sidebar" id="sidebar" aria-hidden="true" aria-label="Menu de navegação">
+   <div role="menu" class="sidebar" id="sidebar" aria-hidden="true" aria-label="Menu de navegação principal">
       <a href="/index.html" class="sidebar__brand">vitivallis.</a>
 
       <nav class="navbar">
@@ -106,9 +105,9 @@
       </div>
    </div>
 
-   <a href="#" class="btn-blue" id="btn-scroll" aria-label="Go to top">
-      <i class="fa-solid fa-angle-up"></i>
-   </a>
+   <button type="button" class="btn-blue" id="btn-scroll" aria-label="Go to top">
+      <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
+   </button>
 
    <main class="main">
       <section class="home" id="contact">
@@ -122,7 +121,7 @@
          </div>
       </section>
 
-      <section>
+      <section aria-label="Entre em contato conosco">
          <div class="container">
             <div class="contact">
                <div class="contact__item">
@@ -173,21 +172,21 @@
                </div>
                <div class="contact__item">
                   <h2>Já está convencido?</h2>
-                  <form action="#" class="contact__form">
+                  <form action="#" class="contact__form" id="formContact">
                      <div class="contact__form-item">
                         <label for="name" aria-label="Name"></label>
-                        <input type="text" name="name" id="name" placeholder="Nome" autocomplete="on">
+                        <input type="text" name="name" id="name" placeholder="Nome" autocomplete="on" required>
                      </div>
                      <div class="contact__form-item">
                         <label for="email" aria-label="Email"></label>
-                        <input type="text" name="email" id="email" placeholder="Email" autocomplete="on">
+                        <input type="text" name="email" id="email" placeholder="Email" autocomplete="on" required>
                      </div>
                      <div class="contact__form-item">
                         <label for="mensagem" aria-label="Mensagem"></label>
-                        <textarea name="mensagem" id="mensagem" rows="3" cols="10" placeholder="Mensagem"></textarea>
+                        <textarea name="mensagem" id="mensagem" placeholder="Mensagem" required></textarea>
                      </div>
                      <div class="contact__form-item">
-                        <button class="btn-default btn-orange" type="button">Enviar</button>
+                        <button class="btn-default btn-orange" type="submit">Enviar</button>
                      </div>
                   </form>
                </div>
@@ -195,7 +194,7 @@
          </div>
       </section>
 
-      <section>
+      <section aria-label="Nossa localização no mapa">
          <div class="container">
             <iframe
                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4695.262572106402!2d-38.373895124256904!3d-7.212797370817767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a41e3845373f81%3A0x991ac89a56623035!2sR.%20Um%20-%20Bela%20Vista%2C%20Serra%20Grande%20-%20PB%2C%2058955-000!5e1!3m2!1spt-BR!2sbr!4v1726266041937!5m2!1spt-BR!2sbr"
@@ -242,7 +241,7 @@
    <div class="footer__image"></div>
 
    <script src="https://kit.fontawesome.com/09fa9cee0a.js" crossorigin="anonymous" defer></script>
-   <script type="module" src="../scripts/script.js" defer></script>
+   <script type="module" src="../scripts/script.js"></script>
 </body>
 
 </html>

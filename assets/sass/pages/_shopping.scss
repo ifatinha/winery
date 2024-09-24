@@ -6,7 +6,7 @@
 @use "../base/mixins"as *;
 
 .shopping {
-    padding: 120px 0;
+    padding: 120px 0 60px;
 
     &__header {
         @include flex(center, space-between);
@@ -32,6 +32,11 @@
     }
 
     &__form {
+        .order__title {
+            @include font-primary(18);
+            @include color("slate-gray");
+        }
+
         select {
             @include font-primary(18);
             @include color("slate-gray");
@@ -40,6 +45,18 @@
             letter-spacing: 0;
             outline       : none;
             padding       : 8px 12px;
+        }
+    }
+}
+
+#our-products {
+    .special__title {
+        font-size    : 3rem;
+        margin-bottom: 1rem;
+        text-align   : left;
+
+        @include devices(m) {
+            font-size: 2rem;
         }
     }
 }
