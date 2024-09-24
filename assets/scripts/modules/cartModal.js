@@ -8,5 +8,13 @@ export function openModalCart() {
 
   btnCart.addEventListener("click", () => {
     toggleClass(cartModal, "cart__modal-actived");
+    
+    const isOpenModal = cartModal.classList.contains("cart__modal-actived");
+
+    if (isOpenModal) {
+      cartModal.setAttribute("aria-hidden", false);
+    } else {
+      cartModal.setAttribute("aria-hidden", true);
+    }
   });
 }

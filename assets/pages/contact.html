@@ -3,15 +3,16 @@
 
 <head>
    <meta charset="utf-8">
+   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta name="description" content="Descubra a nossa landing page moderna e responsiva dedicada a uma vinícola, 
-      criada para mostrar habilidades em desenvolvimento web. Explore a oferta de vinhos, 
-      a história e o ambiente da vinícola através de um design atraente e informativo, 
-      utilizando HTML, CSS e SASS.">
+   <meta name="description"
+      content="Explore nossa moderna landing page responsiva dedicada a uma vinícola, exibindo vinhos, história e ambiente com design atraente em HTML, CSS e SASS.">
    <meta name="author" content="Fatima Ferreira">
    <meta name="robots" content="index, follow">
-   <meta name="copyright" content="© 2024 fferreira">
+   <meta name="copyright" content="© 2024 Fatima Ferreira">
    <meta name="license" content="MIT License: https://opensource.org/licenses/MIT">
+   <meta name="keywords"
+      content="vinícola, vinhos, landing page, desenvolvimento web, HTML, CSS, SASS, design responsivo, vinhos artesanais, vinícola moderna">
    <title>Vitivallis | Contact</title>
    <link rel="shortcut icon" href="../images/wine_icon.png" type="image/x-icon">
    <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,10 +31,10 @@
          <a href="/index.html" class="header__brand">vitivallis.</a>
 
          <nav class="header__navbar">
-            <button class="menu__bugger" type="button" id="bugger" aria-controls="modal" aria-label="Open mobile menu"
+            <button class="menu__burger" type="button" id="burger" aria-controls="modal" aria-label="Open mobile menu"
                aria-expanded="false" aria-haspopup="true">
-               <span class="menu__bugger-visually">Menu</span>
-               <i class="menu__bugger-bars" id="bar" aria-hidden="true"></i>
+               <span class="menu__burger-visually">Menu</span>
+               <i class="menu__burger-bars" id="menuIcon" aria-hidden="true"></i>
             </button>
 
             <a href="#" class="btn-cart" id="btnCart">
@@ -45,12 +46,13 @@
    </header>
 
    <div class="modal" id="modal"></div>
-   <div class="sidebar" id="sidebar">
+
+   <div class="sidebar" id="sidebar" aria-hidden="true" aria-label="Menu de navegação">
       <a href="/index.html" class="sidebar__brand">vitivallis.</a>
 
       <nav class="navbar">
          <ul class="navbar__list">
-            <li><a href="/index.html" class="js-actived-link">Início</a></li>
+            <li><a href="/index.html" class="js-actived-link">Inicio</a></li>
             <li><a href="about.html">Sobre</a></li>
             <li><a href="shopping.html">Shopping</a></li>
             <li><a href="contact.html">Contato</a></li>
@@ -59,41 +61,46 @@
 
       <ul class="sidebar__social">
          <li>
-            <a href="#facebook" aria-label="Facebook" title="Facebook">
+            <a href="https://facebook.com" aria-label="Facebook" target="_blank">
                <i class="fa-brands fa-facebook-f"></i>
             </a>
          </li>
          <li>
-            <a href="#instagram" aria-label="Instagram" title="Instagram">
+            <a href="https://instagram.com" aria-label="Instagram" target="_blank">
                <i class="fa-brands fa-instagram"></i>
             </a>
          </li>
          <li>
-            <a href="#twitter" aria-label="Twitter" title="Twitter">
+            <a href="https://twitter.com" aria-label="Twitter" target="_blank">
                <i class="fa-brands fa-x-twitter"></i>
             </a>
          </li>
          <li>
-            <a href="#whatsapp" aria-label="WhatsApp" title="WhatsApp">
+            <a href="https://whatsapp.com" aria-label="WhatsApp" target="_blank">
                <i class="fa-brands fa-whatsapp"></i>
             </a>
          </li>
       </ul>
 
-      <p class="sidebar__paragraph">Copyright 2019 @ vitivallis.</p>
+      <p class="sidebar__paragraph">Copyright 2024 @ vitivallis.</p>
    </div>
-   <div class="cart__modal" id="cartModal">
+
+   <div class="cart__modal" id="cartModal" aria-hidden="true">
       <div class="cart__container">
          <p class="cart__empty">Carrinho vazio.</p>
          <div class="cart__visible">
             <h2 class="cart__title">Seus produtos</h2>
             <ul class="cart__list" id="cartList"></ul>
-            <p class="cart__total" id="cartTotal">
+            <p class="cart__total" id="cartTotal" aria-live="polite">
                <strong></strong>
             </p>
             <div class="cart__buttons">
-               <a href="#" class="btn-default btn-border_black">Ver carrinho</a>
-               <a href="#" class="btn-default btn-border_black">Finalizar</a>
+               <button class="btn-default btn-border_black" aria-label="Ver carrinho de compras">
+                  Ver carrinho
+               </button>
+               <button class="btn-default btn-border_black" aria-label="Finalizar compra">
+                  Finalizar
+               </button>
             </div>
          </div>
       </div>
@@ -180,7 +187,7 @@
                         <textarea name="mensagem" id="mensagem" rows="3" cols="10" placeholder="Mensagem"></textarea>
                      </div>
                      <div class="contact__form-item">
-                        <a href="#" class="btn-default btn-blue">Enviar</a>
+                        <button class="btn-default btn-orange" type="button">Enviar</button>
                      </div>
                   </form>
                </div>

@@ -23,7 +23,6 @@ function buildWine() {
   });
 }
 
-
 export function addWineToCart() {
   const buttonBuy = document.querySelector("#btn-buy");
 
@@ -114,6 +113,7 @@ export function deleteCartItem() {
       item.remove();
       updateCartQuantity(items.length);
       renderTotalProducts();
+      alert("Produto removido do carrinho.");
       window.location.reload();
     }
   };

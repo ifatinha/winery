@@ -11,6 +11,7 @@
     border-style  : solid;
     border-color  : transparent;
     border-radius : 3px;
+    cursor        : pointer;
     display       : inline-block;
     color         : map-get($map: $theme-color, $key: "pure-white");
     letter-spacing: 1px;
@@ -73,6 +74,7 @@
     @include color("pure-white");
     @include font-primary(22);
     @include flex(center, center);
+    cursor    : pointer;
     gap       : 4px;
     transition: .3s ease-in-out;
     text-align: center;
@@ -87,4 +89,9 @@
     @include font-primary(14, 600);
     border-color : map-get($map: $theme-color, $key: "black");
     border-radius: 40px;
+
+    @include hover() {
+        background: map-get($map: $theme-color, $key: "black");
+        color     : map-get($map: $theme-color, $key: "pure-white");
+    }
 }

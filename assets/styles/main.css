@@ -147,6 +147,7 @@ a {
   border-style: solid;
   border-color: transparent;
   border-radius: 3px;
+  cursor: pointer;
   display: inline-block;
   color: #ffffff;
   letter-spacing: 1px;
@@ -211,6 +212,7 @@ a {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  cursor: pointer;
   gap: 4px;
   transition: 0.3s ease-in-out;
   text-align: center;
@@ -227,8 +229,12 @@ a {
   border-color: #000000;
   border-radius: 40px;
 }
+.btn-border_black:hover {
+  background: #000000;
+  color: #ffffff;
+}
 
-.menu__bugger {
+.menu__burger {
   color: #ffffff;
   align-items: center;
   display: flex;
@@ -241,19 +247,19 @@ a {
   padding-left: 0;
   padding-right: 0;
 }
-.menu__bugger:hover .menu__bugger-bars::after,
-.menu__bugger:hover .menu__bugger-bars::before {
+.menu__burger:hover .menu__burger-bars::after,
+.menu__burger:hover .menu__burger-bars::before {
   width: 100%;
 }
-.menu__bugger:focus {
+.menu__burger:focus {
   outline: none;
 }
-.menu__bugger-visually {
+.menu__burger-visually {
   font-family: "Source Sans 3", sans-serif;
   font-size: 1rem;
   font-weight: 500;
 }
-.menu__bugger-bars {
+.menu__burger-bars {
   background-color: #ffffff;
   display: block;
   height: 2px;
@@ -261,7 +267,7 @@ a {
   transition: all 0.25s linear;
   width: 24px;
 }
-.menu__bugger-bars::after, .menu__bugger-bars::before {
+.menu__burger-bars::after, .menu__burger-bars::before {
   background-color: #ffffff;
   content: "";
   display: block;
@@ -271,20 +277,20 @@ a {
   transition: all 0.25s linear;
   width: 100%;
 }
-.menu__bugger-bars::after {
+.menu__burger-bars::after {
   transform: translate(0, -8px);
 }
-.menu__bugger-bars::before {
+.menu__burger-bars::before {
   transform: translate(0, 8px);
 }
 
-.js-open-menu .menu__bugger-bars {
+.js-open-menu .menu__burger-bars {
   background: transparent;
 }
-.js-open-menu .menu__bugger-bars::before {
+.js-open-menu .menu__burger-bars::before {
   transform: rotate(45deg);
 }
-.js-open-menu .menu__bugger-bars::after {
+.js-open-menu .menu__burger-bars::after {
   transform: rotate(-45deg);
 }
 
@@ -311,7 +317,7 @@ a {
   max-width: 280px;
   right: 100px;
   transition: 0.3 ease-in-out;
-  top: 100px;
+  top: 60px;
   width: 280px;
 }
 @media screen and (min-width: 1600px) {

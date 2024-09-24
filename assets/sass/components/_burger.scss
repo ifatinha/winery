@@ -4,7 +4,7 @@
 @use "../base/mixins"as *;
 @use "../layouts/flex"as *;
 
-.menu__bugger {
+.menu__burger {
     @include color("pure-white");
     @include flex(center, center, 8px);
     background-color: transparent;
@@ -16,8 +16,8 @@
 
     @include hover {
 
-        .menu__bugger-bars::after,
-        .menu__bugger-bars::before {
+        .menu__burger-bars::after,
+        .menu__burger-bars::before {
             width: 100%;
         }
 
@@ -63,7 +63,7 @@
 
 .js-open-menu {
 
-    .menu__bugger-bars {
+    .menu__burger-bars {
         background: transparent;
 
         &::before {
