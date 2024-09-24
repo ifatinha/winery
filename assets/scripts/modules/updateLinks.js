@@ -1,8 +1,14 @@
 export const updateAriaAttributes = (isOpen, button) => {
-  button.setAttribute("aria-expanded", isOpen ? "true" : "false");
-  button.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+  const attributes = {
+    "aria-expanded": isOpen ? "true" : "false",
+    "aria-label": isOpen ? "Fechar menu" : "Abrir menu",
+  };
+
+  Object.entries(attributes).forEach(([key, value]) => {
+    button.setAttribute(key, value);
+  });
 };
 
-export const updateAriaHidden = (isOpen, element) => {
-  element.setAttribute("aria-hidden", isOpen);
+export const updateAriaHidden = (isHidden, element) => {
+  element.setAttribute("aria-hidden", isHidden);
 };

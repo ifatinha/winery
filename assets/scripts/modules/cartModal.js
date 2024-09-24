@@ -6,9 +6,9 @@ export function openModalCart() {
 
   if (!btnCart || !cartModal) return;
 
-  btnCart.addEventListener("click", () => {
+  const handleToggle = (event) => {
+    if (event?.type === "touchstart") event.preventDefault();
     toggleClass(cartModal, "cart__modal-actived");
-    
     const isOpenModal = cartModal.classList.contains("cart__modal-actived");
 
     if (isOpenModal) {
@@ -16,5 +16,9 @@ export function openModalCart() {
     } else {
       cartModal.setAttribute("aria-hidden", true);
     }
+  };
+
+  ["click", "touchstart"].forEach((eventType) => {
+    btnCart.addEventListener(eventType, handleToggle);
   });
 }

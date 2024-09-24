@@ -84,10 +84,12 @@ export function renderProducts() {
 
   if (wines.length > 0) {
     const cartList = document.querySelector("#cartList");
+    
     updateCartQuantity(wines.length);
 
     wines.forEach((wine) => {
       const li = createCartItem(wine);
+
       cartList.appendChild(li);
     });
 

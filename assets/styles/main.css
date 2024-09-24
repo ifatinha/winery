@@ -1487,6 +1487,9 @@ a {
   padding-top: 3rem;
   position: relative;
 }
+#details .cart__modal {
+  top: 90px;
+}
 
 .product__details {
   display: grid;

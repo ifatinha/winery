@@ -1,27 +1,29 @@
 function updateProductDetails(imageSrc, productTitle, productPrice) {
-  const imgElement = document.querySelector("#product-image");
-  const titleElement = document.querySelector("#product-title");
-  const priceElement = document.querySelector("#product-price");
+  const elements = {
+    imgElement: document.querySelector("#product-image"),
+    titleElement: document.querySelector("#product-title"),
+    priceElement: document.querySelector("#product-price"),
+  };
 
-  if (imgElement) {
-    imgElement.src = imageSrc;
-  }
-
-  if (titleElement) {
-    titleElement.innerText = productTitle;
-  }
-
-  if (priceElement) {
-    priceElement.innerText = productPrice;
-  }
+  if (elements.imgElement) elements.imgElement.src = imageSrc;
+  if (elements.titleElement) elements.titleElement.innerText = productTitle;
+  if (elements.priceElement) elements.priceElement.innerText = productPrice;
 }
 
 export function loadProductDetails() {
   const urlParams = new URLSearchParams(window.location.search);
 
-  const image = decodeURIComponent(urlParams.get("image"));
-  const title = decodeURIComponent(urlParams.get("title"));
-  const price = decodeURIComponent(urlParams.get("price"));
+  const image = urlParams.get("image")
+    ? decodeURIComponent(urlParams.get("image"))
+    : "";
+
+  const title = urlParams.get("title")
+    ? decodeURIComponent(urlParams.get("title"))
+    : "";
+
+  const price = urlParams.get("price")
+    ? decodeURIComponent(urlParams.get("price"))
+    : "";
 
   updateProductDetails(image, title, price);
 }
