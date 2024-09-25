@@ -1,124 +1,109 @@
 import { Wine } from "../classes/wine.js";
 import { createCartItem } from "./createElements.js";
-
 import {
   saveListToLocalStorage,
   loadListFromLocalStorage,
   removeItemLocalStore,
 } from "./localStorage.js";
+import { createWineFromDOM } from "./wineBuilder.js";
 
-function buildWine() {
-  const image = document.querySelector("#product-image").src;
-  const name = document.querySelector("#product-title").innerText;
-  const price = parseFloat(
-    document.querySelector("#product-price").innerText.split(" ")[1]
-  );
-  const quantity = parseInt(document.querySelector("#quantity").value, 10);
+export function handleAddWineToCart() {
+  const buyButton = document.querySelector("#btn-buy");
 
-  return new Wine({
-    imageSource: image,
-    name: name,
-    price: price,
-    quantity: quantity,
-  });
-}
+  if (!buyButton) return;
 
-export function addWineToCart() {
-  const buttonBuy = document.querySelector("#btn-buy");
-
-  if (!buttonBuy) {
-    return;
-  }
-
-  buttonBuy.addEventListener("click", () => {
-    const wine = buildWine();
+  buyButton.addEventListener("click", () => {
+    const wine = createWineFromDOM();
     saveListToLocalStorage(wine);
-    window.location.reload();
     alert("Produto Adicionar ao carrinho");
+    window.location.reload();
   });
 }
 
-function updateCartQuantity(quantity) {
-  const cartQtdElement = document.querySelector("#cartQtd");
+function updateCartDisplayQuantity(quantity) {
+  const cartQuantityElement = document.querySelector("#cartQuantity");
 
-  if (cartQtdElement) {
-    if (quantity > 0) {
-      cartQtdElement.classList.add("js-cart__actived");
-      cartQtdElement.innerText = quantity;
-    } else {
-      cartQtdElement.classList.remove("js-cart__actived");
-      cartQtdElement.innerText = "";
-    }
+  if (!cartQuantityElement) return;
+
+  if (quantity > 0) {
+    cartQuantityElement.classList.add("js-cart__actived");
+    cartQuantityElement.textContent = quantity;
+  } else {
+    cartQuantityElement.classList.remove("js-cart__actived");
+    cartQuantityElement.textContent = "";
   }
 }
 
-function calculateCartTotal() {
-  const wines = loadListFromLocalStorage();
-  return wines.reduce((total, item) => {
-    return total + item.price * item.quantity;
-  }, 0);
-}
-
-function renderTotalProducts() {
-  const cartElement = document.querySelector("#cartTotal strong");
-  cartElement.textContent = `Total: R$ ${calculateCartTotal()}`;
-}
-
-function cartEmpty(isEmpty) {
-  const message = document.querySelector(".cart__empty");
+function toggleCartEmptyState(isEmpty) {
+  const emptyMessage = document.querySelector(".cart__empty");
   const cart = document.querySelector(".cart__visible");
 
-  if (message) {
-    message.classList.toggle("cart__empty", isEmpty);
-    message.classList.toggle("cart__not-empty", !isEmpty);
-  }
+  if (!emptyMessage || !cart) return;
 
-  if (cart) {
-    cart.classList.toggle("cart__visible", !isEmpty);
-    cart.classList.toggle("cart__hidden", isEmpty);
-  }
+  emptyMessage.classList.toggle("cart__empty", isEmpty);
+  emptyMessage.classList.toggle("cart__not-empty", !isEmpty);
+
+  cart.classList.toggle("cart__visible", !isEmpty);
+  cart.classList.toggle("cart__hidden", isEmpty);
 }
 
 export function renderProducts() {
   const wines = loadListFromLocalStorage();
+  const cartList = document.querySelector("#cartList");
+
+  if (!cartList) return;
 
   if (wines.length > 0) {
-    const cartList = document.querySelector("#cartList");
-    updateCartQuantity(wines.length);
+    updateCartDisplayQuantity(wines.length);
 
     wines.forEach((wine) => {
-      const li = createCartItem(wine);
-      cartList.appendChild(li);
+      const cartItem = createCartItem(wine);
+      cartList.appendChild(cartItem);
     });
 
-    renderTotalProducts();
-    cartEmpty(false);
+    updateCartTotalDisplay();
+    toggleCartEmptyState(false);
   } else {
-    cartEmpty(true);
+    toggleCartEmptyState(true);
   }
 }
 
-export function deleteCartItem() {
-  const links = document.querySelectorAll("#btnRemoveWine");
-  const items = document.querySelectorAll(".cart__list-item");
+function calculateTotalCartValue() {
+  const wines = loadListFromLocalStorage();
 
-  if (links.length === 0 || items.length === 0) return;
+  return wines.reduce((total, wine) => total + wine.price * wine.quantity, 0);
+}
+
+function updateCartTotalDisplay() {
+  const cartElement = document.querySelector("#cartTotal strong");
+
+  if (!cartElement) return;
+
+  const totalValue = calculateTotalCartValue();
+  cartElement.textContent = `Total: R$ ${totalValue}`;
+}
+
+export function handleCartItemDeletion() {
+  const removeButtons = document.querySelectorAll("[data-remove-wine]");
+  const winesList = document.querySelectorAll(".cart__list-item");
+
+  if (!removeButtons || !winesList) return;
 
   const handleRemoveItem = (index) => {
-    const item = items[index];
+    const item = winesList[index];
 
     if (item) {
-      const key = item.getAttribute("id");
-      removeItemLocalStore(key);
+      const itemId = item.getAttribute("id");
+      removeItemLocalStore(itemId);
       item.remove();
-      updateCartQuantity(items.length);
-      renderTotalProducts();
+      updateCartDisplayQuantity(winesList.length);
+      updateCartTotalDisplay();
       alert("Produto removido do carrinho.");
       window.location.reload();
     }
   };
 
-  links.forEach((link, index) => {
+  removeButtons.forEach((link, index) => {
     link.addEventListener("click", () => handleRemoveItem(index));
   });
 }

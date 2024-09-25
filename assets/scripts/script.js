@@ -4,9 +4,9 @@ import { scrollToTop } from "./modules/scrollToTop.js";
 import { initializeProductLinks } from "./modules/productLinkHandler.js";
 import { loadProductDetails } from "./modules/productDetails.js";
 import {
-  addWineToCart,
+  handleAddWineToCart,
   renderProducts,
-  deleteCartItem,
+  handleCartItemDeletion,
 } from "./modules/cartActions.js";
 import { openModalCart } from "./modules/cartModal.js";
 
@@ -16,8 +16,8 @@ window.addEventListener("DOMContentLoaded", () => {
   scrollToTop();
   initializeProductLinks();
   loadProductDetails();
-  addWineToCart();
+  handleAddWineToCart();
   renderProducts();
   openModalCart();
-  deleteCartItem();
+  handleCartItemDeletion();
 });
