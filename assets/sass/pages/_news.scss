@@ -1,0 +1,111 @@
+@use "../layouts/grid"as *;
+@use "../layouts/flex"as *;
+@use "../global/responsive"as *;
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../base/mixins"as *;
+
+.news {
+    @include grid(3fr 1fr);
+    gap    : 3rem;
+    padding: 120px 0;
+
+    @include devices(m) {
+        grid-template-columns: 1fr;
+        padding              : 80px 0;
+    }
+
+    &__column {
+        &:nth-child(2) {
+            background: darkgreen;
+        }
+    }
+}
+
+.post {
+    &__image {
+        width: 100%;
+
+        img {
+            display   : block;
+            object-fit: cover;
+            width     : 100%;
+        }
+    }
+
+    &__info {
+        padding: 2rem 0;
+    }
+
+    &__publication {
+        @include color("slate-gray");
+        @include font-primary(12);
+        font-weight   : 600;
+        letter-spacing: 2px;
+        line-height   : 20px;
+        margin-bottom : 8px;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        @include color("black");
+        @include font-secondary(30);
+        line-height  : 44px;
+        margin-bottom: 12px;
+    }
+
+    &__meta {
+        display      : flex;
+        gap          : 8px;
+        margin-bottom: 1rem;
+
+        li {
+            @include color("dark-gray");
+            @include font-primary(14);
+            line-height: 28px;
+            text-align : left;
+
+            &+li {
+                &::before {
+                    content     : "/\00a0";
+                    margin-right: 6px;
+                }
+            }
+        }
+    }
+
+    &__paragraph {
+        @include color("slate-gray");
+        @include font-primary(18);
+        line-height  : 30px;
+        margin-bottom: 30px;
+    }
+
+    &__social {
+        @include flex(start, end);
+        border-bottom: 1px solid #efefef;
+        gap          : 1rem;
+        width        : 100%;
+
+        @include devices(m) {
+            justify-content: start;
+        }
+
+        li {
+            a {
+                @include color("slate-gray");
+                @include font-primary(12);
+                line-height: 32px;
+                padding    : 0 3px;
+
+                i {
+                    transition: .3s ease-in-out;
+
+                    @include hover {
+                        @include color("light-gray");
+                    }
+                }
+            }
+        }
+    }
+}

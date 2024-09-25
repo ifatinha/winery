@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html,
 body,
@@ -1662,6 +1663,106 @@ a {
   .related .product {
     grid-template-columns: 1fr;
   }
+}
+
+.news {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 3rem;
+  padding: 120px 0;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .news {
+    grid-template-columns: 1fr;
+    padding: 80px 0;
+  }
+}
+.news__column:nth-child(2) {
+  background: darkgreen;
+}
+
+.post__image {
+  width: 100%;
+}
+.post__image img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+}
+.post__info {
+  padding: 2rem 0;
+}
+.post__publication {
+  color: #5d6163;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 20px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.post__title {
+  color: #000000;
+  font-family: "Playfair Display", serif;
+  font-size: 1.875rem;
+  font-weight: 400;
+  line-height: 44px;
+  margin-bottom: 12px;
+}
+.post__meta {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+.post__meta li {
+  color: #474747;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+}
+.post__meta li + li::before {
+  content: "/ ";
+  margin-right: 6px;
+}
+.post__paragraph {
+  color: #5d6163;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+.post__social {
+  align-items: start;
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+  border-bottom: 1px solid #efefef;
+  gap: 1rem;
+  width: 100%;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .post__social {
+    justify-content: start;
+  }
+}
+.post__social li a {
+  color: #5d6163;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 32px;
+  padding: 0 3px;
+}
+.post__social li a i {
+  transition: 0.3s ease-in-out;
+}
+.post__social li a i:hover {
+  color: #9d9d9d;
 }
 
 /*# sourceMappingURL=main.css.map */
