@@ -12,13 +12,11 @@
 
     @include devices(m) {
         grid-template-columns: 1fr;
-        padding              : 80px 0;
+        padding              : 80px 0 0;
     }
 
-    &__column {
-        &:nth-child(2) {
-            background: darkgreen;
-        }
+    @include devices(t) {
+        gap: 1rem;
     }
 }
 
@@ -107,5 +105,74 @@
                 }
             }
         }
+    }
+
+    &__form {
+        margin-bottom: 40px;
+        position     : relative;
+        width        : 100%;
+
+        input {
+            @include color("slate-gray");
+            @include font-primary(18);
+            appearance        : none;
+            border            : 2px solid #eeeeee;
+            line-height       : 20px;
+            min-height        : 40px;
+            outline           : none;
+            text-indent       : 8px;
+            width             : 100%;
+            -webkit-appearance: none;
+
+            &::-webkit-search-decoration,
+            &::-webkit-search-results-button,
+            &::-webkit-search-results-decoration {
+                display: none;
+            }
+        }
+
+        .search__icon {
+            @include color("slate-gray");
+            line-height: 40px;
+            position   : absolute;
+            right      : 22px;
+            top        : 0;
+        }
+    }
+
+    &__subtitle {
+        @include font-primary(18);
+        @include color("dark-gray");
+        letter-spacing: -0.05px;
+        line-height   : 30px;
+        margin-bottom : 20px;
+    }
+
+    &__list {
+        @include color("slate-gray");
+        @include font-primary(18);
+        margin-bottom: 40px;
+
+        li {
+            a {
+                line-height: 30px;
+                transition : .3s ease-in-out;
+
+                @include hover {
+                    @include color("blue-sky");
+                    padding-left: 8px;
+                }
+            }
+
+            i {
+                font-size   : 10px;
+                margin-right: 12px;
+            }
+        }
+    }
+
+    &__recents {
+        list-style-type    : disc;
+        list-style-position: inside;
     }
 }
