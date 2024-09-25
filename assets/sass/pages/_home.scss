@@ -76,3 +76,12 @@
 #news {
     @include bg-gradient("../images/news-bg.jpg");
 }
+
+#cart {
+    @include bg-gradient("../images/cart-bg.jpg");
+    height: 90vh;
+
+    @include devices(m) {
+        height: 100vh;
+    }
+}

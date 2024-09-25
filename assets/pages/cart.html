@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore nossa moderna landing page responsiva dedicada a uma vinícola, exibindo vinhos, história e ambiente com design atraente em HTML, CSS e SASS.">
+    <meta name="author" content="Fatima Ferreira">
+    <meta name="robots" content="index, follow">
+    <meta name="copyright" content="© 2024 Fatima Ferreira">
+    <meta name="license" content="MIT License: https://opensource.org/licenses/MIT">
+    <meta name="keywords"
+        content="vinícola, vinhos, landing page, desenvolvimento web, HTML, CSS, SASS, design responsivo, vinhos artesanais, vinícola moderna">
+    <title>Vitivallis | Cart</title>
+    <link rel="shortcut icon" href="../images/wine_icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <!-- https://oshinewptheme.com/v37/ -->
+
+    <header class="header">
+        <div class="container header__container">
+            <a href="/index.html" class="header__brand">vitivallis.</a>
+
+            <nav class="header__navbar">
+                <button class="menu__burger" type="button" id="burger" aria-controls="modal"
+                    aria-label="Open mobile menu" aria-expanded="false" aria-haspopup="true">
+                    <span class="menu__burger-visually">Menu</span>
+                    <i class="menu__burger-bars" id="menuIcon" aria-hidden="true"></i>
+                </button>
+
+                <a href="#" class="btn-cart" id="btnCart">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    <span class="cart-quantity" id="cartQuantity"></span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="modal" id="modal"></div>
+
+    <div role="menu" class="sidebar" id="sidebar" aria-hidden="true" aria-label="Menu de navegação principal">
+        <a href="/index.html" class="sidebar__brand">vitivallis.</a>
+
+        <nav class="navbar">
+            <ul class="navbar__list">
+                <li><a href="/index.html" class="js-actived-link">Inicio</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="shopping.html">Shopping</a></li>
+                <li><a href="contact.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <ul class="sidebar__social">
+            <li>
+                <a href="https://facebook.com" aria-label="Facebook" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com" aria-label="Instagram" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com" aria-label="Twitter" target="_blank">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://whatsapp.com" aria-label="WhatsApp" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </li>
+        </ul>
+
+        <p class="sidebar__paragraph">Copyright 2024 @ vitivallis.</p>
+    </div>
+
+    <div class="cart__modal" id="cartModal" aria-hidden="true">
+        <div class="cart__container">
+            <p class="cart__empty">Carrinho vazio.</p>
+            <div class="cart__visible">
+                <h2 class="cart__title">Seus produtos</h2>
+                <ul class="cart__list" id="cartList"></ul>
+                <p class="cart__total" id="cartTotal" aria-live="polite">
+                    <strong></strong>
+                </p>
+                <div class="cart__buttons">
+                    <button class="btn-default btn-border_black" aria-label="Ver carrinho de compras">
+                        Ver carrinho
+                    </button>
+                    <button class="btn-default btn-border_black" aria-label="Finalizar compra">
+                        Finalizar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn-blue" id="btn-scroll" aria-label="Go to top">
+        <i class="fa-solid fa-angle-up" aria-hidden="true"></i>
+    </button>
+
+    <main class="main">
+        <section class="home" id="cart" aria-label="Informações sobre a vinícola">
+            <div class="container">
+                <div class="home__container">
+                    <h1 class="home__title">Carrinho</h1>
+                    <p class="home__paragraph">
+                        Desfrute de momentos especiais com os nossos vinhos selecionados, perfeitos para compartilhar
+                        com amigos e familiares.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__container-item">
+                    <h2>Sobre</h2>
+                    <p>Uma vinícola premiada, de propriedade e operada por uma família, sediada em Naples, CA. Fomos
+                        estabelecidos em 1929 e produzimos vinhos premium em pequenos lotes que oferecem uma experiência
+                        superior. </p>
+                </div>
+                <div class="footer__container-item">
+                    <h2>Visite-nos</h2>
+                    <address>25, Bela Vista, (exit 54 1606) Serra Grande, Paraíba - 60635</address>
+                    <p>Phone: <a href="tel:+551234567890"> +55-123-4567-890</a></p>
+                    <p>Email: <a href="mailto:help@vitivallis.com">help@vitivallis.com</a></p>
+                </div>
+                <div class="footer__container-item">
+                    <h2>Horas</h2>
+                    <p>Segunda a Sexta</p>
+                    <span>10AM - 5PM</span>
+                    <p>Sábado e Domingo</p>
+                    <span>9AM - 5PM</span>
+                </div>
+                <div class="footer__container-item">
+                    <h2>Links</h2>
+                    <ul>
+                        <li><i class="fa-solid fa-angle-right"></i><a href="#">Política de Privacidade</a></li>
+                        <li><i class="fa-solid fa-angle-right"></i><a href="#">Política de envio</a></li>
+                        <li><i class="fa-solid fa-angle-right"></i><a href="#">Termos e condições</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer__image"></div>
+
+    <script src="https://kit.fontawesome.com/09fa9cee0a.js" crossorigin="anonymous" defer></script>
+    <script type="module" src="../scripts/script.js"></script>
+</body>
+
+</html>
