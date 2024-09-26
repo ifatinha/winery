@@ -1,0 +1,18 @@
+@use "../base/colors"as *;
+@use "../base/typography"as *;
+@use "../global/responsive"as *;
+
+.cart {
+    padding: 120px 0;
+
+    @include devices(m) {
+        padding: 60px 0;
+    }
+
+    &__subtitle {
+        @include font-secondary(18);
+        @include color("deep-mauve");
+        line-height   : 2;
+        text-transform: uppercase;
+    }
+}
