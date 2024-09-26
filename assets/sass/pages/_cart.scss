@@ -1,6 +1,8 @@
 @use "../base/colors"as *;
 @use "../base/typography"as *;
+@use "../base/mixins"as *;
 @use "../global/responsive"as *;
+@use "../layouts/flex"as *;
 
 .cart {
     padding: 120px 0;
@@ -13,6 +15,87 @@
         @include font-secondary(18);
         @include color("deep-mauve");
         line-height   : 2;
+        margin-bottom : 2rem;
         text-transform: uppercase;
+    }
+
+    &__table {
+        border         : 1px solid map-get($map: $theme-color, $key: "soft-silver");
+        border-collapse: separate;
+        margin-left    : -1px;
+        text-align     : left;
+        width          : 100%;
+
+        thead {
+            @include font-primary(16);
+
+            th {
+                @include color("smoky-steel");
+                border-bottom: 1px solid map-get($map: $theme-color, $key: "soft-silver");
+                line-height  : 18px;
+                padding      : 20px 20px;
+
+                span {
+                    display  : inline-block;
+                    max-width: 32px;
+                    overflow : hidden;
+                    opacity  : 0;
+                }
+            }
+        }
+
+        tbody {
+            td {
+                @include font-primary(16);
+                @include color("stone-gray");
+                font-weight: 500;
+            }
+        }
+
+        td {
+            padding       : 25px;
+            vertical-align: middle;
+        }
+    }
+}
+
+.product-remove {
+    text-align: center;
+
+    a {
+        @include font-primary(28);
+        @include color("charcoal");
+        display    : inline-block;
+        font-weight: 500;
+        height     : 24px;
+        line-height: 1;
+        transition : .3s ease-in-out;
+        text-align : center;
+        width      : 24px;
+
+        @include hover {
+            opacity: .7;
+        }
+
+    }
+}
+
+.produtc-thumbnail {
+    position: relative;
+
+    .thumbnail {
+        border-radius: 50%;
+        height       : 50px;
+        position     : absolute;
+        transform    : translate(50%, -50%);
+        width        : 50px;
+
+        img {
+            border-radius: 50%;
+            display      : block;
+            height       : 50px;
+            object-fit   : cover;
+            width        : 50px;
+        }
     }
 }

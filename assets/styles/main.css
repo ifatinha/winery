@@ -1855,7 +1855,81 @@ a {
   font-weight: 400;
   color: #76445f;
   line-height: 2;
+  margin-bottom: 2rem;
   text-transform: uppercase;
+}
+.cart__table {
+  border: 1px solid #dedede;
+  border-collapse: separate;
+  margin-left: -1px;
+  text-align: left;
+  width: 100%;
+}
+.cart__table thead {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+.cart__table thead th {
+  color: #555555;
+  border-bottom: 1px solid #dedede;
+  line-height: 18px;
+  padding: 20px 20px;
+}
+.cart__table thead th span {
+  display: inline-block;
+  max-width: 32px;
+  overflow: hidden;
+  opacity: 0;
+}
+.cart__table tbody td {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #7a7a7a;
+  font-weight: 500;
+}
+.cart__table td {
+  padding: 25px;
+  vertical-align: middle;
+}
+
+.product-remove {
+  text-align: center;
+}
+.product-remove a {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #232323;
+  display: inline-block;
+  font-weight: 500;
+  height: 24px;
+  line-height: 1;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  width: 24px;
+}
+.product-remove a:hover {
+  opacity: 0.7;
+}
+
+.produtc-thumbnail {
+  position: relative;
+}
+.produtc-thumbnail .thumbnail {
+  border-radius: 50%;
+  height: 50px;
+  position: absolute;
+  transform: translate(50%, -50%);
+  width: 50px;
+}
+.produtc-thumbnail .thumbnail img {
+  border-radius: 50%;
+  display: block;
+  height: 50px;
+  object-fit: cover;
+  width: 50px;
 }
 
 /*# sourceMappingURL=main.css.map */
