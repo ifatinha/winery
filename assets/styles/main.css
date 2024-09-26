@@ -985,6 +985,18 @@ a {
   display: flex;
 }
 
+.error-message {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #FF0000 !important;
+  display: none;
+}
+
+.error {
+  display: block;
+}
+
 .home {
   align-items: center;
   display: flex;

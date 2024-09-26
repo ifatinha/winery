@@ -9,6 +9,7 @@ import {
   handleCartItemDeletion,
 } from "./modules/cartActions.js";
 import { openModalCart } from "./modules/cartModal.js";
+import { formLoginValidator } from "./modules/validateForm.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   openMenu();
@@ -20,4 +21,5 @@ window.addEventListener("DOMContentLoaded", () => {
   renderProducts();
   openModalCart();
   handleCartItemDeletion();
+  formLoginValidator();
 });

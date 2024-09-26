@@ -66,3 +66,13 @@
 .js-cart__actived {
     display: flex;
 }
+
+.error-message {
+    @include font-primary(14);
+    color  : #FF0000 !important;
+    display: none;
+}
+
+.error {
+    display: block;
+}
