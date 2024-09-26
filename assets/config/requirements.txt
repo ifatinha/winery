@@ -7,11 +7,11 @@ npm -g install sass
 # Ou instale o sass como dependência de desenvolvimento.
 npm install sass --save-dev
 
-# Monitora o arquivo Sass `_main.scss` na pasta `assets/scss` e compila para o CSS comprimido em `assets/main/main.css`.
-sass --watch assets/sass/_main.scss:assets/styles/main.css --style compressed
-
 # Instala globalmente o Clean-CSS, uma ferramenta para minificação de CSS.
 npm i clean-css-cli -g
+
+# Monitora o arquivo Sass `_main.scss` na pasta `assets/scss` e compila para o CSS comprimido em `assets/main/main.css`.
+sass --watch assets/sass/_main.scss:assets/styles/main.css --style compressed
 
 # Minifica o arquivo `main.css` para `main.min.css`, incluindo o rebase de URLs (se necessário).
 cleancss -o main.min.css main.css --with-rebase
