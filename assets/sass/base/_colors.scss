@@ -7,9 +7,11 @@ $theme-color:(
     "charcoal": #232323,
     "charcoal-gray": #323232,
     "deep-mauve": #76445f,
+    "deep-amber" :#cc5500,
     "dark-gray": #474747,
     "golden-yellow": #fcb900,
     "light-gray": #9d9d9d,
+    "light-apricot": #ffe0cc,
     "ocean-depths" :#1a7ab2,
     "pure-white": #ffffff,
     "slate-gray": #5d6163,
@@ -21,6 +23,7 @@ $theme-color:(
     "soft-coral-red":#fee2e2,
     "vibrant-aqua-green":#26cda4,
     "vivid-red": #ef4444,
+    "warm-peach":#ffc299,
     );
 
 @mixin color($key) {

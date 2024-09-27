@@ -141,7 +141,8 @@
                                 <div class="cart__product-footer">
                                     <div class="cart__quantity-control">
                                         <a href="#" class="btn__control">-</a>
-                                        <input type="number" name="qtdProduct" id="qtdProduct" min="1" max="10">
+                                        <input class="cart__quantity-input" type="text" name="qtdProduct"
+                                            id="qtdProduct" value="1">
                                         <a href="#" class="btn__control">+</a>
                                     </div>
                                     <div class="cart__product-price">R$ 299.99</div>
@@ -149,6 +150,20 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="cart__summary">
+                        <h2>Subtotal</h2>
+                        <div class="cart__price-details">
+                            <a href="#codigoPromocional">Código promocional?</a>
+                            <div class="cart__final-price">R$ 299.99</div>
+                        </div>
+                    </div>
+
+                    <form action="#" method="get" class="checkout__form">
+                        <p class="checkout__info-text">Taxas de envio e descontos calculados na finalização da compra
+                        </p>
+                        <button type="submit" class="checkout__submit-btn">Checkout</button>
+                    </form>
                 </div>
             </div>
         </section>

@@ -12,7 +12,7 @@
     }
 
     &__subtitle {
-        @include font-secondary(18);
+        @include font-secondary(28);
         @include color("deep-mauve");
         line-height   : 2;
         margin-bottom : 2rem;
@@ -60,14 +60,19 @@
     }
 
     &__product-info {
-        @include flex(start, space-between);
+        @include flex(center, center);
         flex-direction: column;
         width         : 100%;
     }
 
     &__product-header {
-        @include flex(center, space-between);
-        width: 100%;
+        @include flex(start, space-between);
+        flex-basis: 105px;
+        width     : 100%;
+
+        @include devices(m) {
+            flex-basis: auto;
+        }
     }
 
     &__product-title {
@@ -96,5 +101,91 @@
     &__quantity-control {
         @include flex(center, center);
         gap: 12px;
+    }
+
+    &__quantity-input {
+        @include round(38px, true);
+        @include font-primary(16);
+        border     : 1px solid map-get($map: $theme-color, $key: "soft-silver");
+        font-weight: 500;
+        outline    : none;
+        text-align : center;
+    }
+
+    &__product-price,
+    &__final-price {
+        @include font-primary(24);
+        @include color("bright-orange");
+        font-weight: 500;
+    }
+
+    &__summary {
+        @include flex(center, space-between);
+        margin : 40px 0;
+        padding: 0 1rem;
+
+        @include devices(m) {
+            flex-direction : column;
+            justify-content: center;
+        }
+
+        h2 {
+            @include font-secondary(22);
+            @include color("charcoal-gray");
+            font-weight: 500;
+        }
+    }
+
+    &__price-details {
+        @include flex(center, start);
+        gap: 10px;
+
+        a {
+            @include font-primary(14);
+            @include color("deep-amber");
+            background   : map-get($map: $theme-color, $key: "light-apricot");
+            border-radius: 24px;
+            display      : inline-block;
+            padding      : 8px 12px;
+            transition   : .3s ease-in-out;
+
+            @include hover() {
+                background: map-get($map: $theme-color, $key: "warm-peach");
+            }
+        }
+    }
+}
+
+.checkout__form {
+    @include flex(end, center);
+    flex-direction: column;
+    margin        : 20px 0;
+    padding       : 0 1rem;
+}
+
+.checkout__info-text {
+    @include font-primary(16);
+}
+
+.checkout__submit-btn {
+    @include font-primary(16);
+    @include color("pure-white");
+    border        : none;
+    background    : map-get($map: $theme-color, $key: "sunset-amber");
+    border-radius : 50px;
+    border        : 2px solid map-get($map: $theme-color, $key: "sunset-amber");
+    cursor        : pointer;
+    display       : inline-block;
+    font-weight   : 600;
+    letter-spacing: 1px;
+    line-height   : 40px;
+    padding       : 0 30px;
+    text-transform: uppercase;
+    transition    : 0.3s ease;
+
+    @include hover {
+        @include color("black");
+        background  : map-get($map: $theme-color, $key: "pure-white");
+        border-color: map-get($map: $theme-color, $key: "black");
     }
 }
