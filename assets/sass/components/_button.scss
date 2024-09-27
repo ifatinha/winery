@@ -90,3 +90,17 @@
         color     : map-get($map: $theme-color, $key: "pure-white");
     }
 }
+
+.btn__control {
+    @include round(38px, true);
+    @include flex(center, center);
+    @include font-primary(26);
+    border     : 1px solid map-get($map: $theme-color, $key: "soft-silver");
+    font-weight: 500;
+    transition : .3s ease-in-out;
+
+    @include hover() {
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background: #f5f5f5;
+    }
+}

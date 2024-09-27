@@ -8,7 +8,7 @@ function createElement({ elementName = "div", classes = "" } = {}) {
   return element;
 }
 
-export function createCartItem(wine) {
+export function createCartListItem(wine) {
   const li = createElement({
     elementName: "li",
     classes: "cart__list-item",

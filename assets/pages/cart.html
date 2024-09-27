@@ -94,7 +94,7 @@
                     <strong></strong>
                 </p>
                 <div class="cart__buttons">
-                    <button class="btn-default btn-border_black" aria-label="Ver carrinho de compras">
+                    <button class="btn-default btn-border_black" aria-label="Ver carrinho de compras" id="viewCart">
                         Ver carrinho
                     </button>
                     <button class="btn-default btn-border_black" aria-label="Finalizar compra">
@@ -126,40 +126,29 @@
             <div class="container">
                 <div class="cart__content">
                     <h2 class="cart__subtitle">Carrinho</h2>
-                    <form action="" method="get">
-                        <table class="cart__table">
-                            <thead>
-                                <tr>
-                                    <th class="product-remove">
-                                        <span>Remover item</span>
-                                    </th>
-                                    <th class="produtc-thumbnail">
-                                        <span>Thumbnail image</span>
-                                    </th>
-                                    <th class="product-name">Produto</th>
-                                    <th class="product-name">Preço</th>
-                                    <th class="product-price">Quantidade</th>
-                                    <th class="product-subtotal">Subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="product-remove"><a href="#">X</a></td>
-                                    <td class="produtc-thumbnail">
-                                        <div class="thumbnail">
-                                            <img src="../images/product-01.jpg"
-                                                alt="bottle of wine                                        ">
-                                            </th>
-                                        </div>
-                                    </td>
-                                    <td class="product-name">Sangiovese</td>
-                                    <td class="product-name">R$ 299.99</td>
-                                    <td class="product-price">1</td>
-                                    <td class="product-subtotal">R$ 299.99</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </form>
+
+                    <div class="cart__product-container">
+                        <div class="cart__product-card">
+                            <div class="cart__product-image">
+                                <img src="../images/product-01.jpg" alt="Product" height="640" width="896">
+                            </div>
+                            <div class="cart__product-info">
+                                <div class="cart__product-header">
+                                    <h2 class="cart__product-title">Barbera de Ouro</h2>
+                                    <a href="#" class="cart__remove-item"><i class="fa-regular fa-trash-can"></i></a>
+                                </div>
+
+                                <div class="cart__product-footer">
+                                    <div class="cart__quantity-control">
+                                        <a href="#" class="btn__control">-</a>
+                                        <input type="number" name="qtdProduct" id="qtdProduct" min="1" max="10">
+                                        <a href="#" class="btn__control">+</a>
+                                    </div>
+                                    <div class="cart__product-price">R$ 299.99</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

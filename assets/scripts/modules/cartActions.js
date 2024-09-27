@@ -1,5 +1,5 @@
 import { Wine } from "../classes/wine.js";
-import { createCartItem } from "./createElements.js";
+import { createCartListItem } from "./createElements.js";
 import {
   saveListToLocalStorage,
   loadListFromLocalStorage,
@@ -57,7 +57,7 @@ export function renderProducts() {
     updateCartDisplayQuantity(wines.length);
 
     wines.forEach((wine) => {
-      const cartItem = createCartItem(wine);
+      const cartItem = createCartListItem(wine);
       cartList.appendChild(cartItem);
     });
 
@@ -105,5 +105,15 @@ export function handleCartItemDeletion() {
 
   removeButtons.forEach((link, index) => {
     link.addEventListener("click", () => handleRemoveItem(index));
+  });
+}
+
+export function redirectPageCart() {
+  const buttonRedirect = document.querySelector("#viewCart");
+
+  if (!buttonRedirect) return;
+
+  buttonRedirect.addEventListener("click", () => {
+    window.location.href = "../pages/cart.html";
   });
 }

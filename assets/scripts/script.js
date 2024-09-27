@@ -7,6 +7,7 @@ import {
   handleAddWineToCart,
   renderProducts,
   handleCartItemDeletion,
+  redirectPageCart,
 } from "./modules/cartActions.js";
 import { openModalCart } from "./modules/cartModal.js";
 import { formLoginValidator } from "./modules/validateForm.js";
@@ -22,4 +23,5 @@ window.addEventListener("DOMContentLoaded", () => {
   openModalCart();
   handleCartItemDeletion();
   formLoginValidator();
+  redirectPageCart();
 });
