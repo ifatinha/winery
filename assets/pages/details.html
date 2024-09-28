@@ -112,7 +112,7 @@
   <main class="main">
     <section aria-label="Detalhes do produto selecionado">
       <div class="container">
-        <div class="product__details">
+        <div class="product__details" id="product-details" data-product-key="">
           <div class="product__image">
             <img src="" alt="Wine" id="product-image" width="640" height="896">
           </div>
@@ -134,8 +134,9 @@
             <form action="#" class="cart__form">
               <label for="quantity">Quantidade: </label>
               <input class="product__info-qtd" type="number" name="quantity" id="quantity" min="1" max="10" value="1">
-              <a href="#" class="btn-default btn-orange" id="btn-buy" aria-label="Adicionar item ao carrinho">Adicionar
-                ao carrinho</a>
+              <a href="#" class="btn-default btn-orange" id="btn-buy" aria-label="Adicionar item ao carrinho">
+                Adicionar ao carrinho
+              </a>
             </form>
             <p class="product__info-category">
               Categoria: <span>Vinho branco</span>
@@ -166,11 +167,11 @@
       <div class="container">
         <h2 class="related__title">Produtos relacionados</h2>
         <div class="product">
-          <div class="product__item" data-product="product-02">
+          <div class="product__item" data-product-key="product-02">
             <div class="product__img">
               <img src="../images/product-02.jpg" alt="Product">
               <div class="product__overlay">
-                <a href="#" aria-label="Ver detalhes" data-productBtn="product-02">
+                <a href="#" aria-label="Ver detalhes" data-product-action="product-02">
                   <i class="fa-solid fa-plus"></i>
                 </a>
               </div>
@@ -180,11 +181,11 @@
               <span>R$ 229.99</span>
             </div>
           </div>
-          <div class="product__item" data-product="product-03">
+          <div class="product__item" data-product-key="product-03">
             <div class="product__img">
               <img src="../images/product-03.jpg" alt="Product">
               <div class="product__overlay">
-                <a href="#" aria-label="Ver detalhes" data-productBtn="product-03">
+                <a href="#" aria-label="Ver detalhes" data-product-action="product-03">
                   <i class="fa-solid fa-plus"></i>
                 </a>
               </div>
@@ -194,11 +195,11 @@
               <span>R$ 249.99</span>
             </div>
           </div>
-          <div class="product__item" data-product="product-04">
+          <div class="product__item" data-product-key="product-04">
             <div class="product__img">
               <img src="../images/product-04.jpg" alt="Product">
               <div class="product__overlay">
-                <a href="#" aria-label="Ver detalhes" data-productBtn="product-04">
+                <a href="#" aria-label="Ver detalhes" data-product-action="product-04">
                   <i class="fa-solid fa-plus"></i>
                 </a>
               </div>
@@ -208,11 +209,11 @@
               <span>R$ 329.99</span>
             </div>
           </div>
-          <div class="product__item" data-product="product-05">
+          <div class="product__item" data-product-key="product-05">
             <div class="product__img">
               <img src="../images/product-05.jpg" alt="Product">
               <div class="product__overlay">
-                <a href="#" aria-label="Ver detalhes" data-productBtn="product-05">
+                <a href="#" aria-label="Ver detalhes" data-product-action="product-05">
                   <i class="fa-solid fa-plus"></i>
                 </a>
               </div>

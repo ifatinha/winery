@@ -1,7 +1,7 @@
 function redirectToProductDetails(link) {
-  const productId = link.dataset.productbtn;
+  const productId = link.dataset.productAction;
   const productElement = document.querySelector(
-    `[data-product='${productId}']`
+    `[data-product-key='${productId}']`
   );
 
   if (!productElement) {
@@ -18,6 +18,7 @@ function redirectToProductDetails(link) {
   const priceValue = productPrice ? productPrice.innerText : "";
 
   const queryParams = new URLSearchParams({
+    productKey: encodeURIComponent(productId),
     image: encodeURIComponent(imageSrc),
     title: encodeURIComponent(titleValue),
     price: encodeURIComponent(priceValue),
@@ -27,7 +28,7 @@ function redirectToProductDetails(link) {
 }
 
 function setupProductLinks() {
-  const productLinks = document.querySelectorAll("[data-productBtn]");
+  const productLinks = document.querySelectorAll("[data-product-action]");
 
   productLinks.forEach((link) => {
     link.addEventListener("click", () => {

@@ -9,6 +9,8 @@ import {
   displayProductsPage,
   handleCartItemDeletion,
   redirectPageCart,
+  increaseCartItem,
+  decreaseCartItem,
 } from "./modules/cartActions.js";
 import { openModalCart } from "./modules/cartModal.js";
 import { formLoginValidator } from "./modules/validateForm.js";
@@ -26,4 +28,6 @@ window.addEventListener("DOMContentLoaded", () => {
   handleCartItemDeletion();
   formLoginValidator();
   redirectPageCart();
+  increaseCartItem();
+  decreaseCartItem();
 });

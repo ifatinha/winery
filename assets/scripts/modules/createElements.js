@@ -14,7 +14,7 @@ export function displayModalCartItem(wine) {
     classes: "cart__list-item js-product",
   });
 
-  li.id = wine.code;
+  li.id = wine.idProduct;
 
   const divInfo = createElement({
     elementName: "div",
@@ -59,7 +59,7 @@ export function displayModalCartItem(wine) {
 
   link.innerText = "X";
   link.href = "#";
-  link.dataset.productId = wine.code;
+  link.dataset.productId = wine.idProduct;
   li.appendChild(link);
 
   return li;
@@ -71,7 +71,7 @@ export function displayCartItem(wine) {
     classes: "cart__product-card js-product",
   });
 
-  li.id = wine.code;
+  li.id = wine.idProduct;
 
   const divImage = createElement({
     elementName: "div",
@@ -107,7 +107,7 @@ export function displayCartItem(wine) {
     classes: "cart__remove-item",
   });
   buttonRemove.href = "#";
-  buttonRemove.dataset.productId = wine.code;
+  buttonRemove.dataset.productId = wine.idProduct;
 
   const icon = createElement({
     elementName: "i",
@@ -134,7 +134,7 @@ export function displayCartItem(wine) {
   });
 
   decreaseQuantityBtn.textContent = "-";
-  decreaseQuantityBtn.id = "decreaseQuantityBtn";
+  decreaseQuantityBtn.dataset.decrementItem = wine.idProduct;
   decreaseQuantityBtn.type = "button";
   divQtdControl.appendChild(decreaseQuantityBtn);
 
@@ -144,10 +144,11 @@ export function displayCartItem(wine) {
   });
 
   productQuantityInput.value = wine.quantity;
-  productQuantityInput.id = "productQuantityInput";
-  productQuantityInput.type = "text";
+  productQuantityInput.dataset.quantityInput = wine.idProduct;
+  productQuantityInput.type = "number";
   productQuantityInput.name = "productQuantityInput";
   productQuantityInput.setAttribute("aria-label", "Quantidade do produto");
+  productQuantityInput.setAttribute("min", 1);
   divQtdControl.appendChild(productQuantityInput);
 
   divProductFooter.appendChild(divQtdControl);
@@ -158,8 +159,8 @@ export function displayCartItem(wine) {
   });
 
   increaseQuantityBtn.textContent = "+";
-  increaseQuantityBtn.id = "increaseQuantityBtn";
   increaseQuantityBtn.type = "button";
+  increaseQuantityBtn.dataset.incrementItem = wine.idProduct;
   divQtdControl.appendChild(increaseQuantityBtn);
 
   const priceElement = createElement({
@@ -167,7 +168,7 @@ export function displayCartItem(wine) {
     classes: "cart__product-price",
   });
 
-  priceElement.textContent = wine.price;
+  priceElement.textContent = wine.getTotal();
   divProductFooter.appendChild(priceElement);
 
   divProductInfo.appendChild(divProductFooter);

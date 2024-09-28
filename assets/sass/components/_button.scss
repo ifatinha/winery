@@ -105,3 +105,40 @@
         background: #f5f5f5;
     }
 }
+
+.checkout__button {
+    @include font-primary(16);
+    border        : 2px solid transparent;
+    border-radius : 50px;
+    cursor        : pointer;
+    display       : inline-block;
+    font-weight   : 600;
+    letter-spacing: 1px;
+    line-height   : 40px;
+    padding       : 0 30px;
+    text-transform: uppercase;
+    transition    : 0.3s ease;
+}
+
+.checkout__button-black {
+    background  : map-get($map: $theme-color, $key: "pure-white");
+    border-color: map-get($map: $theme-color, $key: "black");
+
+    @include hover {
+        @include color("pure-white");
+        background  : map-get($map: $theme-color, $key: "sunset-amber");
+        border-color: map-get($map: $theme-color, $key: "sunset-amber");
+    }
+}
+
+.checkout__button-orange {
+    @include color("pure-white");
+    background  : map-get($map: $theme-color, $key: "sunset-amber");
+    border-color: map-get($map: $theme-color, $key: "sunset-amber");
+
+    @include hover {
+        @include color("black");
+        background  : map-get($map: $theme-color, $key: "pure-white");
+        border-color: map-get($map: $theme-color, $key: "black");
+    }
+}

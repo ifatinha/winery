@@ -1,13 +1,21 @@
-function updateProductDetails(imageSrc, productTitle, productPrice) {
+function updateProductDetails(
+  productKey,
+  imageSrc,
+  productTitle,
+  productPrice
+) {
   const elements = {
     imgElement: document.querySelector("#product-image"),
     titleElement: document.querySelector("#product-title"),
     priceElement: document.querySelector("#product-price"),
+    productElement: document.querySelector("#product-details"),
   };
 
   if (elements.imgElement) elements.imgElement.src = imageSrc;
   if (elements.titleElement) elements.titleElement.innerText = productTitle;
   if (elements.priceElement) elements.priceElement.innerText = productPrice;
+  if (elements.productElement)
+    elements.productElement.dataset.productKey = productKey;
 }
 
 export function loadProductDetails() {
@@ -25,5 +33,9 @@ export function loadProductDetails() {
     ? decodeURIComponent(urlParams.get("price"))
     : "";
 
-  updateProductDetails(image, title, price);
+  const productKey = urlParams.get("productKey")
+    ? decodeURIComponent(urlParams.get("productKey"))
+    : "";
+
+  updateProductDetails(productKey, image, title, price);
 }

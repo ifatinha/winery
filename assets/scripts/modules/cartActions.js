@@ -3,6 +3,7 @@ import {
   saveListToLocalStorage,
   loadListFromLocalStorage,
   removeItemLocalStore,
+  updateQuantityProduct,
 } from "./localStorage.js";
 import { createWineFromDOM } from "./wineBuilder.js";
 
@@ -45,20 +46,21 @@ function updateCartTotalDisplay(elementId) {
   if (!cartElement) return;
 
   const totalValue = calculateTotalCartValue();
-  cartElement.textContent = `Total: R$ ${totalValue}`;
+  cartElement.textContent = `R$ ${totalValue}`;
 }
 
-export function handleAddWineToCart() {
-  const buyButton = document.querySelector("#btn-buy");
+function handleIncrement(event) {
+  const itemId = event.currentTarget.dataset.incrementItem;
+  const input = document.querySelector(`[data-quantity-input="${itemId}"]`);
 
-  if (!buyButton) return;
+  input.value = +input.value + 1;
+  updateQuantityProduct(itemId, +input.value);
+}
 
-  buyButton.addEventListener("click", () => {
-    const wine = createWineFromDOM();
-    saveListToLocalStorage(wine);
-    alert("Produto Adicionar ao carrinho");
-    window.location.reload();
-  });
+function handleDecrement(event) {
+  const itemId = event.currentTarget.dataset.decrementItem;
+  const input = document.querySelector(`[data-quantity-input="${itemId}"]`);
+  input.value = +input.value - 1;
 }
 
 export function displayModalProducts() {
@@ -89,7 +91,6 @@ export function displayProductsPage() {
   if (!cartList) return;
 
   if (wines.length > 0) {
-    
     wines.forEach((wine) => {
       const cartItem = displayCartItem(wine);
       cartList.appendChild(cartItem);
@@ -98,9 +99,21 @@ export function displayProductsPage() {
     updateCartTotalDisplay("cartFinalPrice");
     toggleCartEmptyState(false);
   } else {
-    console.log("estou aqui.");
     toggleCartEmptyState(true);
   }
+}
+
+export function handleAddWineToCart() {
+  const buyButton = document.querySelector("#btn-buy");
+
+  if (!buyButton) return;
+
+  buyButton.addEventListener("click", () => {
+    const wine = createWineFromDOM();
+    saveListToLocalStorage(wine);
+    alert("Produto Adicionar ao carrinho");
+    window.location.reload();
+  });
 }
 
 export function handleCartItemDeletion() {
@@ -135,5 +148,21 @@ export function redirectPageCart() {
 
   buttonRedirect.addEventListener("click", () => {
     window.location.href = "../pages/cart.html";
+  });
+}
+
+export function increaseCartItem() {
+  const increaseButtons = document.querySelectorAll("[data-increment-item]");
+
+  increaseButtons.forEach((button) => {
+    button.addEventListener("click", handleIncrement);
+  });
+}
+
+export function decreaseCartItem() {
+  const decreaseButtons = document.querySelectorAll("[data-decrement-item]");
+
+  decreaseButtons.forEach((button) => {
+    button.addEventListener("click", handleDecrement);
   });
 }

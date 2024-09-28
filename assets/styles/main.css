@@ -252,6 +252,43 @@ a {
   background: #f5f5f5;
 }
 
+.checkout__button {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 40px;
+  padding: 0 30px;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.checkout__button-black {
+  background: #ffffff;
+  border-color: #000000;
+}
+.checkout__button-black:hover {
+  color: #ffffff;
+  background: #de844f;
+  border-color: #de844f;
+}
+
+.checkout__button-orange {
+  color: #ffffff;
+  background: #de844f;
+  border-color: #de844f;
+}
+.checkout__button-orange:hover {
+  color: #000000;
+  background: #ffffff;
+  border-color: #000000;
+}
+
 .menu__burger {
   color: #ffffff;
   align-items: center;
@@ -1978,10 +2015,17 @@ a {
   border-radius: 50%;
   height: 34px;
   text-align: center;
+  transition: 0.3s ease;
   width: 34px;
+}
+.cart__remove-item:hover {
+  background: #fcb1b1;
 }
 .cart__remove-item i {
   color: #ef4444;
+}
+.cart__remove-item i:hover {
+  color: #5a4a4a;
 }
 .cart__product-footer {
   align-items: center;
@@ -2004,10 +2048,20 @@ a {
   font-family: "Source Sans 3", sans-serif;
   font-size: 1rem;
   font-weight: 400;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  appearance: none;
+  -moz-appearance: textfield;
   border: 1px solid #dedede;
   font-weight: 500;
   outline: none;
   text-align: center;
+}
+.cart__quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 .cart__product-price, .cart__final-price {
   font-family: "Source Sans 3", sans-serif;
@@ -2073,30 +2127,6 @@ a {
   font-family: "Source Sans 3", sans-serif;
   font-size: 1rem;
   font-weight: 400;
-}
-
-.checkout__submit-btn {
-  font-family: "Source Sans 3", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #ffffff;
-  border: none;
-  background: #de844f;
-  border-radius: 50px;
-  border: 2px solid #de844f;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 600;
-  letter-spacing: 1px;
-  line-height: 40px;
-  padding: 0 30px;
-  text-transform: uppercase;
-  transition: 0.3s ease;
-}
-.checkout__submit-btn:hover {
-  color: #000000;
-  background: #ffffff;
-  border-color: #000000;
 }
 
 /*# sourceMappingURL=main.css.map */
