@@ -38,7 +38,7 @@
 
             <a href="#" class="btn-cart" id="btnCart">
                <i class="fa-solid fa-cart-plus"></i>
-               <span class="cart-quantity" id="cartQuantity"></span>
+               <span class="cart-quantity" id="cartModalQuantity"></span>
             </a>
          </nav>
       </div>
@@ -86,11 +86,11 @@
 
    <div class="cart__modal" id="cartModal" aria-hidden="true">
       <div class="cart__container">
-         <p class="cart__empty">Carrinho vazio.</p>
+         <p class="cart__empty">Seu carrinho está vazio no momento..</p>
          <div class="cart__visible">
             <h2 class="cart__title">Seus produtos</h2>
-            <ul class="cart__list" id="cartList"></ul>
-            <p class="cart__total" id="cartTotal" aria-live="polite">
+            <ul class="cart__list" id="cartModalList"></ul>
+            <p class="cart__total" id="cartModalTotal" aria-live="polite">
                <strong></strong>
             </p>
             <div class="cart__buttons">
@@ -159,7 +159,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Barbera de Ouro</h2>
-                     <span>$ 299.99</span>
+                     <span>R$ 299.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-02">
@@ -173,7 +173,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Sangiovese</h2>
-                     <span>$ 229.99</span>
+                     <span>R$ 229.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-03">
@@ -187,7 +187,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Zinfandel</h2>
-                     <span>$ 249.99</span>
+                     <span>R$ 249.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-04">
@@ -201,7 +201,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Pinot noir</h2>
-                     <span>$ 329.99</span>
+                     <span>R$ 329.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-05">
@@ -215,7 +215,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Vinho Riesling</h2>
-                     <span>$ 349.99</span>
+                     <span>R$ 349.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-06">
@@ -229,7 +229,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Gewürztraminer</h2>
-                     <span>$ 249.99</span>
+                     <span>R$ 249.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-07">
@@ -243,7 +243,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Cabernet Sauvignon</h2>
-                     <span>$ 329.99</span>
+                     <span>R$ 329.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-08">
@@ -257,7 +257,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Shiraz</h2>
-                     <span>$399.99</span>
+                     <span>R$ 399.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-09">
@@ -271,7 +271,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Sauvignon Blanc</h2>
-                     <span>$249.99</span>
+                     <span>R$ 249.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-10">
@@ -285,7 +285,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Serenade of the Valley</h2>
-                     <span>$549.99</span>
+                     <span>R$ 549.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-11">
@@ -299,7 +299,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Breeze of the Vineyard</h2>
-                     <span>$649.99</span>
+                     <span>R$ 649.99</span>
                   </div>
                </div>
                <div class="product__item" data-product="product-12">
@@ -313,7 +313,7 @@
                   </div>
                   <div class="product__price">
                      <h2>Ruby Enchantment</h2>
-                     <span>$249.99</span>
+                     <span>R$ 249.99</span>
                   </div>
                </div>
             </div>

@@ -38,7 +38,7 @@
 
             <a href="#" class="btn-cart" id="btnCart">
                <i class="fa-solid fa-cart-plus"></i>
-               <span class="cart-quantity" id="cartQuantity"></span>
+               <span class="cart-quantity" id="cartModalQuantity"></span>
             </a>
          </nav>
       </div>
@@ -86,11 +86,11 @@
 
    <div class="cart__modal" id="cartModal" aria-hidden="true">
       <div class="cart__container">
-         <p class="cart__empty">Carrinho vazio.</p>
+         <p class="cart__empty">Seu carrinho está vazio no momento..</p>
          <div class="cart__visible">
             <h2 class="cart__title">Seus produtos</h2>
-            <ul class="cart__list" id="cartList"></ul>
-            <p class="cart__total" id="cartTotal" aria-live="polite">
+            <ul class="cart__list" id="cartModalList"></ul>
+            <p class="cart__total" id="cartModalTotal" aria-live="polite">
                <strong></strong>
             </p>
             <div class="cart__buttons">

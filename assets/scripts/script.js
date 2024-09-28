@@ -5,7 +5,8 @@ import { initializeProductLinks } from "./modules/productLinkHandler.js";
 import { loadProductDetails } from "./modules/productDetails.js";
 import {
   handleAddWineToCart,
-  renderProducts,
+  displayModalProducts,
+  displayProductsPage,
   handleCartItemDeletion,
   redirectPageCart,
 } from "./modules/cartActions.js";
@@ -19,7 +20,8 @@ window.addEventListener("DOMContentLoaded", () => {
   initializeProductLinks();
   loadProductDetails();
   handleAddWineToCart();
-  renderProducts();
+  displayModalProducts();
+  displayProductsPage();
   openModalCart();
   handleCartItemDeletion();
   formLoginValidator();

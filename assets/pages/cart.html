@@ -38,7 +38,7 @@
 
                 <a href="#" class="btn-cart" id="btnCart">
                     <i class="fa-solid fa-cart-plus"></i>
-                    <span class="cart-quantity" id="cartQuantity"></span>
+                    <span class="cart-quantity" id="cartModalQuantity"></span>
                 </a>
             </nav>
         </div>
@@ -86,11 +86,11 @@
 
     <div class="cart__modal" id="cartModal" aria-hidden="true">
         <div class="cart__container">
-            <p class="cart__empty">Carrinho vazio.</p>
+            <p class="cart__empty">Seu carrinho está vazio no momento..</p>
             <div class="cart__visible">
                 <h2 class="cart__title">Seus produtos</h2>
-                <ul class="cart__list" id="cartList"></ul>
-                <p class="cart__total" id="cartTotal" aria-live="polite">
+                <ul class="cart__list" id="cartModalList"></ul>
+                <p class="cart__total" id="cartModalTotal" aria-live="polite">
                     <strong></strong>
                 </p>
                 <div class="cart__buttons">
@@ -124,45 +124,26 @@
 
         <section class="cart">
             <div class="container">
-                <div class="cart__content">
+                <p class="cart__empty">Seu carrinho está vazio no momento.</p>
+                <div class="cart__content cart__visible">
                     <h2 class="cart__subtitle">Carrinho</h2>
 
-                    <div class="cart__product-container">
-                        <div class="cart__product-card">
-                            <div class="cart__product-image">
-                                <img src="../images/product-01.jpg" alt="Product" height="640" width="896">
-                            </div>
-                            <div class="cart__product-info">
-                                <div class="cart__product-header">
-                                    <h2 class="cart__product-title">Barbera de Ouro</h2>
-                                    <a href="#" class="cart__remove-item"><i class="fa-regular fa-trash-can"></i></a>
-                                </div>
-
-                                <div class="cart__product-footer">
-                                    <div class="cart__quantity-control">
-                                        <a href="#" class="btn__control">-</a>
-                                        <input class="cart__quantity-input" type="text" name="qtdProduct"
-                                            id="qtdProduct" value="1">
-                                        <a href="#" class="btn__control">+</a>
-                                    </div>
-                                    <div class="cart__product-price">R$ 299.99</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="cart__product-container" id="cartListPage"></ul>
 
                     <div class="cart__summary">
                         <h2>Subtotal</h2>
                         <div class="cart__price-details">
                             <a href="#codigoPromocional">Código promocional?</a>
-                            <div class="cart__final-price">R$ 299.99</div>
+                            <p class="cart__final-price" id="cartFinalPrice" aria-live="polite">
+                                <strong></strong>
+                            </p>
                         </div>
                     </div>
 
                     <form action="#" method="get" class="checkout__form">
                         <p class="checkout__info-text">Taxas de envio e descontos calculados na finalização da compra
                         </p>
-                        <button type="submit" class="checkout__submit-btn">Checkout</button>
+                        <button type="submit" class="checkout__submit-btn">Finalizar</button>
                     </form>
                 </div>
             </div>

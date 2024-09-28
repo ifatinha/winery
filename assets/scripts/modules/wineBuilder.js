@@ -8,6 +8,7 @@ export function createWineFromDOM() {
   );
   const quantity = parseInt(document.querySelector("#quantity").value, 10);
 
+  console.log(document.querySelector("#product-price").innerText.split(" ")[1]);
   return new Wine({
     imageSource: imageSource,
     name: name,

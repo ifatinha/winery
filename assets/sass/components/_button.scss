@@ -96,6 +96,7 @@
     @include flex(center, center);
     @include font-primary(26);
     border     : 1px solid map-get($map: $theme-color, $key: "soft-silver");
+    cursor     : pointer;
     font-weight: 500;
     transition : .3s ease-in-out;
 

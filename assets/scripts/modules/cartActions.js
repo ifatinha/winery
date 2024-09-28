@@ -1,5 +1,4 @@
-import { Wine } from "../classes/wine.js";
-import { createCartListItem } from "./createElements.js";
+import { displayModalCartItem, displayCartItem } from "./createElements.js";
 import {
   saveListToLocalStorage,
   loadListFromLocalStorage,
@@ -7,21 +6,8 @@ import {
 } from "./localStorage.js";
 import { createWineFromDOM } from "./wineBuilder.js";
 
-export function handleAddWineToCart() {
-  const buyButton = document.querySelector("#btn-buy");
-
-  if (!buyButton) return;
-
-  buyButton.addEventListener("click", () => {
-    const wine = createWineFromDOM();
-    saveListToLocalStorage(wine);
-    alert("Produto Adicionar ao carrinho");
-    window.location.reload();
-  });
-}
-
-function updateCartDisplayQuantity(quantity) {
-  const cartQuantityElement = document.querySelector("#cartQuantity");
+function updateCartDisplayQuantity(quantity, elementId) {
+  const cartQuantityElement = document.querySelector(`#${elementId}`);
 
   if (!cartQuantityElement) return;
 
@@ -47,35 +33,14 @@ function toggleCartEmptyState(isEmpty) {
   cart.classList.toggle("cart__hidden", isEmpty);
 }
 
-export function renderProducts() {
-  const wines = loadListFromLocalStorage();
-  const cartList = document.querySelector("#cartList");
-
-  if (!cartList) return;
-
-  if (wines.length > 0) {
-    updateCartDisplayQuantity(wines.length);
-
-    wines.forEach((wine) => {
-      const cartItem = createCartListItem(wine);
-      cartList.appendChild(cartItem);
-    });
-
-    updateCartTotalDisplay();
-    toggleCartEmptyState(false);
-  } else {
-    toggleCartEmptyState(true);
-  }
-}
-
 function calculateTotalCartValue() {
   const wines = loadListFromLocalStorage();
 
   return wines.reduce((total, wine) => total + wine.price * wine.quantity, 0);
 }
 
-function updateCartTotalDisplay() {
-  const cartElement = document.querySelector("#cartTotal strong");
+function updateCartTotalDisplay(elementId) {
+  const cartElement = document.querySelector(`#${elementId} strong`);
 
   if (!cartElement) return;
 
@@ -83,9 +48,64 @@ function updateCartTotalDisplay() {
   cartElement.textContent = `Total: R$ ${totalValue}`;
 }
 
+export function handleAddWineToCart() {
+  const buyButton = document.querySelector("#btn-buy");
+
+  if (!buyButton) return;
+
+  buyButton.addEventListener("click", () => {
+    const wine = createWineFromDOM();
+    saveListToLocalStorage(wine);
+    alert("Produto Adicionar ao carrinho");
+    window.location.reload();
+  });
+}
+
+export function displayModalProducts() {
+  const wines = loadListFromLocalStorage();
+  const cartList = document.querySelector("#cartModalList");
+
+  if (!cartList) return;
+
+  if (wines.length > 0) {
+    updateCartDisplayQuantity(wines.length, "cartModalQuantity");
+
+    wines.forEach((wine) => {
+      const cartItem = displayModalCartItem(wine);
+      cartList.appendChild(cartItem);
+    });
+
+    updateCartTotalDisplay("cartModalTotal");
+    toggleCartEmptyState(false);
+  } else {
+    toggleCartEmptyState(true);
+  }
+}
+
+export function displayProductsPage() {
+  const wines = loadListFromLocalStorage();
+  const cartList = document.querySelector("#cartListPage");
+
+  if (!cartList) return;
+
+  if (wines.length > 0) {
+    
+    wines.forEach((wine) => {
+      const cartItem = displayCartItem(wine);
+      cartList.appendChild(cartItem);
+    });
+
+    updateCartTotalDisplay("cartFinalPrice");
+    toggleCartEmptyState(false);
+  } else {
+    console.log("estou aqui.");
+    toggleCartEmptyState(true);
+  }
+}
+
 export function handleCartItemDeletion() {
-  const removeButtons = document.querySelectorAll("[data-remove-wine]");
-  const winesList = document.querySelectorAll(".cart__list-item");
+  const removeButtons = document.querySelectorAll("[data-product-id]");
+  const winesList = document.querySelectorAll(".js-product");
 
   if (!removeButtons || !winesList) return;
 

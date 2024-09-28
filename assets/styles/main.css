@@ -243,6 +243,7 @@ a {
   font-size: 1.625rem;
   font-weight: 400;
   border: 1px solid #dedede;
+  cursor: pointer;
   font-weight: 500;
   transition: 0.3s ease-in-out;
 }
@@ -1881,6 +1882,16 @@ a {
     padding: 60px 0;
   }
 }
+.cart .cart__empty {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #ffffff;
+  background: #000000;
+  border-radius: 3px;
+  margin-bottom: 2rem;
+  padding: 18px 16px;
+}
 .cart__subtitle {
   font-family: "Playfair Display", serif;
   font-size: 1.75rem;
@@ -1905,6 +1916,7 @@ a {
   justify-content: start;
   border: 2px solid #dedede;
   border-radius: 4px;
+  margin-bottom: 20px;
   padding: 1rem;
 }
 @media screen and (max-width: calc(768px - 1px)) {
