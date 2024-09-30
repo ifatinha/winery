@@ -54,13 +54,15 @@ function handleIncrement(event) {
   const input = document.querySelector(`[data-quantity-input="${itemId}"]`);
 
   input.value = +input.value + 1;
-  updateQuantityProduct(itemId, +input.value);
 }
 
 function handleDecrement(event) {
   const itemId = event.currentTarget.dataset.decrementItem;
   const input = document.querySelector(`[data-quantity-input="${itemId}"]`);
-  input.value = +input.value - 1;
+
+  const currentValue = parseInt(input.value, 10);
+
+  input.value = currentValue > 1 ? currentValue - 1 : 1;
 }
 
 export function displayModalProducts() {
@@ -164,5 +166,38 @@ export function decreaseCartItem() {
 
   decreaseButtons.forEach((button) => {
     button.addEventListener("click", handleDecrement);
+  });
+}
+
+export function updateCartItemsInLocalStorage() {
+  const cartUpdateButton = document.querySelector("#cartUpdateButton");
+  const products = new Set();
+
+  if (!cartUpdateButton) return;
+
+  cartUpdateButton.addEventListener("click", () => {
+    const cartItens = document.querySelectorAll("#cartListPage li");
+
+    cartItens.forEach((item) => {
+      const key = item.getAttribute("id");
+      const quantity = document.querySelector(`#${key} [data-quantity-input]`).value;
+      const imageSource = document.querySelector(
+        `#${key} .cart__product-image img`
+      ).src;
+      const name = document.querySelector(`#${key} .cart__product-title`).textContent;
+      const price = document.querySelector(`#${key} .cart__product-price`).textContent;
+
+      const product = {
+        key,
+        imageSource,
+        name,
+        price,
+        quantity,
+      };
+
+      products.add(product);
+    });
+
+    updateQuantityProduct(products);
   });
 }

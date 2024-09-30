@@ -16,8 +16,11 @@ export function saveListToLocalStorage(wine) {
   localStorage.setItem(wine.idProduct, JSON.stringify(wine));
 }
 
-export function updateQuantityProduct(list) {
-  console.log(list);
+export function updateQuantityProduct(wines) {
+  for (const wine of wines) {
+    console.log(wine);
+    //localStorage.setItem(wine.key, JSON.stringify(wine));
+  }
 }
 
 export function loadListFromLocalStorage() {

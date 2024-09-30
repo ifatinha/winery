@@ -9,9 +9,9 @@ function redirectToProductDetails(link) {
     return;
   }
 
-  const productImage = productElement.querySelector(".product__img img");
-  const productTitle = productElement.querySelector(".product__price h2");
-  const productPrice = productElement.querySelector(".product__price span");
+  const productImage = productElement.querySelector(".product__item-img img");
+  const productTitle = productElement.querySelector(".product__item-price h2");
+  const productPrice = productElement.querySelector(".product__item-price span");
 
   const imageSrc = productImage ? productImage.getAttribute("src") : "";
   const titleValue = productTitle ? productTitle.innerText : "";

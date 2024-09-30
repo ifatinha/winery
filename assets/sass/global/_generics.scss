@@ -30,25 +30,6 @@
     text-transform: uppercase;
 }
 
-.product__price {
-    width: 100%;
-
-    h2 {
-        @include font-secondary(24);
-        @include color("deep-mauve");
-        letter-spacing: -0.1px;
-        line-height   : 36px;
-        text-align    : center;
-    }
-
-    span {
-        @include font-primary(14, 700);
-        display    : block;
-        line-height: 30px;
-        text-align : center;
-    }
-}
-
 .cart-quantity {
     @include color("pure-white");
     @include font-primary(12, 600);

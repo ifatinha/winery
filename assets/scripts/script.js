@@ -11,6 +11,7 @@ import {
   redirectPageCart,
   increaseCartItem,
   decreaseCartItem,
+  updateCartItemsInLocalStorage,
 } from "./modules/cartActions.js";
 import { openModalCart } from "./modules/cartModal.js";
 import { formLoginValidator } from "./modules/validateForm.js";
@@ -30,4 +31,5 @@ window.addEventListener("DOMContentLoaded", () => {
   redirectPageCart();
   increaseCartItem();
   decreaseCartItem();
+  updateCartItemsInLocalStorage();
 });

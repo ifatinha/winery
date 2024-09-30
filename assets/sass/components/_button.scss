@@ -54,6 +54,7 @@
     transform      : translateY(20px);
     transition     : opacity 0.5s ease, transform 0.5s ease;
     width          : 40px;
+    z-index        : 99999999;
 
     @include hover {
         background: map-get($map: $theme-color, $key: "ocean-depths");
