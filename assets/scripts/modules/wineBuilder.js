@@ -19,19 +19,25 @@ export function createWineFromDOM() {
 }
 
 export function buildProductFromCartItem(product) {
-  const key = product.getAttribute("id");
-  const quantity = document.querySelector(
-    `#${key} [data-quantity-input]`
-  ).value;
+  const idProduct = product.getAttribute("id");
   const imageSource = document.querySelector(
-    `#${key} .cart__product-image img`
+    `#${idProduct} .cart__product-image img`
   ).src;
   const name = document.querySelector(
-    `#${key} .cart__product-title`
+    `#${idProduct} .cart__product-title`
   ).textContent;
   const price = document.querySelector(
-    `#${key} .cart__product-price`
+    `#${idProduct} .cart__product-price`
   ).textContent;
+  const quantity = document.querySelector(
+    `#${idProduct} [data-quantity-input]`
+  ).value;
 
-  return { key, imageSource, name, price, quantity };
+  return new Wine({
+    idProduct: idProduct,
+    imageSource: imageSource,
+    name: name,
+    price: price,
+    quantity: quantity,
+  });
 }

@@ -1,3 +1,5 @@
+import { Wine } from "../classes/wine.js";
+
 function createElement({ elementName = "div", classes = "" } = {}) {
   const element = document.createElement(elementName);
 
@@ -65,7 +67,15 @@ export function displayModalCartItem(wine) {
   return li;
 }
 
-export function displayCartItem(wine) {
+export function displayPageCartItem(item) {
+  const wine = new Wine({
+    idProduct: item.idProduct,
+    imageSource: item.imageSource,
+    name: item.name,
+    price: item.price,
+    quantity: item.quantity,
+  });
+
   const li = createElement({
     elementName: "li",
     classes: "cart__product-card js-product",
@@ -168,7 +178,7 @@ export function displayCartItem(wine) {
     classes: "cart__product-price",
   });
 
-  priceElement.textContent = wine.getTotal().toFixed(2);
+  priceElement.textContent = wine.price;
   divProductFooter.appendChild(priceElement);
 
   divProductInfo.appendChild(divProductFooter);

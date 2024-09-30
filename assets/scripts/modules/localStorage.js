@@ -1,45 +1,45 @@
-import { Wine } from "../classes/wine.js";
+function existingProductToLocalStorage(cart, newProduct) {
+  return cart.findIndex(
+    (product) => product.idProduct === newProduct.idProduct
+  );
+}
 
-function createdWine(product) {
-  const wine = new Wine({
-    idProduct: product.idProduct,
-    imageSource: product.imageSource,
-    name: product.name,
-    price: product.price,
-    quantity: product.quantity,
+export function saveListToLocalStorage(newProduct) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingProductIndex = existingProductToLocalStorage(cart, newProduct);
+  console.log(existingProductIndex);
+
+  if (existingProductIndex !== -1) {
+    cart[existingProductIndex].quantity = newProduct.quantity;
+  } else {
+    cart.push(newProduct);
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+export function updateProductToLocalStorage(products) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  products.forEach((product) => {
+    const productIndex = existingProductToLocalStorage(cart, product);
+
+    if (productIndex !== -1) {
+      cart[productIndex] = { ...cart[product], ...product };
+    }
   });
 
-  return wine;
-}
-
-export function saveListToLocalStorage(wine) {
-  localStorage.setItem(wine.idProduct, JSON.stringify(wine));
-}
-
-export function updateQuantityProductToLocalStorage(wines) {
-  for (const wine of wines) {
-    console.log(wine);
-    //localStorage.setItem(wine.key, JSON.stringify(wine));
-  }
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 export function loadListFromLocalStorage() {
-  let wines = [];
-
-  for (let i = 0; i < localStorage.length; i++) {
-    const key = localStorage.key(i);
-    const item = localStorage.getItem(key);
-
-    try {
-      wines.push(createdWine(JSON.parse(item)));
-    } catch (e) {
-      console.error(`Item com a chave '${key}' não é um json válid.`);
-    }
-  }
-
-  return wines;
+  return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
-export function removeItemLocalStore(key) {
-  localStorage.removeItem(key);
+export function removeItemLocalStore(productId) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  cart = cart.filter((product) => product.idProduct !== productId);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
 }

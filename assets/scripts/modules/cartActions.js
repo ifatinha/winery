@@ -1,9 +1,9 @@
-import { displayModalCartItem, displayCartItem } from "./createElements.js";
+import { displayModalCartItem, displayPageCartItem } from "./createElements.js";
 import {
   saveListToLocalStorage,
   loadListFromLocalStorage,
   removeItemLocalStore,
-  updateQuantityProductToLocalStorage,
+  updateProductToLocalStorage,
 } from "./localStorage.js";
 import { createWineFromDOM, buildProductFromCartItem } from "./wineBuilder.js";
 
@@ -63,7 +63,7 @@ export function displayProductsPage() {
 
   if (wines.length > 0) {
     wines.forEach((wine) => {
-      const cartItem = displayCartItem(wine);
+      const cartItem = displayPageCartItem(wine);
       cartList.appendChild(cartItem);
     });
 
@@ -76,8 +76,15 @@ export function displayProductsPage() {
 
 function calculateTotalCartValue() {
   const wines = loadListFromLocalStorage();
+  console.log(wines);
 
-  return wines.reduce((total, wine) => total + wine.price * wine.quantity, 0);
+  const total = wines.reduce(
+    (total, wine) => total + wine.price * wine.quantity,
+    0
+  );
+  console.log(total);
+
+  return total;
 }
 
 function updateCartTotalDisplay(elementId) {
@@ -171,18 +178,24 @@ export function decreaseCartItem() {
 
 function handleCartUpdate() {
   const cartItens = document.querySelectorAll("#cartListPage li");
-  const totalCartValue = document.querySelector("#cartFinalPrice strong");
 
-  if (!cartItens || !totalCartValue) return;
+  if (!cartItens) return;
 
-  const products = new Set();
+  const products = [];
 
-  cartItens.forEach((item) => {
-    products.add(buildProductFromCartItem(item));
-  });
+  try {
+    
+    cartItens.forEach((item) => {
+      products.push(buildProductFromCartItem(item));
+    });
 
-  updateQuantityProductToLocalStorage(products);
-  updateCartTotalDisplay(totalCartValue);
+    updateProductToLocalStorage(products);
+    updateCartTotalDisplay("cartFinalPrice");
+    alert("Carrinho atualizado!");
+    window.location.reload();
+  } catch (err) {
+    console.error(`Não foi possível atualizar os dados do carrinho. ${err}`);
+  }
 }
 
 export function updateCartItemsInLocalStorage() {

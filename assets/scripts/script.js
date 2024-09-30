@@ -16,7 +16,7 @@ import {
 import { openModalCart } from "./modules/cartModal.js";
 import { formLoginValidator } from "./modules/validateForm.js";
 
-window.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   openMenu();
   initializeCloseModal();
   scrollToTop();
