@@ -1705,10 +1705,8 @@ a {
   color: #5d6163;
   font-weight: 500;
 }
-@media screen and (max-width: calc(768px - 1px)) {
-  .cart__form .product__info-qtd {
-    margin-bottom: 1rem;
-  }
+.cart__form .product__info-qtd::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .related {

@@ -3,9 +3,9 @@ import {
   saveListToLocalStorage,
   loadListFromLocalStorage,
   removeItemLocalStore,
-  updateQuantityProduct,
+  updateQuantityProductToLocalStorage,
 } from "./localStorage.js";
-import { createWineFromDOM } from "./wineBuilder.js";
+import { createWineFromDOM, buildProductFromCartItem } from "./wineBuilder.js";
 
 function updateCartDisplayQuantity(quantity, elementId) {
   const cartQuantityElement = document.querySelector(`#${elementId}`);
@@ -32,37 +32,6 @@ function toggleCartEmptyState(isEmpty) {
 
   cart.classList.toggle("cart__visible", !isEmpty);
   cart.classList.toggle("cart__hidden", isEmpty);
-}
-
-function calculateTotalCartValue() {
-  const wines = loadListFromLocalStorage();
-
-  return wines.reduce((total, wine) => total + wine.price * wine.quantity, 0);
-}
-
-function updateCartTotalDisplay(elementId) {
-  const cartElement = document.querySelector(`#${elementId} strong`);
-
-  if (!cartElement) return;
-
-  const totalValue = calculateTotalCartValue();
-  cartElement.textContent = `R$ ${totalValue}`;
-}
-
-function handleIncrement(event) {
-  const itemId = event.currentTarget.dataset.incrementItem;
-  const input = document.querySelector(`[data-quantity-input="${itemId}"]`);
-
-  input.value = +input.value + 1;
-}
-
-function handleDecrement(event) {
-  const itemId = event.currentTarget.dataset.decrementItem;
-  const input = document.querySelector(`[data-quantity-input="${itemId}"]`);
-
-  const currentValue = parseInt(input.value, 10);
-
-  input.value = currentValue > 1 ? currentValue - 1 : 1;
 }
 
 export function displayModalProducts() {
@@ -103,6 +72,21 @@ export function displayProductsPage() {
   } else {
     toggleCartEmptyState(true);
   }
+}
+
+function calculateTotalCartValue() {
+  const wines = loadListFromLocalStorage();
+
+  return wines.reduce((total, wine) => total + wine.price * wine.quantity, 0);
+}
+
+function updateCartTotalDisplay(elementId) {
+  const cartElement = document.querySelector(`#${elementId} strong`);
+
+  if (!cartElement) return;
+
+  const totalValue = calculateTotalCartValue();
+  cartElement.textContent = `R$ ${totalValue.toFixed(2)}`;
 }
 
 export function handleAddWineToCart() {
@@ -153,12 +137,28 @@ export function redirectPageCart() {
   });
 }
 
+function handleIncrement(event) {
+  const itemId = event.currentTarget.dataset.incrementItem;
+  const input = document.querySelector(`[data-quantity-input="${itemId}"]`);
+
+  input.value = +input.value + 1;
+}
+
 export function increaseCartItem() {
   const increaseButtons = document.querySelectorAll("[data-increment-item]");
 
   increaseButtons.forEach((button) => {
     button.addEventListener("click", handleIncrement);
   });
+}
+
+function handleDecrement(event) {
+  const itemId = event.currentTarget.dataset.decrementItem;
+  const input = document.querySelector(`[data-quantity-input="${itemId}"]`);
+
+  const currentValue = parseInt(input.value, 10);
+
+  input.value = currentValue > 1 ? currentValue - 1 : 1;
 }
 
 export function decreaseCartItem() {
@@ -169,35 +169,26 @@ export function decreaseCartItem() {
   });
 }
 
+function handleCartUpdate() {
+  const cartItens = document.querySelectorAll("#cartListPage li");
+  const totalCartValue = document.querySelector("#cartFinalPrice strong");
+
+  if (!cartItens || !totalCartValue) return;
+
+  const products = new Set();
+
+  cartItens.forEach((item) => {
+    products.add(buildProductFromCartItem(item));
+  });
+
+  updateQuantityProductToLocalStorage(products);
+  updateCartTotalDisplay(totalCartValue);
+}
+
 export function updateCartItemsInLocalStorage() {
   const cartUpdateButton = document.querySelector("#cartUpdateButton");
-  const products = new Set();
 
   if (!cartUpdateButton) return;
 
-  cartUpdateButton.addEventListener("click", () => {
-    const cartItens = document.querySelectorAll("#cartListPage li");
-
-    cartItens.forEach((item) => {
-      const key = item.getAttribute("id");
-      const quantity = document.querySelector(`#${key} [data-quantity-input]`).value;
-      const imageSource = document.querySelector(
-        `#${key} .cart__product-image img`
-      ).src;
-      const name = document.querySelector(`#${key} .cart__product-title`).textContent;
-      const price = document.querySelector(`#${key} .cart__product-price`).textContent;
-
-      const product = {
-        key,
-        imageSource,
-        name,
-        price,
-        quantity,
-      };
-
-      products.add(product);
-    });
-
-    updateQuantityProduct(products);
-  });
+  cartUpdateButton.addEventListener("click", handleCartUpdate);
 }

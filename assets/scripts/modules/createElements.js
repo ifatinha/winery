@@ -168,7 +168,7 @@ export function displayCartItem(wine) {
     classes: "cart__product-price",
   });
 
-  priceElement.textContent = wine.getTotal();
+  priceElement.textContent = wine.getTotal().toFixed(2);
   divProductFooter.appendChild(priceElement);
 
   divProductInfo.appendChild(divProductFooter);

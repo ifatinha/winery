@@ -17,3 +17,21 @@ export function createWineFromDOM() {
     quantity: quantity,
   });
 }
+
+export function buildProductFromCartItem(product) {
+  const key = product.getAttribute("id");
+  const quantity = document.querySelector(
+    `#${key} [data-quantity-input]`
+  ).value;
+  const imageSource = document.querySelector(
+    `#${key} .cart__product-image img`
+  ).src;
+  const name = document.querySelector(
+    `#${key} .cart__product-title`
+  ).textContent;
+  const price = document.querySelector(
+    `#${key} .cart__product-price`
+  ).textContent;
+
+  return { key, imageSource, name, price, quantity };
+}

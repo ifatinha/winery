@@ -5,13 +5,13 @@ import { initializeProductLinks } from "./modules/productLinkHandler.js";
 import { loadProductDetails } from "./modules/productDetails.js";
 import {
   handleAddWineToCart,
-  displayModalProducts,
-  displayProductsPage,
   handleCartItemDeletion,
   redirectPageCart,
   increaseCartItem,
   decreaseCartItem,
   updateCartItemsInLocalStorage,
+  displayModalProducts,
+  displayProductsPage,
 } from "./modules/cartActions.js";
 import { openModalCart } from "./modules/cartModal.js";
 import { formLoginValidator } from "./modules/validateForm.js";
@@ -20,11 +20,11 @@ window.addEventListener("DOMContentLoaded", () => {
   openMenu();
   initializeCloseModal();
   scrollToTop();
+  displayModalProducts();
+  displayProductsPage();
   initializeProductLinks();
   loadProductDetails();
   handleAddWineToCart();
-  displayModalProducts();
-  displayProductsPage();
   openModalCart();
   handleCartItemDeletion();
   formLoginValidator();

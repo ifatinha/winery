@@ -158,8 +158,8 @@
     }
 
     .product__info-qtd {
-        @include devices(m) {
-            margin-bottom: 1rem;
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
         }
     }
 }
