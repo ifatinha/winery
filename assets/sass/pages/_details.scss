@@ -156,6 +156,12 @@
         @include color("slate-gray");
         font-weight: 500;
     }
+
+    .product__info-qtd {
+        @include devices(m) {
+            margin-bottom: 1rem;
+        }
+    }
 }
 
 .related {
