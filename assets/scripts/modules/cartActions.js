@@ -4,6 +4,7 @@ import {
   loadListFromLocalStorage,
   removeItemLocalStore,
   updateProductToLocalStorage,
+  removeCart,
 } from "./localStorage.js";
 import { createWineFromDOM, buildProductFromCartItem } from "./wineBuilder.js";
 
@@ -35,9 +36,8 @@ function toggleCartEmptyState(isEmpty) {
 }
 
 export function displayModalProducts() {
-  const wines = loadListFromLocalStorage();
   const cartList = document.querySelector("#cartModalList");
-
+  const wines = loadListFromLocalStorage();
   if (!cartList) return;
 
   if (wines.length > 0) {
@@ -56,9 +56,8 @@ export function displayModalProducts() {
 }
 
 export function displayProductsPage() {
-  const wines = loadListFromLocalStorage();
   const cartList = document.querySelector("#cartListPage");
-
+  const wines = loadListFromLocalStorage();
   if (!cartList) return;
 
   if (wines.length > 0) {
@@ -76,15 +75,7 @@ export function displayProductsPage() {
 
 function calculateTotalCartValue() {
   const wines = loadListFromLocalStorage();
-  console.log(wines);
-
-  const total = wines.reduce(
-    (total, wine) => total + wine.price * wine.quantity,
-    0
-  );
-  console.log(total);
-
-  return total;
+  return wines.reduce((total, wine) => total + wine.price * wine.quantity, 0);
 }
 
 function updateCartTotalDisplay(elementId) {
@@ -184,13 +175,13 @@ function handleCartUpdate() {
   const products = [];
 
   try {
-    
     cartItens.forEach((item) => {
       products.push(buildProductFromCartItem(item));
     });
 
     updateProductToLocalStorage(products);
     updateCartTotalDisplay("cartFinalPrice");
+    updateCartTotalDisplay("cartModalTotal");
     alert("Carrinho atualizado!");
     window.location.reload();
   } catch (err) {
@@ -204,4 +195,27 @@ export function updateCartItemsInLocalStorage() {
   if (!cartUpdateButton) return;
 
   cartUpdateButton.addEventListener("click", handleCartUpdate);
+}
+
+export function removeCartToLocalStorage() {
+  const cartFinishButton = document.querySelector("#cartFinishButton");
+  const finishModalButton = document.querySelector("#finishModalButton");
+  
+  if (!cartFinishButton || !finishModalButton) return;
+
+  cartFinishButton.addEventListener("click", () => {
+    if (confirm("Deseja realmente finalizar o pedido?")) {
+      removeCart();
+      alert("Pedido efetuado com sucesso!");
+      window.location.reload();
+    }
+  });
+
+  finishModalButton.addEventListener("click", () => {
+    if (confirm("Deseja realmente finalizar o pedido?")) {
+      removeCart();
+      alert("Pedido efetuado com sucesso!");
+      window.location.reload();
+    }
+  });
 }

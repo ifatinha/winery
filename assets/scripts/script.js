@@ -12,6 +12,7 @@ import {
   updateCartItemsInLocalStorage,
   displayModalProducts,
   displayProductsPage,
+  removeCartToLocalStorage,
 } from "./modules/cartActions.js";
 import { openModalCart } from "./modules/cartModal.js";
 import { formLoginValidator } from "./modules/validateForm.js";
@@ -32,4 +33,5 @@ document.addEventListener("DOMContentLoaded", () => {
   increaseCartItem();
   decreaseCartItem();
   updateCartItemsInLocalStorage();
+  removeCartToLocalStorage();
 });

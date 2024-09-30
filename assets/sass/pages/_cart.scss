@@ -188,6 +188,15 @@
     flex-direction: column;
     margin        : 20px 0;
     padding       : 0 1rem;
+
+    .checkout__buttons {
+        @include flex(center, end);
+        width     : 100%;
+
+        @include devices(m) {
+            flex-direction: column;
+        }
+    }
 }
 
 .checkout__info-text {

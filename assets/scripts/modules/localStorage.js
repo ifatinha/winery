@@ -43,3 +43,7 @@ export function removeItemLocalStore(productId) {
 
   localStorage.setItem("cart", JSON.stringify(cart));
 }
+
+export function removeCart() {
+  localStorage.removeItem("cart");
+}

@@ -3,6 +3,7 @@
 @use "../base/mixins"as *;
 @use "../base/keyframes"as*;
 @use "../layouts/flex"as *;
+@use "../global/responsive"as *;
 
 
 .btn-default {
@@ -112,13 +113,16 @@
     border        : 2px solid transparent;
     border-radius : 50px;
     cursor        : pointer;
-    display       : inline-block;
     font-weight   : 600;
     letter-spacing: 1px;
     line-height   : 40px;
     padding       : 0 30px;
     text-transform: uppercase;
     transition    : 0.3s ease;
+
+    @include devices(m) {
+        width  : 100%;
+    }
 }
 
 .checkout__button-black {

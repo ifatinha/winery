@@ -260,13 +260,17 @@ a {
   border: 2px solid transparent;
   border-radius: 50px;
   cursor: pointer;
-  display: inline-block;
   font-weight: 600;
   letter-spacing: 1px;
   line-height: 40px;
   padding: 0 30px;
   text-transform: uppercase;
   transition: 0.3s ease;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .checkout__button {
+    width: 100%;
+  }
 }
 
 .checkout__button-black {
@@ -2111,6 +2115,18 @@ a {
   flex-direction: column;
   margin: 20px 0;
   padding: 0 1rem;
+}
+.checkout__form .checkout__buttons {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: end;
+  width: 100%;
+}
+@media screen and (max-width: calc(768px - 1px)) {
+  .checkout__form .checkout__buttons {
+    flex-direction: column;
+  }
 }
 
 .checkout__info-text {
